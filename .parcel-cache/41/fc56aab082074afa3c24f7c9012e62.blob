@@ -21865,42 +21865,34 @@ class MainView extends _reactDefault.default.Component {
         this.state = {
             movies: [
                 {
-                    _id: "60dbc6157af35137390c7d74",
-                    Title: "Silence of the Lambs",
-                    Description: "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.",
-                    Image: "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg"
+                    _id: 1,
+                    Title: "The Staircase",
+                    Description: "Blank description of The Staircase goes here.",
+                    Image: "https://upload.wikimedia.org/wikipedia/en/d/dd/The_Staircase.png"
                 },
                 {
-                    _id: "60dd29cbefba3a45116c9553",
-                    Title: "Home Alone",
-                    Description: "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
-                    Image: "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg"
+                    _id: 2,
+                    Title: "Once Upon a Crime",
+                    Description: "Blank description here.",
+                    Image: "imageURL goes here"
                 },
                 {
-                    _id: "60dd2a71efba3a45116c9559",
-                    Title: "Cast Away",
-                    Description: "A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island.",
-                    Image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Cast_away_film_poster.jpg/220px-Cast_away_film_poster.jpg"
+                    _id: 1,
+                    Title: "Shawshank Redemption",
+                    Description: "Blank description here.",
+                    Image: "imageURL goes here"
                 }
             ],
             selectedMovie: null
         };
     }
-    setSelectedMovie(newSelectedMovie) {
-        this.setState({
-            selectedMovie: newSelectedMovie
-        });
-    }
     render() {
         const { movies , selectedMovie  } = this.state;
         if (selectedMovie) return(/*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
             movie: selectedMovie,
-            onBackClick: (newSelectedMovie)=>{
-                this.setSelectedMovie(newSelectedMovie);
-            },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 42
+                lineNumber: 36
             },
             __self: this
         }));
@@ -21908,7 +21900,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 44
+                lineNumber: 38
             },
             __self: this
         }, "The list is empty!"));
@@ -21916,18 +21908,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 47
+                lineNumber: 41
             },
             __self: this
         }, movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                 key: movie._id,
                 movie: movie,
-                onMovieClick: (movie1)=>{
-                    this.setSelectedMovie(movie1);
+                onMovieClick: (newSelectedMovie)=>{
+                    this.setState = {
+                        selectedMovie: newSelectedMovie
+                    };
                 },
                 __source: {
                     fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                    lineNumber: 48
+                    lineNumber: 43
                 },
                 __self: this
             })
@@ -22107,7 +22101,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie , onMovieClick  } = this.props;
+        const { movieDetails , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-card",
             onClick: ()=>{
@@ -22118,7 +22112,7 @@ class MovieCard extends _reactDefault.default.Component {
                 lineNumber: 7
             },
             __self: this
-        }, movie.Title));
+        }, movieDetails.Title));
     }
 }
 
@@ -22142,12 +22136,9 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieView extends _reactDefault.default.Component {
     render() {
-        const { movie , onBackClick  } = this.props;
+        const { movieDetails  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-view",
-            onClick: ()=>{
-                onBackClick(null);
-            },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 7
@@ -22161,7 +22152,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
-            src: movie.Image,
+            src: movieDetails.Image,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 9
@@ -22188,7 +22179,7 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 13
             },
             __self: this
-        }, movie.Title)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, movieDetails.Title)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-description",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
@@ -22209,19 +22200,7 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 17
             },
             __self: this
-        }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 19
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 20
-            },
-            __self: this
-        }, "Back"))));
+        }, movieDetails.Description))));
     }
 }
 
@@ -22232,4 +22211,4 @@ class MovieView extends _reactDefault.default.Component {
 }
 },{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"1S2ED":[function() {},{}]},["1j6wU","Xk9RF","55ueq"], "55ueq", "parcelRequire9590")
 
-//# sourceMappingURL=index.cef1742d.js.map
+//# sourceMappingURL=index.HASH_REF_4fa018031702035ee0446cd3cef1742d.js.map
