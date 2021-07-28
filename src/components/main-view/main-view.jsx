@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
+import "./main-view.scss";
 
 import { LoginView } from "../login-view/login-view";
+import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -9,10 +11,12 @@ import { MovieView } from "../movie-view/movie-view";
 export class MainView extends React.Component {
   constructor() {
     super();
+    //initial state is set to null
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null
+      user: null,
+      register: null
     };
   }
 
@@ -43,11 +47,38 @@ export class MainView extends React.Component {
     });
   }
 
+  //when a user clicks "register" button, take them to registration page
+  onRegisterClick() {
+    this.setState({
+      register: "yes"
+    });
+  }
+
+  //when back button is clicked on registration page, go back to sign in page
+  onRegisterBack() {
+    this.setState({
+      register: null
+    });
+  }
+
+  //when user registers, log the user and take them to movies view page
+  onRegistered(user) {
+    this.setState({
+      user
+    });
+  }
+
   render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user, register } = this.state;
 
     //if there is no user, show the LoginView
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    if (register === "yes" && !user) return <RegistrationView
+      onRegistered={user => this.onRegistered(user)}
+      onRegisterBack={register => this.onRegisterBack(register)} />;
+
+    if (!user) return <LoginView
+      onLoggedIn={user => this.onLoggedIn(user)}
+      onRegisterClick={register => this.onRegisterClick(register)} />;
 
     //if there are no movies, return blank
     if (movies.length === 0) return <div className="main-view" />;
