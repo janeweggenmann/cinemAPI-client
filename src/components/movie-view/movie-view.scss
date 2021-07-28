@@ -1,0 +1,28 @@
+.movie-view {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.movie-description {
+  text-align: left;
+  padding: 5px;
+  font-style: italic;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: left;
+}
+
+.movie-card_button {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  height: 40px;
+  justify-self: start;
+  align-self: end;
+}
+
+.movie-poster {
+  grid-row-end: span 2;
+}

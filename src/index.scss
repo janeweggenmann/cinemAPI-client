@@ -1,5 +1,30 @@
-$color: steelblue;
-
-.my-flix {
-  color: $color;
+.app-container {
+  padding: 50px;
+  background-color: #42586b;
+  color: white;
+  align-items: center;
+  align-content: center;
+  text-align: center;
 }
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+p, label, span, button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+}
+
+button {
+  background-color: #1d272f;
+  color: white;
+  border-color: #1d272f;
+}
+
+.secondary-button {
+  background-color: #eaecee;
+  border-color: #eaecee;
+  color: black;
+}
+

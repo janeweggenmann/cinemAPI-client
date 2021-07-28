@@ -1,0 +1,22 @@
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  align-content: center;
+  align-items: center;
+}
+
+button, input {
+  width: 200px;
+  padding: 8px 0px;
+  margin: 5px 5px 8px 5px;
+  border-radius: 4px;
+}
+
+.registration-label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
