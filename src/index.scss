@@ -1,30 +1,81 @@
+
 .app-container {
   padding: 50px;
-  background-color: #42586b;
-  color: white;
   align-items: center;
   align-content: center;
   text-align: center;
+  background-color: #eeede9;
 }
 
 h1, h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  font-size: 42pt;
 }
 
-p, label, span, button {
-  font-family: 'Roboto', sans-serif;
-  font-size: 10pt;
+p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  color: #3c3c3c;
 }
 
-button {
-  background-color: #1d272f;
+.cinemapi_title-thin {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  font-size: 42pt;
+}
+
+.cinemapi_title-thick {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  font-size: 42pt;
+}
+
+.btn {
+  font-family: 'Oswald', sans-serif;
+  min-width: 150px;
+  font-size: 14pt !important;
+  height: 45px;
+  margin: 5px;
+}
+
+.btn.btn-primary {
+  background-color:#718C6a;
   color: white;
-  border-color: #1d272f;
+  border-color: #3c3c3c;
 }
 
-.secondary-button {
-  background-color: #eaecee;
-  border-color: #eaecee;
-  color: black;
+.btn.btn-primary:hover,
+.btn.btn-primary:active,
+.btn.btn-primary:focus {
+  background-color:#718C6a;
+  opacity: 80%;
+  color: white;
+  border-color: #3c3c3c;
 }
+
+.btn.btn-secondary {
+  background-color: #3c3c3c;
+  color: white;
+  border-color: #3c3c3c;
+}
+
+.btn.btn-secondary:hover,
+.btn.btn-secondary:active,
+.btn.btn-secondary:focus {
+  background-color: #3c3c3c;
+  opacity: 70%;
+  color: white;
+  border-color: #3c3c3c;
+}
+
+
+
 

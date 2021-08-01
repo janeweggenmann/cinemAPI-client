@@ -1,27 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./movie-view.scss";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
     return (
-      <div className="movie-view" onClick={() => { onBackClick(null); }}>
-        <div className="movie-poster">
-          <img src={movie.ImageURL} />
-        </div>
-        <div className="movie-info">
-          <div className="movie-title">
-            <h2 className="value">{movie.Name}</h2>
+      <Row className="movie-view" onClick={() => { onBackClick(null); }}>
+        <Col xs={12} md={6}>
+          <img className="movie-view_image" src={movie.ImageURL} />
+        </Col>
+        <Col className="d-flex" xs={12} md={6}>
+          <h2 className="movie-view_title">{movie.Name}</h2>
+          <div>
+            <p className="movie-view_label">Overview:  <span className="movie-view_text"> {movie.Description}</span></p>
+            <p className="movie-view_label">Genre:  <span className="movie-view_text"> {movie.Genre.Name}</span></p>
+            <p className="movie-view_label">Directed By:  <span className="movie-view_text"> {movie.Director.Name}</span></p>
+            <p className="movie-view_label">Genre:  <span className="movie-view_text"> {movie.Genre.Name}</span></p>
           </div>
-          <div className="movie-description">
-            <span className="label">Description: </span>
-            <span className="value">{movie.Description}</span>
+          <div className="d-flex align-items-start">
+            <button className="movie-view_button">Back</button>
           </div>
-        </div>
-        <button className="movie-card_button">Back</button>
-      </div>
+        </Col>
+      </Row>
     );
   }
 }

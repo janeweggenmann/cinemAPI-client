@@ -871,18 +871,29 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _mainView = require("./components/main-view/main-view");
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_mainView.MainView, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/index.jsx",
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: this
-        }));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_mainView.MainView, {
+            containerAttributes: {
+                style: 'background-color : #fff'
+            },
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/index.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        })));
     }
 }
 // Finds the root of your app
@@ -895,7 +906,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view":"5cmpG","./index.scss":"1S2ED","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"3b2NM":[function(require,module,exports) {
+},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view":"5cmpG","react-bootstrap/Container":"3Mt3t","./index.scss":"1S2ED","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"3b2NM":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react.development.js');
 
@@ -21860,6 +21871,10 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _mainViewScss = require("./main-view.scss");
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
 var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
@@ -21924,7 +21939,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 75
+                lineNumber: 77
             },
             __self: this
         }));
@@ -21935,7 +21950,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 79
+                lineNumber: 81
             },
             __self: this
         }));
@@ -21944,7 +21959,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 84
+                lineNumber: 86
             },
             __self: this
         }));
@@ -21952,7 +21967,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 87
+                lineNumber: 89
             },
             __self: this
         }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -21962,22 +21977,40 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 89
+                lineNumber: 91
             },
             __self: this
-        }) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
+        }) : /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 98
+            },
+            __self: this
+        }, movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                className: "movie_card",
+                xs: 12,
+                sm: 6,
+                md: 4,
+                lg: 3,
+                xl: 3,
                 key: movie._id,
+                __source: {
+                    fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                    lineNumber: 100
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                 movie: movie,
-                onMovieClick: (newSelectedMovie)=>{
-                    this.setSelectedMovie(newSelectedMovie);
+                onMovieClick: (movie1)=>{
+                    this.setSelectedMovie(movie1);
                 },
                 __source: {
                     fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                    lineNumber: 97
+                    lineNumber: 101
                 },
                 __self: this
-            })
-        )));
+            }))
+        ))));
     }
 }
 
@@ -21986,7 +22019,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","./main-view.scss":"7cw4c","../login-view/login-view":"3XzRu","../registration-view/registration-view":"1q2lk","../movie-card/movie-card":"35h4y","../movie-view/movie-view":"6Dk2Z","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","./main-view.scss":"7cw4c","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../login-view/login-view":"3XzRu","../registration-view/registration-view":"1q2lk","../movie-card/movie-card":"35h4y","../movie-view/movie-view":"6Dk2Z","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -23352,7 +23385,1086 @@ module.exports = CancelToken;
     return typeof payload === 'object' && payload.isAxiosError === true;
 };
 
-},{}],"7cw4c":[function() {},{}],"3XzRu":[function(require,module,exports) {
+},{}],"7cw4c":[function() {},{}],"3fzwD":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const DEVICE_SIZES = [
+    'xxl',
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+const Row = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , ...props }, ref)=>{
+    const decoratedBsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'row');
+    const sizePrefix = `${decoratedBsPrefix}-cols`;
+    const classes = [];
+    DEVICE_SIZES.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let cols;
+        if (propValue != null && typeof propValue === 'object') ({ cols  } = propValue);
+        else cols = propValue;
+        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
+        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+    });
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnames.default(className, decoratedBsPrefix, ...classes)
+    }));
+});
+Row.displayName = 'Row';
+var _default = Row;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"4ttVj":[function(require,module,exports) {
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+module.exports = _interopRequireDefault;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+},{}],"5aJRc":[function(require,module,exports) {
+(function() {
+    var hasOwn = {
+    }.hasOwnProperty;
+    function classNames() {
+        var classes = [];
+        for(var i = 0; i < arguments.length; i++){
+            var arg = arguments[i];
+            if (!arg) continue;
+            var argType = typeof arg;
+            if (argType === 'string' || argType === 'number') classes.push(arg);
+            else if (Array.isArray(arg)) {
+                if (arg.length) {
+                    var inner = classNames.apply(null, arg);
+                    if (inner) classes.push(inner);
+                }
+            } else if (argType === 'object') {
+                if (arg.toString === Object.prototype.toString) {
+                    for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
+                } else classes.push(arg.toString());
+            }
+        }
+        return classes.join(' ');
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        classNames.default = classNames;
+        module.exports = classNames;
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) // register as 'classnames', consistent with npm package name
+    define('classnames', [], function() {
+        return classNames;
+    });
+    else window.classNames = classNames;
+})();
+
+},{}],"4rz1S":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.useBootstrapPrefix = useBootstrapPrefix;
+exports.useIsRTL = useIsRTL;
+exports.createBootstrapComponent = createBootstrapComponent;
+exports.default = exports.ThemeConsumer = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const ThemeContext = /*#__PURE__*/ React.createContext({
+    prefixes: {
+    }
+});
+const { Consumer , Provider  } = ThemeContext;
+exports.ThemeConsumer = Consumer;
+function ThemeProvider({ prefixes ={
+} , dir , children  }) {
+    const contextValue = React.useMemo(()=>({
+            prefixes: {
+                ...prefixes
+            },
+            dir
+        })
+    , [
+        prefixes,
+        dir
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Provider, {
+        value: contextValue,
+        children: children
+    }));
+}
+function useBootstrapPrefix(prefix, defaultPrefix) {
+    const { prefixes  } = React.useContext(ThemeContext);
+    return prefix || prefixes[defaultPrefix] || defaultPrefix;
+}
+function useIsRTL() {
+    const { dir  } = React.useContext(ThemeContext);
+    return dir === 'rtl';
+}
+function createBootstrapComponent(Component, opts) {
+    if (typeof opts === 'string') opts = {
+        prefix: opts
+    };
+    const isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
+    const { prefix , forwardRefAs =isClassy ? 'ref' : 'innerRef'  } = opts;
+    const Wrapped = /*#__PURE__*/ React.forwardRef(({ ...props }, ref)=>{
+        props[forwardRefAs] = ref;
+        const bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
+        return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ...props,
+            bsPrefix: bsPrefix
+        }));
+    });
+    Wrapped.displayName = `Bootstrap(${Component.displayName || Component.name})`;
+    return Wrapped;
+}
+var _default = ThemeProvider;
+exports.default = _default;
+
+},{"react":"3b2NM","react/jsx-runtime":"7jBZW"}],"7jBZW":[function(require,module,exports) {
+'use strict';
+module.exports = require('./cjs/react-jsx-runtime.development.js');
+
+},{"./cjs/react-jsx-runtime.development.js":"7DujV"}],"7DujV":[function(require,module,exports) {
+/** @license React v17.0.2
+ * react-jsx-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+(function() {
+    var React = require('react');
+    var _assign = require('object-assign');
+    // ATTENTION
+    // When adding new symbols to this file,
+    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var REACT_ELEMENT_TYPE = 60103;
+    var REACT_PORTAL_TYPE = 60106;
+    exports.Fragment = 60107;
+    var REACT_STRICT_MODE_TYPE = 60108;
+    var REACT_PROFILER_TYPE = 60114;
+    var REACT_PROVIDER_TYPE = 60109;
+    var REACT_CONTEXT_TYPE = 60110;
+    var REACT_FORWARD_REF_TYPE = 60112;
+    var REACT_SUSPENSE_TYPE = 60113;
+    var REACT_SUSPENSE_LIST_TYPE = 60120;
+    var REACT_MEMO_TYPE = 60115;
+    var REACT_LAZY_TYPE = 60116;
+    var REACT_BLOCK_TYPE = 60121;
+    var REACT_SERVER_BLOCK_TYPE = 60122;
+    var REACT_FUNDAMENTAL_TYPE = 60117;
+    var REACT_SCOPE_TYPE = 60119;
+    var REACT_OPAQUE_ID_TYPE = 60128;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
+    var REACT_OFFSCREEN_TYPE = 60130;
+    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    if (typeof Symbol === 'function' && Symbol.for) {
+        var symbolFor = Symbol.for;
+        REACT_ELEMENT_TYPE = symbolFor('react.element');
+        REACT_PORTAL_TYPE = symbolFor('react.portal');
+        exports.Fragment = symbolFor('react.fragment');
+        REACT_STRICT_MODE_TYPE = symbolFor('react.strict_mode');
+        REACT_PROFILER_TYPE = symbolFor('react.profiler');
+        REACT_PROVIDER_TYPE = symbolFor('react.provider');
+        REACT_CONTEXT_TYPE = symbolFor('react.context');
+        REACT_FORWARD_REF_TYPE = symbolFor('react.forward_ref');
+        REACT_SUSPENSE_TYPE = symbolFor('react.suspense');
+        REACT_SUSPENSE_LIST_TYPE = symbolFor('react.suspense_list');
+        REACT_MEMO_TYPE = symbolFor('react.memo');
+        REACT_LAZY_TYPE = symbolFor('react.lazy');
+        REACT_BLOCK_TYPE = symbolFor('react.block');
+        REACT_SERVER_BLOCK_TYPE = symbolFor('react.server.block');
+        REACT_FUNDAMENTAL_TYPE = symbolFor('react.fundamental');
+        REACT_SCOPE_TYPE = symbolFor('react.scope');
+        REACT_OPAQUE_ID_TYPE = symbolFor('react.opaque.id');
+        REACT_DEBUG_TRACING_MODE_TYPE = symbolFor('react.debug_trace_mode');
+        REACT_OFFSCREEN_TYPE = symbolFor('react.offscreen');
+        REACT_LEGACY_HIDDEN_TYPE = symbolFor('react.legacy_hidden');
+    }
+    var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = '@@iterator';
+    function getIteratorFn(maybeIterable) {
+        if (maybeIterable === null || typeof maybeIterable !== 'object') return null;
+        var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
+        if (typeof maybeIterator === 'function') return maybeIterator;
+        return null;
+    }
+    var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    function error(format) {
+        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
+        printWarning('error', format, args);
+    }
+    function printWarning(level, format, args) {
+        var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+        var stack = ReactDebugCurrentFrame.getStackAddendum();
+        if (stack !== '') {
+            format += '%s';
+            args = args.concat([
+                stack
+            ]);
+        }
+        var argsWithFormat = args.map(function(item) {
+            return '' + item;
+        }); // Careful: RN currently depends on this prefix
+        argsWithFormat.unshift('Warning: ' + format); // We intentionally don't use spread (or .apply) directly because it
+        // breaks IE9: https://github.com/facebook/react/issues/13610
+        // eslint-disable-next-line react-internal/no-production-logging
+        Function.prototype.apply.call(console[level], console, argsWithFormat);
+    }
+    // Filter certain DOM attributes (e.g. src, href) if their values are empty strings.
+    var enableScopeAPI = false; // Experimental Create Event Handle API.
+    function isValidElementType(type) {
+        if (typeof type === 'string' || typeof type === 'function') return true;
+         // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+        if (type === exports.Fragment || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI) return true;
+        if (typeof type === 'object' && type !== null) {
+            if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) return true;
+        }
+        return false;
+    }
+    function getWrappedName(outerType, innerType, wrapperName) {
+        var functionName = innerType.displayName || innerType.name || '';
+        return outerType.displayName || (functionName !== '' ? wrapperName + "(" + functionName + ")" : wrapperName);
+    }
+    function getContextName(type) {
+        return type.displayName || 'Context';
+    }
+    function getComponentName(type) {
+        if (type == null) // Host root, text node or just invalid type.
+        return null;
+        if (typeof type.tag === 'number') error("Received an unexpected object in getComponentName(). This is likely a bug in React. Please file an issue.");
+        if (typeof type === 'function') return type.displayName || type.name || null;
+        if (typeof type === 'string') return type;
+        switch(type){
+            case exports.Fragment:
+                return 'Fragment';
+            case REACT_PORTAL_TYPE:
+                return 'Portal';
+            case REACT_PROFILER_TYPE:
+                return 'Profiler';
+            case REACT_STRICT_MODE_TYPE:
+                return 'StrictMode';
+            case REACT_SUSPENSE_TYPE:
+                return 'Suspense';
+            case REACT_SUSPENSE_LIST_TYPE:
+                return 'SuspenseList';
+        }
+        if (typeof type === 'object') switch(type.$$typeof){
+            case REACT_CONTEXT_TYPE:
+                var context = type;
+                return getContextName(context) + '.Consumer';
+            case REACT_PROVIDER_TYPE:
+                var provider = type;
+                return getContextName(provider._context) + '.Provider';
+            case REACT_FORWARD_REF_TYPE:
+                return getWrappedName(type, type.render, 'ForwardRef');
+            case REACT_MEMO_TYPE:
+                return getComponentName(type.type);
+            case REACT_BLOCK_TYPE:
+                return getComponentName(type._render);
+            case REACT_LAZY_TYPE:
+                var lazyComponent = type;
+                var payload = lazyComponent._payload;
+                var init = lazyComponent._init;
+                try {
+                    return getComponentName(init(payload));
+                } catch (x) {
+                    return null;
+                }
+        }
+        return null;
+    }
+    // Helpers to patch console.logs to avoid logging during side-effect free
+    // replaying on render function. This currently only patches the object
+    // lazily which won't cover if the log function was extracted eagerly.
+    // We could also eagerly patch the method.
+    var disabledDepth = 0;
+    var prevLog;
+    var prevInfo;
+    var prevWarn;
+    var prevError;
+    var prevGroup;
+    var prevGroupCollapsed;
+    var prevGroupEnd;
+    function disabledLog() {
+    }
+    disabledLog.__reactDisabledLog = true;
+    function disableLogs() {
+        if (disabledDepth === 0) {
+            /* eslint-disable react-internal/no-production-logging */ prevLog = console.log;
+            prevInfo = console.info;
+            prevWarn = console.warn;
+            prevError = console.error;
+            prevGroup = console.group;
+            prevGroupCollapsed = console.groupCollapsed;
+            prevGroupEnd = console.groupEnd; // https://github.com/facebook/react/issues/19099
+            var props = {
+                configurable: true,
+                enumerable: true,
+                value: disabledLog,
+                writable: true
+            }; // $FlowFixMe Flow thinks console is immutable.
+            Object.defineProperties(console, {
+                info: props,
+                log: props,
+                warn: props,
+                error: props,
+                group: props,
+                groupCollapsed: props,
+                groupEnd: props
+            });
+        /* eslint-enable react-internal/no-production-logging */ }
+        disabledDepth++;
+    }
+    function reenableLogs() {
+        disabledDepth--;
+        if (disabledDepth === 0) {
+            /* eslint-disable react-internal/no-production-logging */ var props = {
+                configurable: true,
+                enumerable: true,
+                writable: true
+            }; // $FlowFixMe Flow thinks console is immutable.
+            Object.defineProperties(console, {
+                log: _assign({
+                }, props, {
+                    value: prevLog
+                }),
+                info: _assign({
+                }, props, {
+                    value: prevInfo
+                }),
+                warn: _assign({
+                }, props, {
+                    value: prevWarn
+                }),
+                error: _assign({
+                }, props, {
+                    value: prevError
+                }),
+                group: _assign({
+                }, props, {
+                    value: prevGroup
+                }),
+                groupCollapsed: _assign({
+                }, props, {
+                    value: prevGroupCollapsed
+                }),
+                groupEnd: _assign({
+                }, props, {
+                    value: prevGroupEnd
+                })
+            });
+        /* eslint-enable react-internal/no-production-logging */ }
+        if (disabledDepth < 0) error("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+    }
+    var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
+    var prefix;
+    function describeBuiltInComponentFrame(name, source, ownerFn) {
+        if (prefix === undefined) // Extract the VM specific prefix used by each line.
+        try {
+            throw Error();
+        } catch (x) {
+            var match = x.stack.trim().match(/\n( *(at )?)/);
+            prefix = match && match[1] || '';
+        }
+         // We use the prefix to ensure our stacks line up with native stack frames.
+        return '\n' + prefix + name;
+    }
+    var reentry = false;
+    var componentFrameCache;
+    var PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;
+    componentFrameCache = new PossiblyWeakMap();
+    function describeNativeComponentFrame(fn, construct) {
+        // If something asked for a stack inside a fake render, it should get ignored.
+        if (!fn || reentry) return '';
+        var frame = componentFrameCache.get(fn);
+        if (frame !== undefined) return frame;
+        var control;
+        reentry = true;
+        var previousPrepareStackTrace = Error.prepareStackTrace; // $FlowFixMe It does accept undefined.
+        Error.prepareStackTrace = undefined;
+        var previousDispatcher;
+        previousDispatcher = ReactCurrentDispatcher.current; // Set the dispatcher in DEV because this might be call in the render function
+        // for warnings.
+        ReactCurrentDispatcher.current = null;
+        disableLogs();
+        try {
+            // This should throw.
+            if (construct) {
+                // Something should be setting the props in the constructor.
+                var Fake = function() {
+                    throw Error();
+                }; // $FlowFixMe
+                Object.defineProperty(Fake.prototype, 'props', {
+                    set: function() {
+                        // We use a throwing setter instead of frozen or non-writable props
+                        // because that won't throw in a non-strict mode function.
+                        throw Error();
+                    }
+                });
+                if (typeof Reflect === 'object' && Reflect.construct) {
+                    // We construct a different control for this case to include any extra
+                    // frames added by the construct call.
+                    try {
+                        Reflect.construct(Fake, []);
+                    } catch (x) {
+                        control = x;
+                    }
+                    Reflect.construct(fn, [], Fake);
+                } else {
+                    try {
+                        Fake.call();
+                    } catch (x) {
+                        control = x;
+                    }
+                    fn.call(Fake.prototype);
+                }
+            } else {
+                try {
+                    throw Error();
+                } catch (x) {
+                    control = x;
+                }
+                fn();
+            }
+        } catch (sample) {
+            // This is inlined manually because closure doesn't do it for us.
+            if (sample && control && typeof sample.stack === 'string') {
+                // This extracts the first frame from the sample that isn't also in the control.
+                // Skipping one frame that we assume is the frame that calls the two.
+                var sampleLines = sample.stack.split('\n');
+                var controlLines = control.stack.split('\n');
+                var s = sampleLines.length - 1;
+                var c = controlLines.length - 1;
+                while(s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c])// We expect at least one stack frame to be shared.
+                // Typically this will be the root most one. However, stack frames may be
+                // cut off due to maximum stack limits. In this case, one maybe cut off
+                // earlier than the other. We assume that the sample is longer or the same
+                // and there for cut off earlier. So we should find the root most frame in
+                // the sample somewhere in the control.
+                c--;
+                for(; s >= 1 && c >= 0; s--, c--)// Next we find the first one that isn't the same which should be the
+                // frame that called our sample function and the control.
+                if (sampleLines[s] !== controlLines[c]) {
+                    // In V8, the first line is describing the message but other VMs don't.
+                    // If we're about to return the first line, and the control is also on the same
+                    // line, that's a pretty good indicator that our sample threw at same line as
+                    // the control. I.e. before we entered the sample frame. So we ignore this result.
+                    // This can happen if you passed a class to function component, or non-function.
+                    if (s !== 1 || c !== 1) do {
+                        s--;
+                        c--; // We may still have similar intermediate frames from the construct call.
+                        // The next one that isn't the same should be our match though.
+                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
+                            // V8 adds a "new" prefix for native classes. Let's remove it to make it prettier.
+                            var _frame = '\n' + sampleLines[s].replace(' at new ', ' at ');
+                            if (typeof fn === 'function') componentFrameCache.set(fn, _frame);
+                            return _frame;
+                        }
+                    }while (s >= 1 && c >= 0)
+                    break;
+                }
+            }
+        } finally{
+            reentry = false;
+            ReactCurrentDispatcher.current = previousDispatcher;
+            reenableLogs();
+            Error.prepareStackTrace = previousPrepareStackTrace;
+        } // Fallback to just using the name if we couldn't make it throw.
+        var name = fn ? fn.displayName || fn.name : '';
+        var syntheticFrame = name ? describeBuiltInComponentFrame(name) : '';
+        if (typeof fn === 'function') componentFrameCache.set(fn, syntheticFrame);
+        return syntheticFrame;
+    }
+    function describeFunctionComponentFrame(fn, source, ownerFn) {
+        return describeNativeComponentFrame(fn, false);
+    }
+    function shouldConstruct(Component) {
+        var prototype = Component.prototype;
+        return !!(prototype && prototype.isReactComponent);
+    }
+    function describeUnknownElementTypeFrameInDEV(type, source, ownerFn) {
+        if (type == null) return '';
+        if (typeof type === 'function') return describeNativeComponentFrame(type, shouldConstruct(type));
+        if (typeof type === 'string') return describeBuiltInComponentFrame(type);
+        switch(type){
+            case REACT_SUSPENSE_TYPE:
+                return describeBuiltInComponentFrame('Suspense');
+            case REACT_SUSPENSE_LIST_TYPE:
+                return describeBuiltInComponentFrame('SuspenseList');
+        }
+        if (typeof type === 'object') switch(type.$$typeof){
+            case REACT_FORWARD_REF_TYPE:
+                return describeFunctionComponentFrame(type.render);
+            case REACT_MEMO_TYPE:
+                // Memo may contain any component type so we recursively resolve it.
+                return describeUnknownElementTypeFrameInDEV(type.type, source, ownerFn);
+            case REACT_BLOCK_TYPE:
+                return describeFunctionComponentFrame(type._render);
+            case REACT_LAZY_TYPE:
+                var lazyComponent = type;
+                var payload = lazyComponent._payload;
+                var init = lazyComponent._init;
+                try {
+                    // Lazy may contain any component type so we recursively resolve it.
+                    return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+                } catch (x) {
+                }
+        }
+        return '';
+    }
+    var loggedTypeFailures = {
+    };
+    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+    function setCurrentlyValidatingElement(element) {
+        if (element) {
+            var owner = element._owner;
+            var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+            ReactDebugCurrentFrame.setExtraStackFrame(stack);
+        } else ReactDebugCurrentFrame.setExtraStackFrame(null);
+    }
+    function checkPropTypes(typeSpecs, values, location, componentName, element) {
+        // $FlowFixMe This is okay but Flow doesn't know it.
+        var has = Function.call.bind(Object.prototype.hasOwnProperty);
+        for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+            var error$1 = void 0; // Prop type validation may throw. In case they do, we don't want to
+            // fail the render phase where it didn't fail before. So we log it.
+            // After these have been cleaned up, we'll let them throw.
+            try {
+                // This is intentionally an invariant that gets caught. It's the same
+                // behavior as without this statement except with a better message.
+                if (typeof typeSpecs[typeSpecName] !== 'function') {
+                    var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+                    err.name = 'Invariant Violation';
+                    throw err;
+                }
+                error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED');
+            } catch (ex) {
+                error$1 = ex;
+            }
+            if (error$1 && !(error$1 instanceof Error)) {
+                setCurrentlyValidatingElement(element);
+                error("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", componentName || 'React class', location, typeSpecName, typeof error$1);
+                setCurrentlyValidatingElement(null);
+            }
+            if (error$1 instanceof Error && !(error$1.message in loggedTypeFailures)) {
+                // Only monitor this failure once because there tends to be a lot of the
+                // same error.
+                loggedTypeFailures[error$1.message] = true;
+                setCurrentlyValidatingElement(element);
+                error('Failed %s type: %s', location, error$1.message);
+                setCurrentlyValidatingElement(null);
+            }
+        }
+    }
+    var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
+    var RESERVED_PROPS = {
+        key: true,
+        ref: true,
+        __self: true,
+        __source: true
+    };
+    var specialPropKeyWarningShown;
+    var specialPropRefWarningShown;
+    var didWarnAboutStringRefs;
+    didWarnAboutStringRefs = {
+    };
+    function hasValidRef(config) {
+        if (hasOwnProperty.call(config, 'ref')) {
+            var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
+            if (getter && getter.isReactWarning) return false;
+        }
+        return config.ref !== undefined;
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, 'key')) {
+            var getter = Object.getOwnPropertyDescriptor(config, 'key').get;
+            if (getter && getter.isReactWarning) return false;
+        }
+        return config.key !== undefined;
+    }
+    function warnIfStringRefCannotBeAutoConverted(config, self) {
+        if (typeof config.ref === 'string' && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
+            var componentName = getComponentName(ReactCurrentOwner.current.type);
+            if (!didWarnAboutStringRefs[componentName]) {
+                error("Component \"%s\" contains the string ref \"%s\". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", getComponentName(ReactCurrentOwner.current.type), config.ref);
+                didWarnAboutStringRefs[componentName] = true;
+            }
+        }
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        var warnAboutAccessingKey = function() {
+            if (!specialPropKeyWarningShown) {
+                specialPropKeyWarningShown = true;
+                error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
+            }
+        };
+        warnAboutAccessingKey.isReactWarning = true;
+        Object.defineProperty(props, 'key', {
+            get: warnAboutAccessingKey,
+            configurable: true
+        });
+    }
+    function defineRefPropWarningGetter(props, displayName) {
+        var warnAboutAccessingRef = function() {
+            if (!specialPropRefWarningShown) {
+                specialPropRefWarningShown = true;
+                error("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", displayName);
+            }
+        };
+        warnAboutAccessingRef.isReactWarning = true;
+        Object.defineProperty(props, 'ref', {
+            get: warnAboutAccessingRef,
+            configurable: true
+        });
+    }
+    /**
+ * Factory method to create a new React element. This no longer adheres to
+ * the class pattern, so do not use new to call it. Also, instanceof check
+ * will not work. Instead test $$typeof field against Symbol.for('react.element') to check
+ * if something is a React Element.
+ *
+ * @param {*} type
+ * @param {*} props
+ * @param {*} key
+ * @param {string|object} ref
+ * @param {*} owner
+ * @param {*} self A *temporary* helper to detect places where `this` is
+ * different from the `owner` when React.createElement is called, so that we
+ * can warn. We want to get rid of owner and replace string `ref`s with arrow
+ * functions, and as long as `this` and owner are the same, there will be no
+ * change in behavior.
+ * @param {*} source An annotation object (added by a transpiler or otherwise)
+ * indicating filename, line number, and/or other information.
+ * @internal
+ */ var ReactElement = function(type, key, ref, self, source, owner, props) {
+        var element = {
+            // This tag allows us to uniquely identify this as a React Element
+            $$typeof: REACT_ELEMENT_TYPE,
+            // Built-in properties that belong on the element
+            type: type,
+            key: key,
+            ref: ref,
+            props: props,
+            // Record the component responsible for creating this element.
+            _owner: owner
+        };
+        // The validation flag is currently mutative. We put it on
+        // an external backing store so that we can freeze the whole object.
+        // This can be replaced with a WeakMap once they are implemented in
+        // commonly used development environments.
+        element._store = {
+        }; // To make comparing ReactElements easier for testing purposes, we make
+        // the validation flag non-enumerable (where possible, which should
+        // include every environment we run tests in), so the test framework
+        // ignores it.
+        Object.defineProperty(element._store, 'validated', {
+            configurable: false,
+            enumerable: false,
+            writable: true,
+            value: false
+        }); // self and source are DEV only properties.
+        Object.defineProperty(element, '_self', {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: self
+        }); // Two elements created in two different places should be considered
+        // equal for testing purposes and therefore we hide it from enumeration.
+        Object.defineProperty(element, '_source', {
+            configurable: false,
+            enumerable: false,
+            writable: false,
+            value: source
+        });
+        if (Object.freeze) {
+            Object.freeze(element.props);
+            Object.freeze(element);
+        }
+        return element;
+    };
+    /**
+ * https://github.com/reactjs/rfcs/pull/107
+ * @param {*} type
+ * @param {object} props
+ * @param {string} key
+ */ function jsxDEV(type, config, maybeKey, source, self) {
+        var propName; // Reserved names are extracted
+        var props = {
+        };
+        var key = null;
+        var ref = null; // Currently, key can be spread in as a prop. This causes a potential
+        // issue if key is also explicitly declared (ie. <div {...props} key="Hi" />
+        // or <div key="Hi" {...props} /> ). We want to deprecate key spread,
+        // but as an intermediary step, we will use jsxDEV for everything except
+        // <div {...props} key="Hi" />, because we aren't currently able to tell if
+        // key is explicitly declared to be undefined or not.
+        if (maybeKey !== undefined) key = '' + maybeKey;
+        if (hasValidKey(config)) key = '' + config.key;
+        if (hasValidRef(config)) {
+            ref = config.ref;
+            warnIfStringRefCannotBeAutoConverted(config, self);
+        } // Remaining properties are added to a new props object
+        for(propName in config)if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) props[propName] = config[propName];
+         // Resolve default props
+        if (type && type.defaultProps) {
+            var defaultProps = type.defaultProps;
+            for(propName in defaultProps)if (props[propName] === undefined) props[propName] = defaultProps[propName];
+        }
+        if (key || ref) {
+            var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
+            if (key) defineKeyPropWarningGetter(props, displayName);
+            if (ref) defineRefPropWarningGetter(props, displayName);
+        }
+        return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
+    }
+    var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
+    var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+    function setCurrentlyValidatingElement$1(element) {
+        if (element) {
+            var owner = element._owner;
+            var stack = describeUnknownElementTypeFrameInDEV(element.type, element._source, owner ? owner.type : null);
+            ReactDebugCurrentFrame$1.setExtraStackFrame(stack);
+        } else ReactDebugCurrentFrame$1.setExtraStackFrame(null);
+    }
+    var propTypesMisspellWarningShown;
+    propTypesMisspellWarningShown = false;
+    /**
+ * Verifies the object is a ReactElement.
+ * See https://reactjs.org/docs/react-api.html#isvalidelement
+ * @param {?object} object
+ * @return {boolean} True if `object` is a ReactElement.
+ * @final
+ */ function isValidElement(object) {
+        return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function getDeclarationErrorAddendum() {
+        if (ReactCurrentOwner$1.current) {
+            var name = getComponentName(ReactCurrentOwner$1.current.type);
+            if (name) return '\n\nCheck the render method of `' + name + '`.';
+        }
+        return '';
+    }
+    function getSourceInfoErrorAddendum(source) {
+        if (source !== undefined) {
+            var fileName = source.fileName.replace(/^.*[\\\/]/, '');
+            var lineNumber = source.lineNumber;
+            return '\n\nCheck your code at ' + fileName + ':' + lineNumber + '.';
+        }
+        return '';
+    }
+    /**
+ * Warn if there's no key explicitly set on dynamic arrays of children or
+ * object keys are not valid. This allows us to keep track of children between
+ * updates.
+ */ var ownerHasKeyUseWarning = {
+    };
+    function getCurrentComponentErrorInfo(parentType) {
+        var info = getDeclarationErrorAddendum();
+        if (!info) {
+            var parentName = typeof parentType === 'string' ? parentType : parentType.displayName || parentType.name;
+            if (parentName) info = "\n\nCheck the top-level render call using <" + parentName + ">.";
+        }
+        return info;
+    }
+    /**
+ * Warn if the element doesn't have an explicit key assigned to it.
+ * This element is in an array. The array could grow and shrink or be
+ * reordered. All children that haven't already been validated are required to
+ * have a "key" property assigned to it. Error statuses are cached so a warning
+ * will only be shown once.
+ *
+ * @internal
+ * @param {ReactElement} element Element that requires a key.
+ * @param {*} parentType element's parent's type.
+ */ function validateExplicitKey(element, parentType) {
+        if (!element._store || element._store.validated || element.key != null) return;
+        element._store.validated = true;
+        var currentComponentErrorInfo = getCurrentComponentErrorInfo(parentType);
+        if (ownerHasKeyUseWarning[currentComponentErrorInfo]) return;
+        ownerHasKeyUseWarning[currentComponentErrorInfo] = true; // Usually the current owner is the offender, but if it accepts children as a
+        // property, it may be the creator of the child that's responsible for
+        // assigning it a key.
+        var childOwner = '';
+        if (element && element._owner && element._owner !== ReactCurrentOwner$1.current) // Give the component that originally created this child.
+        childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
+        setCurrentlyValidatingElement$1(element);
+        error("Each child in a list should have a unique \"key\" prop.%s%s See https://reactjs.org/link/warning-keys for more information.", currentComponentErrorInfo, childOwner);
+        setCurrentlyValidatingElement$1(null);
+    }
+    /**
+ * Ensure that every element either is passed in a static location, in an
+ * array with an explicit keys property defined, or in an object literal
+ * with valid key property.
+ *
+ * @internal
+ * @param {ReactNode} node Statically passed child of any type.
+ * @param {*} parentType node's parent's type.
+ */ function validateChildKeys(node, parentType) {
+        if (typeof node !== 'object') return;
+        if (Array.isArray(node)) for(var i = 0; i < node.length; i++){
+            var child = node[i];
+            if (isValidElement(child)) validateExplicitKey(child, parentType);
+        }
+        else if (isValidElement(node)) // This element was passed in a valid location.
+        {
+            if (node._store) node._store.validated = true;
+        } else if (node) {
+            var iteratorFn = getIteratorFn(node);
+            if (typeof iteratorFn === 'function') // Entry iterators used to provide implicit keys,
+            // but now we print a separate warning for them later.
+            {
+                if (iteratorFn !== node.entries) {
+                    var iterator = iteratorFn.call(node);
+                    var step;
+                    while(!(step = iterator.next()).done)if (isValidElement(step.value)) validateExplicitKey(step.value, parentType);
+                }
+            }
+        }
+    }
+    /**
+ * Given an element, validate that its props follow the propTypes definition,
+ * provided by the type.
+ *
+ * @param {ReactElement} element
+ */ function validatePropTypes(element) {
+        var type = element.type;
+        if (type === null || type === undefined || typeof type === 'string') return;
+        var propTypes;
+        if (typeof type === 'function') propTypes = type.propTypes;
+        else if (typeof type === 'object' && (type.$$typeof === REACT_FORWARD_REF_TYPE || // Inner props are checked in the reconciler.
+        type.$$typeof === REACT_MEMO_TYPE)) propTypes = type.propTypes;
+        else return;
+        if (propTypes) {
+            // Intentionally inside to avoid triggering lazy initializers:
+            var name = getComponentName(type);
+            checkPropTypes(propTypes, element.props, 'prop', name, element);
+        } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {
+            propTypesMisspellWarningShown = true; // Intentionally inside to avoid triggering lazy initializers:
+            var _name = getComponentName(type);
+            error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
+        }
+        if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) error("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+    }
+    /**
+ * Given a fragment, validate that it can only be provided with fragment props
+ * @param {ReactElement} fragment
+ */ function validateFragmentProps(fragment) {
+        var keys = Object.keys(fragment.props);
+        for(var i = 0; i < keys.length; i++){
+            var key = keys[i];
+            if (key !== 'children' && key !== 'key') {
+                setCurrentlyValidatingElement$1(fragment);
+                error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
+                setCurrentlyValidatingElement$1(null);
+                break;
+            }
+        }
+        if (fragment.ref !== null) {
+            setCurrentlyValidatingElement$1(fragment);
+            error('Invalid attribute `ref` supplied to `React.Fragment`.');
+            setCurrentlyValidatingElement$1(null);
+        }
+    }
+    function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
+        var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to
+        // succeed and there will likely be errors in render.
+        if (!validType) {
+            var info = '';
+            if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
+            var sourceInfo = getSourceInfoErrorAddendum(source);
+            if (sourceInfo) info += sourceInfo;
+            else info += getDeclarationErrorAddendum();
+            var typeString;
+            if (type === null) typeString = 'null';
+            else if (Array.isArray(type)) typeString = 'array';
+            else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {
+                typeString = "<" + (getComponentName(type.type) || 'Unknown') + " />";
+                info = ' Did you accidentally export a JSX literal instead of a component?';
+            } else typeString = typeof type;
+            error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
+        }
+        var element = jsxDEV(type, props, key, source, self); // The result can be nullish if a mock or a custom function is used.
+        // TODO: Drop this when these are no longer allowed as the type argument.
+        if (element == null) return element;
+         // Skip key warning if the type isn't valid since our key validation logic
+        // doesn't expect a non-string/function type and can throw confusing errors.
+        // We don't want exception behavior to differ between dev and prod.
+        // (Rendering will throw with a helpful message and as soon as the type is
+        // fixed, the key warnings will appear.)
+        if (validType) {
+            var children = props.children;
+            if (children !== undefined) {
+                if (isStaticChildren) {
+                    if (Array.isArray(children)) {
+                        for(var i = 0; i < children.length; i++)validateChildKeys(children[i], type);
+                        if (Object.freeze) Object.freeze(children);
+                    } else error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                } else validateChildKeys(children, type);
+            }
+        }
+        if (type === exports.Fragment) validateFragmentProps(element);
+        else validatePropTypes(element);
+        return element;
+    } // These two functions exist to still get child warnings in dev
+    // even with the prod transform. This means that jsxDEV is purely
+    // opt-in behavior for better messages but that we won't stop
+    // giving you warnings if you use production apis.
+    function jsxWithValidationStatic(type, props, key) {
+        return jsxWithValidation(type, props, key, true);
+    }
+    function jsxWithValidationDynamic(type, props, key) {
+        return jsxWithValidation(type, props, key, false);
+    }
+    var jsx = jsxWithValidationDynamic; // we may want to special case jsxs internally to take advantage of static children.
+    // for now we can ship identical prod functions
+    var jsxs = jsxWithValidationStatic;
+    exports.jsx = jsx;
+    exports.jsxs = jsxs;
+})();
+
+},{"react":"3b2NM","object-assign":"3eM6x"}],"2D0r8":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const DEVICE_SIZES = [
+    'xxl',
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+const Col = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , as: Component = 'div' , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'col');
+    const spans = [];
+    const classes = [];
+    DEVICE_SIZES.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let span;
+        let offset;
+        let order;
+        if (typeof propValue === 'object' && propValue != null) ({ span =true , offset , order  } = propValue);
+        else span = propValue;
+        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
+        if (span) spans.push(span === true ? `${prefix}${infix}` : `${prefix}${infix}-${span}`);
+        if (order != null) classes.push(`order${infix}-${order}`);
+        if (offset != null) classes.push(`offset${infix}-${offset}`);
+    });
+    if (!spans.length) spans.push(prefix); // plain 'col'
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnames.default(className, ...spans, ...classes)
+    }));
+});
+Col.displayName = 'Col';
+var _default = Col;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"3XzRu":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23368,6 +24480,12 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _loginViewScss = require("./login-view.scss");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrapFloatingLabel = require("react-bootstrap-floating-label");
+var _reactBootstrapFloatingLabelDefault = parcelHelpers.interopDefault(_reactBootstrapFloatingLabel);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -23375,7 +24493,7 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState('');
     const handleSubmit = ()=>{
         console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+        props.onLoggedIn(username);
     };
     const registerClick = ()=>{
         props.onRegisterClick("yes");
@@ -23384,88 +24502,141 @@ function LoginView(props) {
         className: "login-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 21
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 22
-        },
-        __self: this
-    }, "Welcome to CinemAPI"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 23
         },
         __self: this
-    }, "Please enter your username and password below to log in."), /*#__PURE__*/ _reactDefault.default.createElement("form", {
-        className: "login-form",
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 24
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "login-label",
+    }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        className: "cinemapi_title-thick",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 24
+        },
+        __self: this
+    }, "API")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 25
         },
         __self: this
-    }, "Username:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "text",
-        placeholder: "Username",
-        value: username,
-        onChange: (e)=>setUsername(e.target.value)
-        ,
+    }, "Your place to find information on movies, genres, and directors."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "login-form",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 26
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 27
         },
         __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "login-label",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
+        className: "login-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 29
+            lineNumber: 28
         },
         __self: this
-    }, "Password:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "password",
-        placeholder: "Password",
-        value: password,
-        onChange: (e)=>setPassword(e.target.value)
+    }, "Please enter your username and password below to log in.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalInput",
+        value: username,
+        onChange: (e)=>setUsername(e.target.value)
         ,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 30
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
+        controlId: "floatingInput",
+        label: "Username",
+        className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 31
         },
         __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-        type: "button",
-        onClick: handleSubmit,
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 33
-        },
-        __self: this
-    }, "Submit")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 35
-        },
-        __self: this
-    }, "Not a member?"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-        type: "button",
-        className: "secondary-button",
-        onClick: registerClick,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "text",
+        size: "lg",
+        placeholder: "Username",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 36
         },
         __self: this
-    }, "Sign Up")));
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalPassword",
+        value: password,
+        onChange: (e)=>setPassword(e.target.value)
+        ,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 39
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
+        controlId: "floatingPassword",
+        label: "Password",
+        className: "mb-3",
+        type: "password",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 40
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "password",
+        placeholder: "Password",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 46
+        },
+        __self: this
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "button",
+        variant: "primary",
+        onClick: handleSubmit,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 49
+        },
+        __self: this
+    }, "Login"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-2",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 50
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
+        className: "login-form-text2",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 51
+        },
+        __self: this
+    }, "Not a member yet?")), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "button",
+        variant: "secondary",
+        onClick: registerClick,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 53
+        },
+        __self: this
+    }, "Create Account"))));
 }
 _s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;
@@ -23483,7 +24654,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap-floating-label":"65tkN","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
@@ -24162,7 +25333,2155 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"./lib/ReactPropTypesSecret":"3OVnw"}],"ytArV":[function() {},{}],"2IRPi":[function(require,module,exports) {
+},{"./lib/ReactPropTypesSecret":"3OVnw"}],"ytArV":[function() {},{}],"6A5ko":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var React = _interopRequireWildcard(require("react"));
+var _FormCheck = _interopRequireDefault(require("./FormCheck"));
+var _FormControl = _interopRequireDefault(require("./FormControl"));
+var _FormFloating = _interopRequireDefault(require("./FormFloating"));
+var _FormGroup = _interopRequireDefault(require("./FormGroup"));
+var _FormLabel = _interopRequireDefault(require("./FormLabel"));
+var _FormRange = _interopRequireDefault(require("./FormRange"));
+var _FormSelect = _interopRequireDefault(require("./FormSelect"));
+var _FormText = _interopRequireDefault(require("./FormText"));
+var _Switch = _interopRequireDefault(require("./Switch"));
+var _FloatingLabel = _interopRequireDefault(require("./FloatingLabel"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const propTypes = {
+    /**
+   * The Form `ref` will be forwarded to the underlying element,
+   * which means, unless it's rendered `as` a composite component,
+   * it will be a DOM node, when resolved.
+   *
+   * @type {ReactRef}
+   * @alias ref
+   */ _ref: _propTypes.default.any,
+    /**
+   * Mark a form as having been validated. Setting it to `true` will
+   * toggle any validation styles on the forms elements.
+   */ validated: _propTypes.default.bool,
+    as: _propTypes.default.elementType
+};
+const Form = /*#__PURE__*/ React.forwardRef(({ className , validated , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'form' , ...props }, ref)=>/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnames.default(className, validated && 'was-validated')
+    })
+);
+Form.displayName = 'Form';
+Form.propTypes = propTypes;
+var _default = Object.assign(Form, {
+    Group: _FormGroup.default,
+    Control: _FormControl.default,
+    Floating: _FormFloating.default,
+    Check: _FormCheck.default,
+    Switch: _Switch.default,
+    Label: _FormLabel.default,
+    Text: _FormText.default,
+    Range: _FormRange.default,
+    Select: _FormSelect.default,
+    FloatingLabel: _FloatingLabel.default
+});
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","prop-types":"4dfy5","react":"3b2NM","./FormCheck":"6WcKM","./FormControl":"573gP","./FormFloating":"6rS17","./FormGroup":"120iJ","./FormLabel":"70qP9","./FormRange":"2ASbS","./FormSelect":"4b2j3","./FormText":"2VsfR","./Switch":"5DfiR","./FloatingLabel":"7brY9","react/jsx-runtime":"7jBZW"}],"6WcKM":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+var _FormCheckInput = _interopRequireDefault(require("./FormCheckInput"));
+var _FormCheckLabel = _interopRequireDefault(require("./FormCheckLabel"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormCheck = /*#__PURE__*/ React.forwardRef(({ id , bsPrefix , bsSwitchPrefix , inline =false , disabled =false , isValid =false , isInvalid =false , feedbackTooltip =false , feedback , className , style , title ='' , type ='checkbox' , label , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as ='input' , ...props }, ref)=>{
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-check');
+    bsSwitchPrefix = _ThemeProvider.useBootstrapPrefix(bsSwitchPrefix, 'form-switch');
+    const { controlId  } = React.useContext(_FormContext.default);
+    const innerFormContext = React.useMemo(()=>({
+            controlId: id || controlId
+        })
+    , [
+        controlId,
+        id
+    ]);
+    const hasLabel = label != null && label !== false && !children;
+    const input = /*#__PURE__*/ _jsxRuntime.jsx(_FormCheckInput.default, {
+        ...props,
+        type: type === 'switch' ? 'checkbox' : type,
+        ref: ref,
+        isValid: isValid,
+        isInvalid: isInvalid,
+        disabled: disabled,
+        as: as
+    });
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_FormContext.default.Provider, {
+        value: innerFormContext,
+        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            style: style,
+            className: _classnames.default(className, label && bsPrefix, inline && `${bsPrefix}-inline`, type === 'switch' && bsSwitchPrefix),
+            children: children || /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                children: [
+                    input,
+                    hasLabel && /*#__PURE__*/ _jsxRuntime.jsx(_FormCheckLabel.default, {
+                        title: title,
+                        children: label
+                    }),
+                    (isValid || isInvalid) && /*#__PURE__*/ _jsxRuntime.jsx(_Feedback.default, {
+                        type: isValid ? 'valid' : 'invalid',
+                        tooltip: feedbackTooltip,
+                        children: feedback
+                    })
+                ]
+            })
+        })
+    }));
+});
+FormCheck.displayName = 'FormCheck';
+var _default = Object.assign(FormCheck, {
+    Input: _FormCheckInput.default,
+    Label: _FormCheckLabel.default
+});
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./Feedback":"40O3n","./FormCheckInput":"3MfQl","./FormCheckLabel":"5aWG1","./FormContext":"72akU","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"40O3n":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const propTypes = {
+    /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */ type: _propTypes.default.string,
+    /** Display feedback as a tooltip. */ tooltip: _propTypes.default.bool,
+    as: _propTypes.default.elementType
+};
+const Feedback = /*#__PURE__*/ React.forwardRef(({ as: Component = 'div' , className , type ='valid' , tooltip =false , ...props }, ref)=>/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnames.default(className, `${type}-${tooltip ? 'tooltip' : 'feedback'}`)
+    })
+);
+Feedback.displayName = 'Feedback';
+Feedback.propTypes = propTypes;
+var _default = Feedback;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","react/jsx-runtime":"7jBZW"}],"3MfQl":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormCheckInput = /*#__PURE__*/ React.forwardRef(({ id , bsPrefix , className , type ='checkbox' , isValid =false , isInvalid =false , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'input' , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-check-input');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        type: type,
+        id: id || controlId,
+        className: _classnames.default(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid')
+    }));
+});
+FormCheckInput.displayName = 'FormCheckInput';
+var _default = FormCheckInput;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"72akU":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormContext = /*#__PURE__*/ React.createContext({
+});
+var _default = FormContext;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"react":"3b2NM"}],"5aWG1":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormCheckLabel = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , htmlFor , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-check-label');
+    return(/*#__PURE__*/ _jsxRuntime.jsx("label", {
+        ...props,
+        ref: ref,
+        htmlFor: htmlFor || controlId,
+        className: _classnames.default(className, bsPrefix)
+    }));
+});
+FormCheckLabel.displayName = 'FormCheckLabel';
+var _default = FormCheckLabel;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"573gP":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _warning = _interopRequireDefault(require("warning"));
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormControl = /*#__PURE__*/ React.forwardRef(({ bsPrefix , type , size , htmlSize , id , className , isValid =false , isInvalid =false , plaintext , readOnly , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'input' , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-control');
+    let classes;
+    if (plaintext) classes = {
+        [`${bsPrefix}-plaintext`]: true
+    };
+    else classes = {
+        [bsPrefix]: true,
+        [`${bsPrefix}-${size}`]: size
+    };
+    _warning.default(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        type: type,
+        size: htmlSize,
+        ref: ref,
+        readOnly: readOnly,
+        id: id || controlId,
+        className: _classnames.default(className, classes, isValid && `is-valid`, isInvalid && `is-invalid`, type === 'color' && `${bsPrefix}-color`)
+    }));
+});
+FormControl.displayName = 'FormControl';
+var _default = Object.assign(FormControl, {
+    Feedback: _Feedback.default
+});
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Feedback":"40O3n","./FormContext":"72akU","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"5jojS":[function(require,module,exports) {
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */ var __DEV__ = true;
+var warning = function() {
+};
+if (__DEV__) {
+    var printWarning = function printWarning1(format, args) {
+        var len = arguments.length;
+        args = new Array(len > 1 ? len - 1 : 0);
+        for(var key = 1; key < len; key++)args[key - 1] = arguments[key];
+        var argIndex = 0;
+        var message = 'Warning: ' + format.replace(/%s/g, function() {
+            return args[argIndex++];
+        });
+        if (typeof console !== 'undefined') console.error(message);
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {
+        }
+    };
+    warning = function(condition, format, args) {
+        var len = arguments.length;
+        args = new Array(len > 2 ? len - 2 : 0);
+        for(var key = 2; key < len; key++)args[key - 2] = arguments[key];
+        if (format === undefined) throw new Error("`warning(condition, format, ...args)` requires a warning message argument");
+        if (!condition) printWarning.apply(null, [
+            format
+        ].concat(args));
+    };
+}
+module.exports = warning;
+
+},{}],"6rS17":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+var _default = _createWithBsPrefix.default('form-floating');
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"2oVVc":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = createWithBsPrefix;
+var _classnames = _interopRequireDefault(require("classnames"));
+var _camelize = _interopRequireDefault(require("dom-helpers/camelize"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const pascalCase = (str)=>str[0].toUpperCase() + _camelize.default(str).slice(1)
+;
+// TODO: emstricten & fix the typing here! `createWithBsPrefix<TElementType>...`
+function createWithBsPrefix(prefix, { displayName =pascalCase(prefix) , Component , defaultProps  } = {
+}) {
+    const BsComponent = /*#__PURE__*/ React.forwardRef(({ className , bsPrefix , as: Tag = Component || 'div' , ...props }, ref)=>{
+        const resolvedPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, prefix);
+        return(/*#__PURE__*/ _jsxRuntime.jsx(Tag, {
+            ref: ref,
+            className: _classnames.default(className, resolvedPrefix),
+            ...props
+        }));
+    });
+    BsComponent.defaultProps = defaultProps;
+    BsComponent.displayName = displayName;
+    return BsComponent;
+}
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","dom-helpers/camelize":"7AXwA","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"7AXwA":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.default = camelize;
+var rHyphen = /-(.)/g;
+function camelize(string) {
+    return string.replace(rHyphen, function(_, chr) {
+        return chr.toUpperCase();
+    });
+}
+module.exports = exports["default"];
+
+},{}],"120iJ":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormGroup = /*#__PURE__*/ React.forwardRef(({ controlId , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , ...props }, ref)=>{
+    const context = React.useMemo(()=>({
+            controlId
+        })
+    , [
+        controlId
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_FormContext.default.Provider, {
+        value: context,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ...props,
+            ref: ref
+        })
+    }));
+});
+FormGroup.displayName = 'FormGroup';
+var _default = FormGroup;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM","./FormContext":"72akU","react/jsx-runtime":"7jBZW"}],"70qP9":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _warning = _interopRequireDefault(require("warning"));
+var _Col = _interopRequireDefault(require("./Col"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const defaultProps = {
+    column: false,
+    visuallyHidden: false
+};
+const FormLabel = /*#__PURE__*/ React.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'label' , bsPrefix , column , visuallyHidden , className , htmlFor , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-label');
+    let columnClass = 'col-form-label';
+    if (typeof column === 'string') columnClass = `${columnClass} ${columnClass}-${column}`;
+    const classes = _classnames.default(className, bsPrefix, visuallyHidden && 'visually-hidden', column && columnClass);
+    _warning.default(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.');
+    htmlFor = htmlFor || controlId;
+    if (column) return(/*#__PURE__*/ _jsxRuntime.jsx(_Col.default, {
+        ref: ref,
+        as: "label",
+        className: classes,
+        htmlFor: htmlFor,
+        ...props
+    }));
+    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+    _jsxRuntime.jsx(Component, {
+        ref: ref,
+        className: classes,
+        htmlFor: htmlFor,
+        ...props
+    }));
+});
+FormLabel.displayName = 'FormLabel';
+FormLabel.defaultProps = defaultProps;
+var _default = FormLabel;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Col":"2D0r8","./FormContext":"72akU","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"2ASbS":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormRange = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , id , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-range');
+    return(/*#__PURE__*/ _jsxRuntime.jsx("input", {
+        ...props,
+        type: "range",
+        ref: ref,
+        className: _classnames.default(className, bsPrefix),
+        id: id || controlId
+    }));
+});
+FormRange.displayName = 'FormRange';
+var _default = FormRange;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./FormContext":"72akU","react/jsx-runtime":"7jBZW"}],"4b2j3":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormSelect = /*#__PURE__*/ React.forwardRef(({ bsPrefix , size , htmlSize , className , isValid =false , isInvalid =false , id , ...props }, ref)=>{
+    const { controlId  } = React.useContext(_FormContext.default);
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-select');
+    return(/*#__PURE__*/ _jsxRuntime.jsx("select", {
+        ...props,
+        size: htmlSize,
+        ref: ref,
+        className: _classnames.default(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
+        id: id || controlId
+    }));
+});
+FormSelect.displayName = 'FormSelect';
+var _default = FormSelect;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./FormContext":"72akU","react/jsx-runtime":"7jBZW"}],"2VsfR":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FormText = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , as: Component = 'small' , muted , ...props }, ref)=>{
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-text');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnames.default(className, bsPrefix, muted && 'text-muted')
+    }));
+});
+FormText.displayName = 'FormText';
+var _default = FormText;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"5DfiR":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _FormCheck = _interopRequireDefault(require("./FormCheck"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const Switch = /*#__PURE__*/ React.forwardRef((props, ref)=>/*#__PURE__*/ _jsxRuntime.jsx(_FormCheck.default, {
+        ...props,
+        ref: ref,
+        type: "switch"
+    })
+);
+Switch.displayName = 'Switch';
+var _default = Object.assign(Switch, {
+    Input: _FormCheck.default.Input,
+    Label: _FormCheck.default.Label
+});
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM","./FormCheck":"6WcKM","react/jsx-runtime":"7jBZW"}],"7brY9":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _FormGroup = _interopRequireDefault(require("./FormGroup"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const FloatingLabel = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , children , controlId , label , ...props }, ref)=>{
+    bsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'form-floating');
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_FormGroup.default, {
+        ref: ref,
+        className: _classnames.default(className, bsPrefix),
+        controlId: controlId,
+        ...props,
+        children: [
+            children,
+            /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                htmlFor: controlId,
+                children: label
+            })
+        ]
+    }));
+});
+FloatingLabel.displayName = 'FloatingLabel';
+var _default = FloatingLabel;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./FormGroup":"120iJ","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"1ru0l":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const defaultProps = {
+    variant: 'primary',
+    active: false,
+    disabled: false
+};
+const Button = /*#__PURE__*/ React.forwardRef(({ bsPrefix , variant , size , active , className , type , as , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'btn');
+    const classes = _classnames.default(className, prefix, active && 'active', variant && `${prefix}-${variant}`, size && `${prefix}-${size}`);
+    if (props.href) return(/*#__PURE__*/ _jsxRuntime.jsx(_SafeAnchor.default, {
+        ...props,
+        as: as,
+        ref: ref,
+        className: _classnames.default(classes, props.disabled && 'disabled')
+    }));
+    if (!type && !as) type = 'button';
+    const Component = as || 'button';
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        type: type,
+        className: classes
+    }));
+});
+Button.displayName = 'Button';
+Button.defaultProps = defaultProps;
+var _default = Button;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./SafeAnchor":"5VP5o","react/jsx-runtime":"7jBZW"}],"5VP5o":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function isTrivialHref(href) {
+    return !href || href.trim() === '#';
+}
+/**
+ * There are situations due to browser quirks or Bootstrap CSS where
+ * an anchor tag is needed, when semantically a button tag is the
+ * better choice. SafeAnchor ensures that when an anchor is used like a
+ * button its accessible. It also emulates input `disabled` behavior for
+ * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
+ */ const SafeAnchor = /*#__PURE__*/ React.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'a' , disabled , onKeyDown , ...props }, ref)=>{
+    const handleClick = (event)=>{
+        const { href , onClick  } = props;
+        if (disabled || isTrivialHref(href)) event.preventDefault();
+        if (disabled) {
+            event.stopPropagation();
+            return;
+        }
+        onClick == null || onClick(event);
+    };
+    const handleKeyDown = (event)=>{
+        if (event.key === ' ') {
+            event.preventDefault();
+            handleClick(event);
+        }
+    };
+    if (isTrivialHref(props.href)) {
+        props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
+        // otherwise, the cursor incorrectly styled (except with role='button')
+        props.href = props.href || '#';
+    }
+    if (disabled) {
+        props.tabIndex = -1;
+        props['aria-disabled'] = true;
+    }
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        onClick: handleClick,
+        onKeyDown: _createChainedFunction.default(handleKeyDown, onKeyDown)
+    }));
+});
+SafeAnchor.displayName = 'SafeAnchor';
+var _default = SafeAnchor;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM","./createChainedFunction":"4RHiz","react/jsx-runtime":"7jBZW"}],"4RHiz":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.default = void 0;
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */ function createChainedFunction(...funcs) {
+    return funcs.filter((f)=>f != null
+    ).reduce((acc, f)=>{
+        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+        if (acc === null) return f;
+        return function chainedFunction(...args) {
+            // @ts-ignore
+            acc.apply(this, args); // @ts-ignore
+            f.apply(this, args);
+        };
+    }, null);
+}
+var _default = createChainedFunction;
+exports.default = _default;
+module.exports = exports.default;
+
+},{}],"65tkN":[function(require,module,exports) {
+/*! For license information please see index.js.LICENSE.txt */ (()=>{
+    var t = {
+        839: (t1, e, n)=>{
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+            });
+            o.push([
+                t1.id,
+                "/* Brennan Wilkes */\n\n.floating-label {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tjustify-content: center;\n\talign-items: flex-start;\n\ttext-align: left;\n}\n\n.floating-label > label {\n\tfont-size: 1rem;\n\tcolor: #495057;\n\tpointer-events: none;\n\tposition: absolute;\n\ttransform-origin: top left;\n\ttransition: all 0.2s ease-out;\n\tpadding-left: 1rem;\n\tline-height: 1;\n\tmargin-bottom: 0;\n}\n\n.floating-label:focus-within > label,\n.floating-label > .floating-label-active {\n\ttransform: translate(0, -50%) scale(0.6);\n}\n\n.floating-label > input:focus {\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tborder-color: #86b7fe;\n\toutline: 0;\n\tbox-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);\n}\n\n.floating-label > input {\n\tdisplay: block;\n\twidth: 100%;\n\tpadding: 1rem 0.75rem 0.25rem 0.75rem;\n\tfont-size: 1rem;\n\tfont-weight: 400;\n\tline-height: 1.5;\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tbackground-clip: padding-box;\n\tborder: 1px solid #ced4da;\n\t-webkit-appearance: none;\n\t-moz-appearance: none;\n\tappearance: none;\n\tborder-radius: 0.25rem;\n\ttransition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n",
+                ""
+            ]);
+            const i = o;
+        },
+        101: (t1, e, n)=>{
+            "use strict";
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+            });
+            o.push([
+                t1.id,
+                "/* Brennan Wilkes */\n\n.loadingCog {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\twill-change: transform;\n\tposition: absolute;\n\tright: 0;\n\ttop: 10%;\n\tbottom: 10%;\n\tmargin-right: 1.25%;\n}\n\n.loadingCog:active,\n.loadingCog,\n.loadingCog:focus {\n\toutline: none;\n\tbox-shadow: none;\n}\n\n.loadingCog:hover {\n\tcursor: default !important;\n}\n",
+                ""
+            ]);
+            const i = o;
+        },
+        645: (t1)=>{
+            "use strict";
+            t1.exports = function(t2) {
+                var e = [];
+                return e.toString = function() {
+                    return this.map(function(e1) {
+                        var n = t2(e1);
+                        return e1[2] ? "@media ".concat(e1[2], " {").concat(n, "}") : n;
+                    }).join("");
+                }, e.i = function(t3, n, r) {
+                    "string" == typeof t3 && (t3 = [
+                        [
+                            null,
+                            t3,
+                            ""
+                        ]
+                    ]);
+                    var o = {
+                    };
+                    if (r) for(var i = 0; i < this.length; i++){
+                        var a = this[i][0];
+                        null != a && (o[a] = true);
+                    }
+                    for(var l = 0; l < t3.length; l++){
+                        var u = [].concat(t3[l]);
+                        r && o[u[0]] || (n && (u[2] ? u[2] = "".concat(n, " and ").concat(u[2]) : u[2] = n), e.push(u));
+                    }
+                }, e;
+            };
+        },
+        418: (t1)=>{
+            "use strict";
+            var e = Object.getOwnPropertySymbols, n = Object.prototype.hasOwnProperty, r = Object.prototype.propertyIsEnumerable;
+            function o(t2) {
+                if (null == t2) throw new TypeError("Object.assign cannot be called with null or undefined");
+                return Object(t2);
+            }
+            t1.exports = (function() {
+                try {
+                    if (!Object.assign) return false;
+                    var t2 = "abc";
+                    if (t2[5] = "de", "5" === Object.getOwnPropertyNames(t2)[0]) return false;
+                    for(var e1 = {
+                    }, n1 = 0; n1 < 10; n1++)e1["_" + String.fromCharCode(n1)] = n1;
+                    if ("0123456789" !== Object.getOwnPropertyNames(e1).map(function(t3) {
+                        return e1[t3];
+                    }).join("")) return false;
+                    var r1 = {
+                    };
+                    return "abcdefghijklmnopqrst".split("").forEach(function(t3) {
+                        r1[t3] = t3;
+                    }), "abcdefghijklmnopqrst" === Object.keys(Object.assign({
+                    }, r1)).join("");
+                } catch (t3) {
+                    return false;
+                }
+            })() ? Object.assign : function(t2, i) {
+                for(var a, l, u = o(t2), c = 1; c < arguments.length; c++){
+                    for(var s in a = Object(arguments[c]))n.call(a, s) && (u[s] = a[s]);
+                    if (e) {
+                        l = e(a);
+                        for(var f = 0; f < l.length; f++)r.call(a, l[f]) && (u[l[f]] = a[l[f]]);
+                    }
+                }
+                return u;
+            };
+        },
+        703: (t1, e, n)=>{
+            "use strict";
+            var r = n(414);
+            function o() {
+            }
+            function i() {
+            }
+            i.resetWarningCache = o, t1.exports = function() {
+                function t2(t3, e1, n1, o1, i1, a) {
+                    if (a !== r) {
+                        var l = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
+                        throw l.name = "Invariant Violation", l;
+                    }
+                }
+                function e1() {
+                    return t2;
+                }
+                t2.isRequired = t2;
+                var n1 = {
+                    array: t2,
+                    bool: t2,
+                    func: t2,
+                    number: t2,
+                    object: t2,
+                    string: t2,
+                    symbol: t2,
+                    any: t2,
+                    arrayOf: e1,
+                    element: t2,
+                    elementType: t2,
+                    instanceOf: e1,
+                    node: t2,
+                    objectOf: e1,
+                    oneOf: e1,
+                    oneOfType: e1,
+                    shape: e1,
+                    exact: e1,
+                    checkPropTypes: i,
+                    resetWarningCache: o
+                };
+                return n1.PropTypes = n1, n1;
+            };
+        },
+        697: (t1, e, n)=>{
+            t1.exports = n(703)();
+        },
+        414: (t1)=>{
+            "use strict";
+            t1.exports = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+        },
+        408: (t1, e, n)=>{
+            "use strict";
+            var r = n(418), o = 60103, i = 60106;
+            e.Fragment = 60107, e.StrictMode = 60108, e.Profiler = 60114;
+            var a = 60109, l = 60110, u = 60112;
+            e.Suspense = 60113;
+            var c = 60115, s3 = 60116;
+            if ("function" == typeof Symbol && Symbol.for) {
+                var f = Symbol.for;
+                o = f("react.element"), i = f("react.portal"), e.Fragment = f("react.fragment"), e.StrictMode = f("react.strict_mode"), e.Profiler = f("react.profiler"), a = f("react.provider"), l = f("react.context"), u = f("react.forward_ref"), e.Suspense = f("react.suspense"), c = f("react.memo"), s3 = f("react.lazy");
+            }
+            var p = "function" == typeof Symbol && Symbol.iterator;
+            function d(t2) {
+                for(var e1 = "https://reactjs.org/docs/error-decoder.html?invariant=" + t2, n1 = 1; n1 < arguments.length; n1++)e1 += "&args[]=" + encodeURIComponent(arguments[n1]);
+                return "Minified React error #" + t2 + "; visit " + e1 + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
+            }
+            var y = {
+                isMounted: function() {
+                    return false;
+                },
+                enqueueForceUpdate: function() {
+                },
+                enqueueReplaceState: function() {
+                },
+                enqueueSetState: function() {
+                }
+            }, h = {
+            };
+            function v(t2, e1, n1) {
+                this.props = t2, this.context = e1, this.refs = h, this.updater = n1 || y;
+            }
+            function g() {
+            }
+            function b(t2, e1, n1) {
+                this.props = t2, this.context = e1, this.refs = h, this.updater = n1 || y;
+            }
+            v.prototype.isReactComponent = {
+            }, v.prototype.setState = function(t2, e1) {
+                if ("object" != typeof t2 && "function" != typeof t2 && null != t2) throw Error(d(85));
+                this.updater.enqueueSetState(this, t2, e1, "setState");
+            }, v.prototype.forceUpdate = function(t2) {
+                this.updater.enqueueForceUpdate(this, t2, "forceUpdate");
+            }, g.prototype = v.prototype;
+            var m = b.prototype = new g;
+            m.constructor = b, r(m, v.prototype), m.isPureReactComponent = true;
+            var O = {
+                current: null
+            }, w = Object.prototype.hasOwnProperty, C = {
+                key: true,
+                ref: true,
+                __self: true,
+                __source: true
+            };
+            function S(t2, e1, n1) {
+                var r1, i1 = {
+                }, a1 = null, l1 = null;
+                if (null != e1) for(r1 in (void 0) !== e1.ref && (l1 = e1.ref), (void 0) !== e1.key && (a1 = "" + e1.key), e1)w.call(e1, r1) && !C.hasOwnProperty(r1) && (i1[r1] = e1[r1]);
+                var u1 = arguments.length - 2;
+                if (1 === u1) i1.children = n1;
+                else if (1 < u1) {
+                    for(var c1 = Array(u1), s1 = 0; s1 < u1; s1++)c1[s1] = arguments[s1 + 2];
+                    i1.children = c1;
+                }
+                if (t2 && t2.defaultProps) for(r1 in u1 = t2.defaultProps)(void 0) === i1[r1] && (i1[r1] = u1[r1]);
+                return {
+                    $$typeof: o,
+                    type: t2,
+                    key: a1,
+                    ref: l1,
+                    props: i1,
+                    _owner: O.current
+                };
+            }
+            function j(t2) {
+                return "object" == typeof t2 && null !== t2 && t2.$$typeof === o;
+            }
+            var _ = /\/+/g;
+            function E(t2, e1) {
+                return "object" == typeof t2 && null !== t2 && null != t2.key ? (function(t3) {
+                    var e2 = {
+                        "=": "=0",
+                        ":": "=2"
+                    };
+                    return "$" + t3.replace(/[=:]/g, function(t4) {
+                        return e2[t4];
+                    });
+                })("" + t2.key) : e1.toString(36);
+            }
+            function x(t2, e1, n1, r1, a1) {
+                var l1 = typeof t2;
+                "undefined" !== l1 && "boolean" !== l1 || (t2 = null);
+                var u1 = false;
+                if (null === t2) u1 = true;
+                else switch(l1){
+                    case "string":
+                    case "number":
+                        u1 = true;
+                        break;
+                    case "object":
+                        switch(t2.$$typeof){
+                            case o:
+                            case i:
+                                u1 = true;
+                        }
+                }
+                if (u1) return a1 = a1(u1 = t2), t2 = "" === r1 ? "." + E(u1, 0) : r1, Array.isArray(a1) ? (n1 = "", null != t2 && (n1 = t2.replace(_, "$&/") + "/"), x(a1, e1, n1, "", function(t3) {
+                    return t3;
+                })) : null != a1 && (j(a1) && (a1 = (function(t3, e2) {
+                    return {
+                        $$typeof: o,
+                        type: t3.type,
+                        key: e2,
+                        ref: t3.ref,
+                        props: t3.props,
+                        _owner: t3._owner
+                    };
+                })(a1, n1 + (!a1.key || u1 && u1.key === a1.key ? "" : ("" + a1.key).replace(_, "$&/") + "/") + t2)), e1.push(a1)), 1;
+                if (u1 = 0, r1 = "" === r1 ? "." : r1 + ":", Array.isArray(t2)) for(var c2 = 0; c2 < t2.length; c2++){
+                    var s2 = r1 + E(l1 = t2[c2], c2);
+                    u1 += x(l1, e1, n1, s2, a1);
+                }
+                else if ("function" == typeof (s2 = function(t3) {
+                    return null === t3 || "object" != typeof t3 ? null : "function" == typeof (t3 = p && t3[p] || t3["@@iterator"]) ? t3 : null;
+                }(t2))) for(t2 = s2.call(t2), c2 = 0; !(l1 = t2.next()).done;)u1 += x(l1 = l1.value, e1, n1, s2 = r1 + E(l1, c2++), a1);
+                else if ("object" === l1) throw e1 = "" + t2, Error(d(31, "[object Object]" === e1 ? "object with keys {" + Object.keys(t2).join(", ") + "}" : e1));
+                return u1;
+            }
+            function P(t2, e1, n1) {
+                if (null == t2) return t2;
+                var r1 = [], o1 = 0;
+                return x(t2, r1, "", "", function(t3) {
+                    return e1.call(n1, t3, o1++);
+                }), r1;
+            }
+            function k(t2) {
+                if (-1 === t2._status) {
+                    var e1 = t2._result;
+                    e1 = e1(), t2._status = 0, t2._result = e1, e1.then(function(e2) {
+                        0 === t2._status && (e2 = e2.default, t2._status = 1, t2._result = e2);
+                    }, function(e2) {
+                        0 === t2._status && (t2._status = 2, t2._result = e2);
+                    });
+                }
+                if (1 === t2._status) return t2._result;
+                throw t2._result;
+            }
+            var R = {
+                current: null
+            };
+            function T() {
+                var t2 = R.current;
+                if (null === t2) throw Error(d(321));
+                return t2;
+            }
+            var I = {
+                ReactCurrentDispatcher: R,
+                ReactCurrentBatchConfig: {
+                    transition: 0
+                },
+                ReactCurrentOwner: O,
+                IsSomeRendererActing: {
+                    current: false
+                },
+                assign: r
+            };
+            e.Children = {
+                map: P,
+                forEach: function(t2, e2, n1) {
+                    P(t2, function() {
+                        e2.apply(this, arguments);
+                    }, n1);
+                },
+                count: function(t2) {
+                    var e2 = 0;
+                    return P(t2, function() {
+                        e2++;
+                    }), e2;
+                },
+                toArray: function(t2) {
+                    return P(t2, function(t3) {
+                        return t3;
+                    }) || [];
+                },
+                only: function(t2) {
+                    if (!j(t2)) throw Error(d(143));
+                    return t2;
+                }
+            }, e.Component = v, e.PureComponent = b, e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = I, e.cloneElement = function(t2, e2, n1) {
+                if (null == t2) throw Error(d(267, t2));
+                var i1 = r({
+                }, t2.props), a1 = t2.key, l1 = t2.ref, u1 = t2._owner;
+                if (null != e2) {
+                    if ((void 0) !== e2.ref && (l1 = e2.ref, u1 = O.current), (void 0) !== e2.key && (a1 = "" + e2.key), t2.type && t2.type.defaultProps) var c2 = t2.type.defaultProps;
+                    for(s4 in e2)w.call(e2, s4) && !C.hasOwnProperty(s4) && (i1[s4] = (void 0) === e2[s4] && (void 0) !== c2 ? c2[s4] : e2[s4]);
+                }
+                var s4 = arguments.length - 2;
+                if (1 === s4) i1.children = n1;
+                else if (1 < s4) {
+                    c2 = Array(s4);
+                    for(var f = 0; f < s4; f++)c2[f] = arguments[f + 2];
+                    i1.children = c2;
+                }
+                return {
+                    $$typeof: o,
+                    type: t2.type,
+                    key: a1,
+                    ref: l1,
+                    props: i1,
+                    _owner: u1
+                };
+            }, e.createContext = function(t2, e2) {
+                return (void 0) === e2 && (e2 = null), (t2 = {
+                    $$typeof: l,
+                    _calculateChangedBits: e2,
+                    _currentValue: t2,
+                    _currentValue2: t2,
+                    _threadCount: 0,
+                    Provider: null,
+                    Consumer: null
+                }).Provider = {
+                    $$typeof: a,
+                    _context: t2
+                }, t2.Consumer = t2;
+            }, e.createElement = S, e.createFactory = function(t2) {
+                var e2 = S.bind(null, t2);
+                return e2.type = t2, e2;
+            }, e.createRef = function() {
+                return {
+                    current: null
+                };
+            }, e.forwardRef = function(t2) {
+                return {
+                    $$typeof: u,
+                    render: t2
+                };
+            }, e.isValidElement = j, e.lazy = function(t2) {
+                return {
+                    $$typeof: s3,
+                    _payload: {
+                        _status: -1,
+                        _result: t2
+                    },
+                    _init: k
+                };
+            }, e.memo = function(t2, e2) {
+                return {
+                    $$typeof: c,
+                    type: t2,
+                    compare: (void 0) === e2 ? null : e2
+                };
+            }, e.useCallback = function(t2, e2) {
+                return T().useCallback(t2, e2);
+            }, e.useContext = function(t2, e2) {
+                return T().useContext(t2, e2);
+            }, e.useDebugValue = function() {
+            }, e.useEffect = function(t2, e2) {
+                return T().useEffect(t2, e2);
+            }, e.useImperativeHandle = function(t2, e2, n1) {
+                return T().useImperativeHandle(t2, e2, n1);
+            }, e.useLayoutEffect = function(t2, e2) {
+                return T().useLayoutEffect(t2, e2);
+            }, e.useMemo = function(t2, e2) {
+                return T().useMemo(t2, e2);
+            }, e.useReducer = function(t2, e2, n1) {
+                return T().useReducer(t2, e2, n1);
+            }, e.useRef = function(t2) {
+                return T().useRef(t2);
+            }, e.useState = function(t2) {
+                return T().useState(t2);
+            }, e.version = "17.0.1";
+        },
+        294: (t1, e2, n)=>{
+            "use strict";
+            t1.exports = n(408);
+        },
+        379: (t1, e2, n)=>{
+            "use strict";
+            var r, o = function() {
+                var t2 = {
+                };
+                return function(e3) {
+                    if ((void 0) === t2[e3]) {
+                        var n1 = document.querySelector(e3);
+                        if (window.HTMLIFrameElement && n1 instanceof window.HTMLIFrameElement) try {
+                            n1 = n1.contentDocument.head;
+                        } catch (t3) {
+                            n1 = null;
+                        }
+                        t2[e3] = n1;
+                    }
+                    return t2[e3];
+                };
+            }(), i = [];
+            function a(t2) {
+                for(var e3 = -1, n2 = 0; n2 < i.length; n2++)if (i[n2].identifier === t2) {
+                    e3 = n2;
+                    break;
+                }
+                return e3;
+            }
+            function l(t2, e3) {
+                for(var n2 = {
+                }, r1 = [], o1 = 0; o1 < t2.length; o1++){
+                    var l1 = t2[o1], u = e3.base ? l1[0] + e3.base : l1[0], c3 = n2[u] || 0, s3 = "".concat(u, " ").concat(c3);
+                    n2[u] = c3 + 1;
+                    var f = a(s3), p = {
+                        css: l1[1],
+                        media: l1[2],
+                        sourceMap: l1[3]
+                    };
+                    -1 !== f ? (i[f].references++, i[f].updater(p)) : i.push({
+                        identifier: s3,
+                        updater: h(p, e3),
+                        references: 1
+                    }), r1.push(s3);
+                }
+                return r1;
+            }
+            function u(t2) {
+                var e3 = document.createElement("style"), r1 = t2.attributes || {
+                };
+                if ((void 0) === r1.nonce) {
+                    var i1 = n.nc;
+                    i1 && (r1.nonce = i1);
+                }
+                if (Object.keys(r1).forEach(function(t3) {
+                    e3.setAttribute(t3, r1[t3]);
+                }), "function" == typeof t2.insert) t2.insert(e3);
+                else {
+                    var a1 = o(t2.insert || "head");
+                    if (!a1) throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+                    a1.appendChild(e3);
+                }
+                return e3;
+            }
+            var c4, s4 = (c4 = [], function(t2, e3) {
+                return c4[t2] = e3, c4.filter(Boolean).join("\n");
+            });
+            function f(t2, e3, n2, r1) {
+                var o1 = n2 ? "" : r1.media ? "@media ".concat(r1.media, " {").concat(r1.css, "}") : r1.css;
+                if (t2.styleSheet) t2.styleSheet.cssText = s4(e3, o1);
+                else {
+                    var i2 = document.createTextNode(o1), a2 = t2.childNodes;
+                    a2[e3] && t2.removeChild(a2[e3]), a2.length ? t2.insertBefore(i2, a2[e3]) : t2.appendChild(i2);
+                }
+            }
+            function p(t2, e3, n2) {
+                var r1 = n2.css, o1 = n2.media, i3 = n2.sourceMap;
+                if (o1 ? t2.setAttribute("media", o1) : t2.removeAttribute("media"), i3 && "undefined" != typeof btoa && (r1 += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i3)))), " */")), t2.styleSheet) t2.styleSheet.cssText = r1;
+                else {
+                    for(; t2.firstChild;)t2.removeChild(t2.firstChild);
+                    t2.appendChild(document.createTextNode(r1));
+                }
+            }
+            var d = null, y = 0;
+            function h(t2, e3) {
+                var n2, r1, o1;
+                if (e3.singleton) {
+                    var i3 = y++;
+                    n2 = d || (d = u(e3)), r1 = f.bind(null, n2, i3, false), o1 = f.bind(null, n2, i3, true);
+                } else n2 = u(e3), r1 = p.bind(null, n2, e3), o1 = function() {
+                    (function(t3) {
+                        if (null === t3.parentNode) return false;
+                        t3.parentNode.removeChild(t3);
+                    })(n2);
+                };
+                return r1(t2), function(e4) {
+                    if (e4) {
+                        if (e4.css === t2.css && e4.media === t2.media && e4.sourceMap === t2.sourceMap) return;
+                        r1(t2 = e4);
+                    } else o1();
+                };
+            }
+            t1.exports = function(t2, e3) {
+                (e3 = e3 || {
+                }).singleton || "boolean" == typeof e3.singleton || (e3.singleton = ((void 0) === r && (r = Boolean(window && document && document.all && !window.atob)), r));
+                var n2 = l(t2 = t2 || [], e3);
+                return function(t3) {
+                    if (t3 = t3 || [], "[object Array]" === Object.prototype.toString.call(t3)) {
+                        for(var r1 = 0; r1 < n2.length; r1++){
+                            var o1 = a(n2[r1]);
+                            i[o1].references--;
+                        }
+                        for(var u1 = l(t3, e3), c5 = 0; c5 < n2.length; c5++){
+                            var s5 = a(n2[c5]);
+                            0 === i[s5].references && (i[s5].updater(), i.splice(s5, 1));
+                        }
+                        n2 = u1;
+                    }
+                };
+            };
+        }
+    }, e2 = {
+    };
+    function n2(r2) {
+        if (e2[r2]) return e2[r2].exports;
+        var o2 = e2[r2] = {
+            id: r2,
+            exports: {
+            }
+        };
+        return t[r2](o2, o2.exports, n2), o2.exports;
+    }
+    n2.n = (t1)=>{
+        var e3 = t1 && t1.__esModule ? ()=>t1.default
+         : ()=>t1
+        ;
+        return n2.d(e3, {
+            a: e3
+        }), e3;
+    }, n2.d = (t1, e4)=>{
+        for(var r2 in e4)n2.o(e4, r2) && !n2.o(t1, r2) && Object.defineProperty(t1, r2, {
+            enumerable: true,
+            get: e4[r2]
+        });
+    }, n2.o = (t1, e4)=>Object.prototype.hasOwnProperty.call(t1, e4)
+    , n2.r = (t1)=>{
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t1, Symbol.toStringTag, {
+            value: "Module"
+        }), Object.defineProperty(t1, "__esModule", {
+            value: true
+        });
+    };
+    var r3 = {
+    };
+    (()=>{
+        n2.r(r3), n2.d(r3, {
+            default: ()=>N
+        });
+        var t1 = n2(294), e4 = n2(697), o2 = n2.n(e4), i4 = n2(379), a3 = n2.n(i4), l2 = n2(839);
+        a3()(l2.Z, {
+            insert: "head",
+            singleton: false
+        }), l2.Z.locals;
+        var u2 = {
+            color: void 0,
+            size: void 0,
+            className: void 0,
+            style: void 0,
+            attr: void 0
+        }, c6 = t1.createContext && t1.createContext(u2), s6 = function() {
+            return (s6 = Object.assign || function(t2) {
+                for(var e5, n3 = 1, r4 = arguments.length; n3 < r4; n3++)for(var o3 in e5 = arguments[n3])Object.prototype.hasOwnProperty.call(e5, o3) && (t2[o3] = e5[o3]);
+                return t2;
+            }).apply(this, arguments);
+        };
+        function f(e5) {
+            return e5 && e5.map(function(e6, n3) {
+                return t1.createElement(e6.tag, s6({
+                    key: n3
+                }, e6.attr), f(e6.child));
+            });
+        }
+        function p(e5) {
+            return function(n3) {
+                return t1.createElement(d, s6({
+                    attr: s6({
+                    }, e5.attr)
+                }, n3), f(e5.child));
+            };
+        }
+        function d(e5) {
+            var n3 = function(n4) {
+                var r4, o3 = e5.attr, i5 = e5.size, a4 = e5.title, l3 = function(t2, e6) {
+                    var n5 = {
+                    };
+                    for(var r5 in t2)Object.prototype.hasOwnProperty.call(t2, r5) && e6.indexOf(r5) < 0 && (n5[r5] = t2[r5]);
+                    if (null != t2 && "function" == typeof Object.getOwnPropertySymbols) {
+                        var o4 = 0;
+                        for(r5 = Object.getOwnPropertySymbols(t2); o4 < r5.length; o4++)e6.indexOf(r5[o4]) < 0 && Object.prototype.propertyIsEnumerable.call(t2, r5[o4]) && (n5[r5[o4]] = t2[r5[o4]]);
+                    }
+                    return n5;
+                }(e5, [
+                    "attr",
+                    "size",
+                    "title"
+                ]), u3 = i5 || n4.size || "1em";
+                return n4.className && (r4 = n4.className), e5.className && (r4 = (r4 ? r4 + " " : "") + e5.className), t1.createElement("svg", s6({
+                    stroke: "currentColor",
+                    fill: "currentColor",
+                    strokeWidth: "0"
+                }, n4.attr, o3, l3, {
+                    className: r4,
+                    style: s6(s6({
+                        color: e5.color || n4.color
+                    }, n4.style), e5.style),
+                    height: u3,
+                    width: u3,
+                    xmlns: "http://www.w3.org/2000/svg"
+                }), a4 && t1.createElement("title", null, a4), e5.children);
+            };
+            return (void 0) !== c6 ? t1.createElement(c6.Consumer, null, function(t2) {
+                return n3(t2);
+            }) : n3(u2);
+        }
+        function y(t2) {
+            return p({
+                tag: "svg",
+                attr: {
+                    version: "1.1",
+                    viewBox: "0 0 16 16"
+                },
+                child: [
+                    {
+                        tag: "path",
+                        attr: {
+                            d: "M14.59 9.535c-0.839-1.454-0.335-3.317 1.127-4.164l-1.572-2.723c-0.449 0.263-0.972 0.414-1.529 0.414-1.68 0-3.042-1.371-3.042-3.062h-3.145c0.004 0.522-0.126 1.051-0.406 1.535-0.839 1.454-2.706 1.948-4.17 1.106l-1.572 2.723c0.453 0.257 0.845 0.634 1.123 1.117 0.838 1.452 0.336 3.311-1.12 4.16l1.572 2.723c0.448-0.261 0.967-0.41 1.522-0.41 1.675 0 3.033 1.362 3.042 3.046h3.145c-0.001-0.517 0.129-1.040 0.406-1.519 0.838-1.452 2.7-1.947 4.163-1.11l1.572-2.723c-0.45-0.257-0.839-0.633-1.116-1.113zM8 11.24c-1.789 0-3.24-1.45-3.24-3.24s1.45-3.24 3.24-3.24c1.789 0 3.24 1.45 3.24 3.24s-1.45 3.24-3.24 3.24z"
+                        }
+                    }
+                ]
+            })(t2);
+        }
+        var h = n2(101);
+        function v(t2) {
+            return (v = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
+                return typeof t3;
+            } : function(t3) {
+                return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            })(t2);
+        }
+        function g(t2, e5) {
+            var n3 = Object.keys(t2);
+            if (Object.getOwnPropertySymbols) {
+                var r4 = Object.getOwnPropertySymbols(t2);
+                e5 && (r4 = r4.filter(function(e6) {
+                    return Object.getOwnPropertyDescriptor(t2, e6).enumerable;
+                })), n3.push.apply(n3, r4);
+            }
+            return n3;
+        }
+        function b(t2, e5, n3) {
+            return e5 in t2 ? Object.defineProperty(t2, e5, {
+                value: n3,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            }) : t2[e5] = n3, t2;
+        }
+        function m(t2, e5) {
+            for(var n3 = 0; n3 < e5.length; n3++){
+                var r5 = e5[n3];
+                r5.enumerable = r5.enumerable || false, r5.configurable = true, "value" in r5 && (r5.writable = true), Object.defineProperty(t2, r5.key, r5);
+            }
+        }
+        function O(t2, e5) {
+            return (O = Object.setPrototypeOf || function(t3, e6) {
+                return t3.__proto__ = e6, t3;
+            })(t2, e5);
+        }
+        function w(t2, e5) {
+            return !e5 || "object" !== v(e5) && "function" != typeof e5 ? C(t2) : e5;
+        }
+        function C(t2) {
+            if ((void 0) === t2) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return t2;
+        }
+        function S(t2) {
+            return (S = Object.setPrototypeOf ? Object.getPrototypeOf : function(t3) {
+                return t3.__proto__ || Object.getPrototypeOf(t3);
+            })(t2);
+        }
+        a3()(h.Z, {
+            insert: "head",
+            singleton: false
+        }), h.Z.locals;
+        var j = function(e5) {
+            (function(t2, e6) {
+                if ("function" != typeof e6 && null !== e6) throw new TypeError("Super expression must either be null or a function");
+                t2.prototype = Object.create(e6 && e6.prototype, {
+                    constructor: {
+                        value: t2,
+                        writable: true,
+                        configurable: true
+                    }
+                }), e6 && O(t2, e6);
+            })(l5, e5);
+            var n3, r6, o3, i5, a4 = (o3 = l5, i5 = function() {
+                if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+                if (Reflect.construct.sham) return false;
+                if ("function" == typeof Proxy) return true;
+                try {
+                    return Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+                    })), true;
+                } catch (t2) {
+                    return false;
+                }
+            }(), function() {
+                var t2, e6 = S(o3);
+                if (i5) {
+                    var n4 = S(this).constructor;
+                    t2 = Reflect.construct(e6, arguments, n4);
+                } else t2 = e6.apply(this, arguments);
+                return w(this, t2);
+            });
+            function l5(t2) {
+                var e6, n5;
+                return (function(t3, e7) {
+                    if (!(t3 instanceof e7)) throw new TypeError("Cannot call a class as a function");
+                })(this, l5), (n5 = a4.call(this, t2)).triggerRotate = n5.triggerRotate.bind(C(n5)), n5.state = {
+                    id: null !== (e6 = n5.props.id) && (void 0) !== e6 ? e6 : "LoadingCog-".concat(parseInt(1000 * Math.random())),
+                    rotateInterval: void 0,
+                    rot: 0
+                }, n5.props.rotating && n5.triggerRotate(), n5;
+            }
+            return n3 = l5, r6 = [
+                {
+                    key: "componentWillUnmount",
+                    value: function() {
+                        this.endRotate(false);
+                    }
+                },
+                {
+                    key: "endRotate",
+                    value: function() {
+                        var t2 = !(arguments.length > 0 && (void 0) !== arguments[0]) || arguments[0];
+                        this.state.rotateInterval && (window.clearInterval(this.state.rotateInterval), t2 && this.setState({
+                            rotateInterval: void 0
+                        }));
+                    }
+                },
+                {
+                    key: "triggerRotate",
+                    value: function() {
+                        var t2 = this;
+                        this.state.rotateInterval && this.endRotate(false);
+                        var e6 = window.setInterval(function() {
+                            t2.setState({
+                                rot: t2.state.rot + 1
+                            });
+                        }, 10);
+                        this.setState({
+                            rotateInterval: e6
+                        });
+                    }
+                },
+                {
+                    key: "componentDidUpdate",
+                    value: function(t2) {
+                        !t2.rotating && this.props.rotating ? this.triggerRotate() : t2.rotating && !this.props.rotating && this.endRotate();
+                    }
+                },
+                {
+                    key: "render",
+                    value: function() {
+                        var e6, n5 = this.props.style ? function(t2) {
+                            for(var e7 = 1; e7 < arguments.length; e7++){
+                                var n6 = null != arguments[e7] ? arguments[e7] : {
+                                };
+                                e7 % 2 ? g(Object(n6), true).forEach(function(e8) {
+                                    b(t2, e8, n6[e8]);
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t2, Object.getOwnPropertyDescriptors(n6)) : g(Object(n6)).forEach(function(e8) {
+                                    Object.defineProperty(t2, e8, Object.getOwnPropertyDescriptor(n6, e8));
+                                });
+                            }
+                            return t2;
+                        }({
+                        }, this.props.style) : {
+                        };
+                        return n5.transform = "rotate(".concat(this.state.rot, "deg)"), t1.createElement(t1.Fragment, null, t1.createElement("div", {
+                            style: n5,
+                            className: "loadingCog",
+                            id: this.state.id
+                        }, t1.createElement(y, {
+                            size: null !== (e6 = this.props.size) && (void 0) !== e6 ? e6 : 30
+                        })));
+                    }
+                }
+            ], m(n3.prototype, r6), l5;
+        }(t1.Component);
+        j.propTypes = {
+            style: o2().object,
+            size: o2().number,
+            rotating: o2().bool,
+            id: o2().string
+        };
+        const _ = j;
+        function E(t2) {
+            return (E = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
+                return typeof t3;
+            } : function(t3) {
+                return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            })(t2);
+        }
+        function x(t2, e5) {
+            for(var n3 = 0; n3 < e5.length; n3++){
+                var r6 = e5[n3];
+                r6.enumerable = r6.enumerable || false, r6.configurable = true, "value" in r6 && (r6.writable = true), Object.defineProperty(t2, r6.key, r6);
+            }
+        }
+        function P(t2, e5) {
+            return (P = Object.setPrototypeOf || function(t3, e6) {
+                return t3.__proto__ = e6, t3;
+            })(t2, e5);
+        }
+        function k(t2, e5) {
+            return !e5 || "object" !== E(e5) && "function" != typeof e5 ? R(t2) : e5;
+        }
+        function R(t2) {
+            if ((void 0) === t2) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return t2;
+        }
+        function T(t2) {
+            return (T = Object.setPrototypeOf ? Object.getPrototypeOf : function(t3) {
+                return t3.__proto__ || Object.getPrototypeOf(t3);
+            })(t2);
+        }
+        var I = function(e5) {
+            (function(t2, e6) {
+                if ("function" != typeof e6 && null !== e6) throw new TypeError("Super expression must either be null or a function");
+                t2.prototype = Object.create(e6 && e6.prototype, {
+                    constructor: {
+                        value: t2,
+                        writable: true,
+                        configurable: true
+                    }
+                }), e6 && P(t2, e6);
+            })(l7, e5);
+            var n3, r7, o3, i5, a4 = (o3 = l7, i5 = function() {
+                if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+                if (Reflect.construct.sham) return false;
+                if ("function" == typeof Proxy) return true;
+                try {
+                    return Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+                    })), true;
+                } catch (t2) {
+                    return false;
+                }
+            }(), function() {
+                var t2, e6 = T(o3);
+                if (i5) {
+                    var n5 = T(this).constructor;
+                    t2 = Reflect.construct(e6, arguments, n5);
+                } else t2 = e6.apply(this, arguments);
+                return k(this, t2);
+            });
+            function l7(t2) {
+                var e6, n7, r8, o5, i6;
+                (function(t3, e7) {
+                    if (!(t3 instanceof e7)) throw new TypeError("Cannot call a class as a function");
+                })(this, l7), (i6 = a4.call(this, t2)).handleTextChange = i6.handleTextChange.bind(R(i6));
+                var u3 = null !== (e6 = i6.props.id) && (void 0) !== e6 ? e6 : "floating-label".concat(parseInt(1000 * Math.random()));
+                return i6.state = {
+                    isActive: !!i6.props.initialValue,
+                    text: null !== (n7 = i6.props.initialValue) && (void 0) !== n7 ? n7 : "",
+                    id: u3,
+                    labelId: null !== (r8 = i6.props.labelId) && (void 0) !== r8 ? r8 : "".concat(u3, "-label"),
+                    inputId: null !== (o5 = i6.props.inputId) && (void 0) !== o5 ? o5 : "".concat(u3, "-input"),
+                    queuedChangeTimeout: void 0,
+                    cogId: "".concat(u3, "-cog")
+                }, i6;
+            }
+            return n3 = l7, r7 = [
+                {
+                    key: "componentDidUpdate",
+                    value: function(t2) {
+                        this.props.initialValue !== t2.initialValue && this.setState({
+                            text: this.props.initialValue,
+                            isActive: !!this.props.initialValue
+                        });
+                    }
+                },
+                {
+                    key: "handleTextChange",
+                    value: function(t2) {
+                        var e6 = this, n7 = arguments.length > 1 && (void 0) !== arguments[1] && arguments[1];
+                        if (this.setState({
+                            isActive: "" !== t2.target.value,
+                            text: t2.target.value
+                        }), this.props.onChange) {
+                            if (this.props.onChangeDelay) {
+                                if (this.state.queuedChangeTimeout && clearTimeout(this.state.queuedChangeTimeout), n7) this.props.onChange(t2);
+                                else {
+                                    var r8 = setTimeout(function() {
+                                        e6.props.onChange(t2), e6.setState({
+                                            queuedChangeTimeout: void 0
+                                        });
+                                    }, this.props.onChangeDelay);
+                                    this.setState({
+                                        queuedChangeTimeout: r8
+                                    });
+                                }
+                            } else this.props.onChange(t2);
+                        }
+                    }
+                },
+                {
+                    key: "render",
+                    value: function() {
+                        var e6, n7, r9, o5, i6, a5, l8, u3, c7, s7, f1, p1 = this, d1 = {
+                            className: null !== (e6 = this.props.className) && (void 0) !== e6 ? e6 : "",
+                            labelClassName: null !== (n7 = this.props.labelClassName) && (void 0) !== n7 ? n7 : "",
+                            inputClassName: null !== (r9 = this.props.inputClassName) && (void 0) !== r9 ? r9 : "",
+                            type: null !== (o5 = this.props.type) && (void 0) !== o5 ? o5 : "text",
+                            label: null !== (i6 = this.props.label) && (void 0) !== i6 ? i6 : "Floating Label",
+                            style: null !== (a5 = this.props.style) && (void 0) !== a5 ? a5 : {
+                            },
+                            labelStyle: null !== (l8 = this.props.labelStyle) && (void 0) !== l8 ? l8 : {
+                            },
+                            inputStyle: null !== (u3 = this.props.inputStyle) && (void 0) !== u3 ? u3 : {
+                            }
+                        };
+                        return t1.createElement(t1.Fragment, null, t1.createElement("div", {
+                            className: "floating-label ".concat(d1.className),
+                            id: this.state.id,
+                            style: d1.style
+                        }, t1.createElement("input", {
+                            className: d1.inputClassName,
+                            id: this.state.inputId,
+                            type: d1.type,
+                            value: this.state.text,
+                            onChange: this.handleTextChange,
+                            onBlur: function(t2) {
+                                p1.props.onBlur && p1.props.onBlur(t2);
+                            },
+                            onFocus: function(t2) {
+                                p1.props.onFocus && p1.props.onFocus(t2);
+                            },
+                            onKeyDown: function(t2) {
+                                "Enter" === t2.key && p1.handleTextChange(t2, true);
+                            },
+                            style: d1.inputStyle
+                        }), t1.createElement("label", {
+                            id: this.state.labelId,
+                            className: "".concat(d1.labelClassName).concat(this.state.isActive ? " floating-label-active" : ""),
+                            style: d1.labelStyle
+                        }, d1.label), this.props.loadingCog ? t1.createElement(_, {
+                            id: this.state.cogId,
+                            rotating: null !== (c7 = this.props.loadingCogSpinning) && (void 0) !== c7 && c7,
+                            size: null !== (s7 = this.props.loadingCogSize) && (void 0) !== s7 ? s7 : 30,
+                            style: null !== (f1 = this.props.loadingCogStyle) && (void 0) !== f1 ? f1 : {
+                            }
+                        }) : t1.createElement(t1.Fragment, null)));
+                    }
+                }
+            ], x(n3.prototype, r7), l7;
+        }(t1.Component);
+        I.propTypes = {
+            id: o2().string,
+            labelId: o2().string,
+            inputId: o2().string,
+            className: o2().string,
+            labelClassName: o2().string,
+            inputClassName: o2().string,
+            type: o2().string,
+            onChange: o2().func,
+            onBlur: o2().func,
+            onFocus: o2().func,
+            onChangeDelay: o2().number,
+            label: o2().string,
+            style: o2().object,
+            labelStyle: o2().object,
+            inputStyle: o2().object,
+            loadingCog: o2().bool,
+            loadingCogSpinning: o2().bool,
+            loadingCogSize: o2().number,
+            loadingCogStyle: o2().object,
+            initialValue: o2().string
+        };
+        const N = I;
+    })(), module.exports = r3;
+})();
+
+},{}],"2IRPi":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -24330,6 +27649,12 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _registrationViewScss = require("./registration-view.scss");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrapFloatingLabel = require("react-bootstrap-floating-label");
+var _reactBootstrapFloatingLabelDefault = parcelHelpers.interopDefault(_reactBootstrapFloatingLabel);
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
@@ -24348,121 +27673,169 @@ function RegistrationView(props) {
         className: "registration-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 22
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 23
-        },
-        __self: this
-    }, "Welcome to CinemAPI"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 24
-        },
-        __self: this
-    }, "Please enter your information below to create an account."), /*#__PURE__*/ _reactDefault.default.createElement("form", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 25
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "registration-form",
+    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+        className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 26
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "registration-label",
+    }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        className: "cinemapi_title-thick",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 26
+        },
+        __self: this
+    }, "API")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "registration-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 27
         },
         __self: this
-    }, "Email:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "email",
-        value: email,
-        onChange: (e)=>registerEmail(e.target.value)
-        ,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-2",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 28
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
+        className: "reg-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 29
         },
         __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "registration-label",
+    }, "Please enter your information below to create an account.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalInput",
+        value: email,
+        onChange: (e)=>registerEmail(e.target.value)
+        ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 31
         },
         __self: this
-    }, "Username:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "text",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
+        controlId: "floatingInput",
+        label: "Email",
+        className: "mb-3",
+        type: "email",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 32
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "email",
+        size: "lg",
+        placeholder: "Email Address",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 38
+        },
+        __self: this
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalInput",
         value: username,
         onChange: (e)=>registerUsername(e.target.value)
-        ,
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 33
-        },
-        __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "registration-label",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 35
-        },
-        __self: this
-    }, "Password:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "password",
-        value: password,
-        onChange: (e)=>registerPassword(e.target.value)
-        ,
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 37
-        },
-        __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        className: "registration-label",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 39
-        },
-        __self: this
-    }, "Date of Birth:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
-        type: "date",
-        value: birthday,
-        onChange: (e)=>registerBirthday(e.target.value)
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 41
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-        type: "button",
-        className: "secondary-button",
-        onClick: registerBack,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
+        controlId: "floatingInput",
+        label: "Username",
+        className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 44
+            lineNumber: 42
         },
         __self: this
-    }, "Back"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "text",
+        size: "lg",
+        placeholder: "Username",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 47
+        },
+        __self: this
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalPassword",
+        value: password,
+        onChange: (e)=>registerPassword(e.target.value)
+        ,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 50
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
+        controlId: "floatingInput",
+        label: "Password",
+        className: "mb-3",
+        type: "password",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 51
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "password",
+        placeholder: "Password",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 57
+        },
+        __self: this
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalInput",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 60
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "date",
+        value: birthday,
+        onChange: (e)=>registerBirthday(e.target.value)
+        ,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 61
+        },
+        __self: this
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
         type: "button",
-        className: "submit-button",
+        variant: "primary",
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 45
+            lineNumber: 63
         },
         __self: this
-    }, "Submit"))));
+    }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "button",
+        variant: "secondary",
+        onClick: registerBack,
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 64
+        },
+        __self: this
+    }, "Back"))));
 }
 _s(RegistrationView, "BWz+VN0Qq8QhM30gal/N+P/A2/A=");
 _c = RegistrationView;
@@ -24482,7 +27855,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","./registration-view.scss":"695UR"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap-floating-label":"65tkN","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24497,21 +27870,60 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _card = require("react-bootstrap/Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
 var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
-        return(/*#__PURE__*/ _reactDefault.default.createElement("button", {
-            className: "movie-card",
+        const year = new Date(movie.Year);
+        const movieyear = year.getFullYear();
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
+            key: movie._id,
+            variant: "light",
             onClick: ()=>{
                 onMovieClick(movie);
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 9
+                lineNumber: 12
             },
             __self: this
-        }, movie.Name));
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
+            variant: "top",
+            src: movie.ImageURL,
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 13
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "movie-card_title",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, movie.Name, " ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "movie-card_year",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, " ", movieyear))))));
     }
 }
 MovieCard.propTypes = {
@@ -24539,7 +27951,287 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./movie-card.scss":"1cDml","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"1cDml":[function() {},{}],"6Dk2Z":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Card":"1CZWQ","./movie-card.scss":"1cDml","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"1CZWQ":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
+var _CardImg = _interopRequireDefault(require("./CardImg"));
+var _CardHeader = _interopRequireDefault(require("./CardHeader"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const DivStyledAsH5 = _divWithClassName.default('h5');
+const DivStyledAsH6 = _divWithClassName.default('h6');
+const CardBody = _createWithBsPrefix.default('card-body');
+const CardTitle = _createWithBsPrefix.default('card-title', {
+    Component: DivStyledAsH5
+});
+const CardSubtitle = _createWithBsPrefix.default('card-subtitle', {
+    Component: DivStyledAsH6
+});
+const CardLink = _createWithBsPrefix.default('card-link', {
+    Component: 'a'
+});
+const CardText = _createWithBsPrefix.default('card-text', {
+    Component: 'p'
+});
+const CardFooter = _createWithBsPrefix.default('card-footer');
+const CardImgOverlay = _createWithBsPrefix.default('card-img-overlay');
+const defaultProps = {
+    body: false
+};
+const Card = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , bg , text , border , body , children , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnames.default(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
+        children: body ? /*#__PURE__*/ _jsxRuntime.jsx(CardBody, {
+            children: children
+        }) : children
+    }));
+});
+Card.displayName = 'Card';
+Card.defaultProps = defaultProps;
+var _default = Object.assign(Card, {
+    Img: _CardImg.default,
+    Title: CardTitle,
+    Subtitle: CardSubtitle,
+    Body: CardBody,
+    Link: CardLink,
+    Text: CardText,
+    Header: _CardHeader.default,
+    Footer: CardFooter,
+    ImgOverlay: CardImgOverlay
+});
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc","./divWithClassName":"27J3S","./CardImg":"68LPL","./CardHeader":"4E7Gz","react/jsx-runtime":"7jBZW"}],"27J3S":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+var _default = (className)=>/*#__PURE__*/ React.forwardRef((p, ref)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            ...p,
+            ref: ref,
+            className: _classnames.default(p.className, className)
+        })
+    )
+;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM","classnames":"5aJRc","react/jsx-runtime":"7jBZW"}],"68LPL":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const CardImg = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , variant , as: Component = 'img' , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card-img');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        className: _classnames.default(variant ? `${prefix}-${variant}` : prefix, className),
+        ...props
+    }));
+});
+CardImg.displayName = 'CardImg';
+var _default = CardImg;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"4E7Gz":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _CardHeaderContext = _interopRequireDefault(require("./CardHeaderContext"));
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const CardHeader = /*#__PURE__*/ React.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card-header');
+    const contextValue = React.useMemo(()=>({
+            cardHeaderBsPrefix: prefix
+        })
+    , [
+        prefix
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_CardHeaderContext.default.Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ref: ref,
+            ...props,
+            className: _classnames.default(className, prefix)
+        })
+    }));
+});
+CardHeader.displayName = 'CardHeader';
+var _default = CardHeader;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./CardHeaderContext":"7MjGQ","react/jsx-runtime":"7jBZW"}],"7MjGQ":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const context = /*#__PURE__*/ React.createContext(null);
+context.displayName = 'CardHeaderContext';
+var _default = context;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"react":"3b2NM"}],"1cDml":[function() {},{}],"6Dk2Z":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24555,83 +28247,132 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _movieViewScss = require("./movie-view.scss");
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
 class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-view",
             onClick: ()=>{
                 onBackClick(null);
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 10
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-poster",
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 11
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
-            src: movie.ImageURL,
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 12
             },
             __self: this
-        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-info",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            xs: 12,
+            md: 6,
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 13
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            className: "movie-view_image",
+            src: movie.ImageURL,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 14
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-title",
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 15
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
-            className: "value",
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "d-flex",
+            xs: 12,
+            md: 6,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 16
             },
             __self: this
-        }, movie.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-description",
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            className: "movie-view_title",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 18
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 19
             },
             __self: this
-        }, "Description: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, "Overview: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "movie-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }, " ", movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 20
             },
             __self: this
-        }, movie.Description))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            className: "movie-card_button",
+        }, "Genre: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 23
+                lineNumber: 20
             },
             __self: this
-        }, "Back")));
+        }, " ", movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "movie-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }, "Directed By: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "movie-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }, " ", movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "movie-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, "Genre: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "movie-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, " ", movie.Genre.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "d-flex align-items-start",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 24
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "movie-view_button",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, "Back")))));
     }
 }
 MovieView.propTypes = {
@@ -24658,6 +28399,61 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./movie-view.scss":"1A89J","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"1A89J":[function() {},{}],"1S2ED":[function() {},{}]},["1j6wU","Xk9RF","55ueq"], "55ueq", "parcelRequire9590")
+},{"react":"3b2NM","prop-types":"4dfy5","./movie-view.scss":"1A89J","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8"}],"1A89J":[function() {},{}],"3Mt3t":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _classnames = _interopRequireDefault(require("classnames"));
+var React = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+const defaultProps = {
+    fluid: false
+};
+const Container = /*#__PURE__*/ React.forwardRef(({ bsPrefix , fluid , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , className , ...props }, ref)=>{
+    const prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'container');
+    const suffix = typeof fluid === 'string' ? `-${fluid}` : '-fluid';
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnames.default(className, fluid ? `${prefix}${suffix}` : prefix)
+    }));
+});
+Container.displayName = 'Container';
+Container.defaultProps = defaultProps;
+var _default = Container;
+exports.default = _default;
+module.exports = exports.default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","react/jsx-runtime":"7jBZW"}],"1S2ED":[function() {},{}]},["1j6wU","Xk9RF","55ueq"], "55ueq", "parcelRequire9590")
 
 //# sourceMappingURL=index.cef1742d.js.map

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./registration-view.scss";
+import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from "react-bootstrap-floating-label";
 
 export function RegistrationView(props) {
   const [email, registerEmail] = useState('');
@@ -20,30 +23,46 @@ export function RegistrationView(props) {
 
   return (
     <div className="registration-view">
-      <h1>Welcome to CinemAPI</h1>
-      <p>Please enter your information below to create an account.</p>
-      <form>
-        <div className="registration-form">
-          <label className="registration-label">
-            Email:
-            <input type="email" value={email} onChange={e => registerEmail(e.target.value)} />
-          </label>
-          <label className="registration-label">
-            Username:
-            <input type="text" value={username} onChange={e => registerUsername(e.target.value)} />
-          </label>
-          <label className="registration-label">
-            Password:
-            <input type="password" value={password} onChange={e => registerPassword(e.target.value)} />
-          </label>
-          <label className="registration-label">
-            Date of Birth:
-            <input type="date" value={birthday} onChange={e => registerBirthday(e.target.value)} />
-          </label>
-        </div>
-        <button type="button" className="secondary-button" onClick={registerBack}>Back</button>
-        <button type="button" className="submit-button" onClick={handleSubmit}>Submit</button>
-      </form>
+      <h1 className="cinemapi_title-thin">Cinem<span className="cinemapi_title-thick">API</span></h1>
+      <Form className="registration-form">
+        <Form.Group className="mb-2">
+          <Form.Text className="reg-form-text1">Please enter your information below to create an account.</Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formHorizontalInput" value={email} onChange={e => registerEmail(e.target.value)}>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email"
+            className="mb-3"
+            type="email"
+          >
+            <Form.Control type="email" size="lg" placeholder="Email Address" />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formHorizontalInput" value={username} onChange={e => registerUsername(e.target.value)}>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Username"
+            className="mb-3"
+          >
+            <Form.Control type="text" size="lg" placeholder="Username" />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formHorizontalPassword" value={password} onChange={e => registerPassword(e.target.value)}>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Password"
+            className="mb-3"
+            type="password"
+          >
+            <Form.Control type="password" placeholder="Password" />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formHorizontalInput">
+          <Form.Control type="date" value={birthday} onChange={e => registerBirthday(e.target.value)} />
+        </Form.Group>
+        <Button type="button" variant="primary" onClick={handleSubmit}>Submit</Button>
+        <Button type="button" variant="secondary" onClick={registerBack}>Back</Button>
+      </Form>
     </div>
   );
 }

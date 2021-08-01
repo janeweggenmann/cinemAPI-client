@@ -1,40 +1,55 @@
+
 .login-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
+  background-color: white;
+  padding: 30px;
+  max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 17pt;
+  font-weight: 300;
+  color: #3c3c3c;
   align-content: center;
-  align-items: center;
 }
 
-p, label, button {
-  font-family: 'Roboto', sans-serif;
-  font-size: 10pt;
+.login-form-text1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13pt;
+  font-weight: 300;
+  color: #3c3c3c;
+  margin: 0 auto;
+  padding: 5px;
 }
 
-button, input {
-  width: 200px;
-  padding: 8px 0px;
-  margin: 5px 5px 8px 5px;
-  border-radius: 4px;
-  border-color: white;
+.login-form-text2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13pt;
+  font-weight: 300;
+  color: #3c3c3c;
+  margin:0 auto;
+  padding-top: 15px;
 }
 
-.login-label {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.mb-2, .mb-3 {
+  max-width: 85%;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.secondary-button {
-  background-color: #eaecee;
-  border-color: #eaecee;
-  color: black;
+.floating-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #3c3c3c;
 }
 
-button {
-  background-color: #1d272f;
-  color: white;
-  border-color: #1d272f;
+.floating-label [type=text],
+.floating-label [type=email] {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #3c3c3c;
 }

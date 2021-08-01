@@ -1,28 +1,57 @@
-.movie-view {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+.d-flex {
+  flex-direction: column;
+  text-align: left;
 }
 
-.movie-description {
-  text-align: left;
-  padding: 5px;
+.movie-view_image {
+  width: 70%;
+  max-height: 550px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+}
+
+.movie-view_title {
+  font-size: 32pt;
+  font-family: 'Anton', sans-serif;
+}
+
+.movie-view_description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 11pt;
+  line-height: 12pt;
   font-style: italic;
 }
 
-h2 {
-  margin-top: 0;
-  text-align: left;
+.movie-view_label {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 8pt;
 }
 
-.movie-card_button {
-  grid-column-start: 2;
-  grid-row-start: 2;
-  height: 40px;
-  justify-self: start;
-  align-self: end;
+.movie-view_text {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 11pt;
 }
 
-.movie-poster {
-  grid-row-end: span 2;
+.movie-view_button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: 11pt;
+  background-color: #3c3c3c;
+  color: white;
+  border-color: #3c3c3c;
+  height: 30px;
+  width: 50px;
+}
+
+.movie-view_button:hover {
+  opacity: 70%;
 }
