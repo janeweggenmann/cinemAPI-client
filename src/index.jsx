@@ -11,7 +11,7 @@ class MyFlixApplication extends React.Component {
   render() {
     return (
       <Container>
-        <MainView containerAttributes={{ style: 'background-color : #fff' }} />
+        <MainView />
       </Container>
     );
   }

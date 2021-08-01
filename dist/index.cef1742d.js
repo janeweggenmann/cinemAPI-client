@@ -885,9 +885,6 @@ class MyFlixApplication extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_mainView.MainView, {
-            containerAttributes: {
-                style: 'background-color : #fff'
-            },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/index.jsx",
                 lineNumber: 14
@@ -27239,6 +27236,8 @@ var _colDefault = parcelHelpers.interopDefault(_col);
 class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
+        const year = new Date(movie.Year);
+        const movieyear = year.getFullYear();
         return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "movie-view",
             onClick: ()=>{
@@ -27246,7 +27245,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 12
+                lineNumber: 14
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -27254,7 +27253,7 @@ class MovieView extends _reactDefault.default.Component {
             md: 6,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 13
+                lineNumber: 15
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -27262,7 +27261,7 @@ class MovieView extends _reactDefault.default.Component {
             src: movie.ImageURL,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 14
+                lineNumber: 16
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -27271,90 +27270,90 @@ class MovieView extends _reactDefault.default.Component {
             md: 6,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 16
+                lineNumber: 18
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             className: "movie-view_title",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 17
+                lineNumber: 19
             },
             __self: this
         }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 18
+                lineNumber: 20
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 19
+                lineNumber: 21
             },
             __self: this
         }, "Overview: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 19
+                lineNumber: 21
             },
             __self: this
         }, " ", movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 20
+                lineNumber: 22
             },
             __self: this
-        }, "Genre: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, "Year: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 20
+                lineNumber: 22
             },
             __self: this
-        }, " ", movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, " ", movieyear)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 23
             },
             __self: this
         }, "Directed By: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 23
             },
             __self: this
         }, " ", movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 22
+                lineNumber: 24
             },
             __self: this
         }, "Genre: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 22
+                lineNumber: 24
             },
             __self: this
         }, " ", movie.Genre.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "d-flex align-items-start",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 24
+                lineNumber: 26
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
             className: "movie-view_button",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 25
+                lineNumber: 27
             },
             __self: this
         }, "Back")))));
