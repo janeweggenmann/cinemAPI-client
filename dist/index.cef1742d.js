@@ -24650,7 +24650,11 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshSig$ = prevRefreshSig;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 },{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
+=======
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap-floating-label":"65tkN"}],"4dfy5":[function(require,module,exports) {
+>>>>>>> Stashed changes
 =======
 },{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap-floating-label":"65tkN"}],"4dfy5":[function(require,module,exports) {
 >>>>>>> Stashed changes
@@ -26622,8 +26626,11 @@ function registerExportsForReactRefresh(module) {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 },{"react-refresh/runtime":"55GO3"}],"1q2lk":[function(require,module,exports) {
 =======
+=======
+>>>>>>> Stashed changes
 },{"react-refresh/runtime":"55GO3"}],"65tkN":[function(require,module,exports) {
 /*! For license information please see index.js.LICENSE.txt */ (()=>{
     var t = {
@@ -27636,6 +27643,9 @@ function registerExportsForReactRefresh(module) {
 })();
 
 },{}],"1q2lk":[function(require,module,exports) {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -27857,7 +27867,11 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshSig$ = prevRefreshSig;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 },{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+=======
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap-floating-label":"65tkN"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+>>>>>>> Stashed changes
 =======
 },{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap-floating-label":"65tkN"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
 >>>>>>> Stashed changes
