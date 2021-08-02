@@ -46005,6 +46005,7 @@ object-assign
             var _c;
             $RefreshReg$(_c, "LoginView");
 
+<<<<<<< HEAD
             helpers.postlude(module);
         } finally {
             window.$RefreshReg$ = prevRefreshReg;
@@ -46016,6 +46017,19 @@ object-assign
         // http://fb.me/prop-types-in-prod
         var throwOnDirectAccess = true;
         module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
+=======
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap-floating-label":"65tkN","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
+var ReactIs = require('react-is');
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
+>>>>>>> parent of c927610 (Update dist)
 
     }, { "react-is": "68QIU", "./factoryWithTypeCheckers": "1PVBO" }], "68QIU": [function (require, module, exports) {
         'use strict';
@@ -48940,6 +48954,7 @@ object-assign
  * @param {function} functions to chain
  * @returns {function|null}
  */ function createChainedFunction(...funcs) {
+<<<<<<< HEAD
             return funcs.filter((f) => f != null
             ).reduce((acc, f) => {
                 if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
@@ -48964,6 +48979,47 @@ object-assign
         exports.defineInteropFlag = function (a) {
             Object.defineProperty(a, '__esModule', {
                 value: true
+=======
+    return funcs.filter((f)=>f != null
+    ).reduce((acc, f)=>{
+        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+        if (acc === null) return f;
+        return function chainedFunction(...args) {
+            // @ts-ignore
+            acc.apply(this, args); // @ts-ignore
+            f.apply(this, args);
+        };
+    }, null);
+}
+var _default = createChainedFunction;
+exports.default = _default;
+module.exports = exports.default;
+
+},{}],"65tkN":[function(require,module,exports) {
+/*! For license information please see index.js.LICENSE.txt */ (()=>{
+    var t = {
+        839: (t1, e, n)=>{
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+            });
+            o.push([
+                t1.id,
+                "/* Brennan Wilkes */\n\n.floating-label {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tjustify-content: center;\n\talign-items: flex-start;\n\ttext-align: left;\n}\n\n.floating-label > label {\n\tfont-size: 1rem;\n\tcolor: #495057;\n\tpointer-events: none;\n\tposition: absolute;\n\ttransform-origin: top left;\n\ttransition: all 0.2s ease-out;\n\tpadding-left: 1rem;\n\tline-height: 1;\n\tmargin-bottom: 0;\n}\n\n.floating-label:focus-within > label,\n.floating-label > .floating-label-active {\n\ttransform: translate(0, -50%) scale(0.6);\n}\n\n.floating-label > input:focus {\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tborder-color: #86b7fe;\n\toutline: 0;\n\tbox-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);\n}\n\n.floating-label > input {\n\tdisplay: block;\n\twidth: 100%;\n\tpadding: 1rem 0.75rem 0.25rem 0.75rem;\n\tfont-size: 1rem;\n\tfont-weight: 400;\n\tline-height: 1.5;\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tbackground-clip: padding-box;\n\tborder: 1px solid #ced4da;\n\t-webkit-appearance: none;\n\t-moz-appearance: none;\n\tappearance: none;\n\tborder-radius: 0.25rem;\n\ttransition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n",
+                ""
+            ]);
+            const i = o;
+        },
+        101: (t1, e, n)=>{
+            "use strict";
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+>>>>>>> parent of c927610 (Update dist)
             });
         };
         exports.exportAll = function (source, dest) {
@@ -50357,11 +50413,171 @@ object-assign
             })(), module.exports = r3;
         })();
 
+<<<<<<< HEAD
     }, {}], "1q2lk": [function (require, module, exports) {
         var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
         var prevRefreshReg = window.$RefreshReg$;
         var prevRefreshSig = window.$RefreshSig$;
         helpers.prelude(module);
+=======
+},{}],"2IRPi":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"1syny":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args;
+    var timeout = undefined;
+    return function(args1) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args1);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"55GO3"}],"1q2lk":[function(require,module,exports) {
+var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+>>>>>>> parent of c927610 (Update dist)
 
         try {
             var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -50574,6 +50790,7 @@ object-assign
             var _c;
             $RefreshReg$(_c, "RegistrationView");
 
+<<<<<<< HEAD
             helpers.postlude(module);
         } finally {
             window.$RefreshReg$ = prevRefreshReg;
@@ -50584,6 +50801,18 @@ object-assign
         var prevRefreshReg = window.$RefreshReg$;
         var prevRefreshSig = window.$RefreshSig$;
         helpers.prelude(module);
+=======
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap-floating-label":"65tkN","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+>>>>>>> parent of c927610 (Update dist)
 
         try {
             var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
