@@ -24497,48 +24497,48 @@ function LoginView(props) {
         className: "login-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 22
+            lineNumber: 21
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 23
+            lineNumber: 22
         },
         __self: this
     }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "cinemapi_title-thick",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 23
+            lineNumber: 22
         },
         __self: this
     }, "API")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 24
+            lineNumber: 23
         },
         __self: this
     }, "Your place to find information on movies, genres, and directors."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "login-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 25
+            lineNumber: 24
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 26
+            lineNumber: 25
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "login-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 27
+            lineNumber: 26
         },
         __self: this
     }, "Please enter your username and password below to log in.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -24549,7 +24549,7 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 29
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
@@ -24558,7 +24558,7 @@ function LoginView(props) {
         className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 30
+            lineNumber: 29
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -24567,7 +24567,7 @@ function LoginView(props) {
         placeholder: "Username",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 35
+            lineNumber: 34
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -24578,7 +24578,7 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 38
+            lineNumber: 37
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
@@ -24588,7 +24588,7 @@ function LoginView(props) {
         type: "password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 39
+            lineNumber: 38
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -24596,7 +24596,7 @@ function LoginView(props) {
         placeholder: "Password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 45
+            lineNumber: 44
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -24605,21 +24605,21 @@ function LoginView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 48
+            lineNumber: 47
         },
         __self: this
     }, "Login"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 49
+            lineNumber: 48
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "login-form-text2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 50
+            lineNumber: 49
         },
         __self: this
     }, "Not a member yet?")), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -24628,7 +24628,7 @@ function LoginView(props) {
         onClick: registerClick,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 52
+            lineNumber: 51
         },
         __self: this
     }, "Create Account"))));
@@ -26637,6 +26637,8 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _reactBootstrapFloatingLabel = require("react-bootstrap-floating-label");
+var _reactBootstrapFloatingLabelDefault = parcelHelpers.interopDefault(_reactBootstrapFloatingLabel);
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
@@ -26655,42 +26657,42 @@ function RegistrationView(props) {
         className: "registration-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 24
+            lineNumber: 25
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "cinemapi_title-thick",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, "API")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "registration-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 26
+            lineNumber: 27
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 27
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "reg-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 28
+            lineNumber: 29
         },
         __self: this
     }, "Please enter your information below to create an account.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26701,17 +26703,17 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 30
+            lineNumber: 31
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
         controlId: "floatingInput",
         label: "Email",
         className: "mb-3",
         type: "email",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 31
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26720,7 +26722,7 @@ function RegistrationView(props) {
         placeholder: "Email Address",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 37
+            lineNumber: 38
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26731,16 +26733,16 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 40
+            lineNumber: 41
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
         controlId: "floatingInput",
         label: "Username",
         className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 41
+            lineNumber: 42
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26749,7 +26751,7 @@ function RegistrationView(props) {
         placeholder: "Username",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 46
+            lineNumber: 47
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26760,17 +26762,17 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 49
+            lineNumber: 50
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapFloatingLabelDefault.default, {
         controlId: "floatingInput",
         label: "Password",
         className: "mb-3",
         type: "password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 50
+            lineNumber: 51
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26778,7 +26780,7 @@ function RegistrationView(props) {
         placeholder: "Password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 56
+            lineNumber: 57
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26786,7 +26788,7 @@ function RegistrationView(props) {
         controlId: "formHorizontalInput",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 59
+            lineNumber: 60
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26796,7 +26798,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 60
+            lineNumber: 61
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26805,7 +26807,7 @@ function RegistrationView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 62
+            lineNumber: 63
         },
         __self: this
     }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26814,7 +26816,7 @@ function RegistrationView(props) {
         onClick: registerBack,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 63
+            lineNumber: 64
         },
         __self: this
     }, "Back"))));
@@ -26837,7 +26839,1018 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap-floating-label":"65tkN","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"65tkN":[function(require,module,exports) {
+/*! For license information please see index.js.LICENSE.txt */ (()=>{
+    var t = {
+        839: (t1, e, n)=>{
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+            });
+            o.push([
+                t1.id,
+                "/* Brennan Wilkes */\n\n.floating-label {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tjustify-content: center;\n\talign-items: flex-start;\n\ttext-align: left;\n}\n\n.floating-label > label {\n\tfont-size: 1rem;\n\tcolor: #495057;\n\tpointer-events: none;\n\tposition: absolute;\n\ttransform-origin: top left;\n\ttransition: all 0.2s ease-out;\n\tpadding-left: 1rem;\n\tline-height: 1;\n\tmargin-bottom: 0;\n}\n\n.floating-label:focus-within > label,\n.floating-label > .floating-label-active {\n\ttransform: translate(0, -50%) scale(0.6);\n}\n\n.floating-label > input:focus {\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tborder-color: #86b7fe;\n\toutline: 0;\n\tbox-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);\n}\n\n.floating-label > input {\n\tdisplay: block;\n\twidth: 100%;\n\tpadding: 1rem 0.75rem 0.25rem 0.75rem;\n\tfont-size: 1rem;\n\tfont-weight: 400;\n\tline-height: 1.5;\n\tcolor: #212529;\n\tbackground-color: #fff;\n\tbackground-clip: padding-box;\n\tborder: 1px solid #ced4da;\n\t-webkit-appearance: none;\n\t-moz-appearance: none;\n\tappearance: none;\n\tborder-radius: 0.25rem;\n\ttransition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n",
+                ""
+            ]);
+            const i = o;
+        },
+        101: (t1, e, n)=>{
+            "use strict";
+            n.d(e, {
+                Z: ()=>i
+            });
+            var r = n(645), o = n.n(r)()(function(t2) {
+                return t2[1];
+            });
+            o.push([
+                t1.id,
+                "/* Brennan Wilkes */\n\n.loadingCog {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\twill-change: transform;\n\tposition: absolute;\n\tright: 0;\n\ttop: 10%;\n\tbottom: 10%;\n\tmargin-right: 1.25%;\n}\n\n.loadingCog:active,\n.loadingCog,\n.loadingCog:focus {\n\toutline: none;\n\tbox-shadow: none;\n}\n\n.loadingCog:hover {\n\tcursor: default !important;\n}\n",
+                ""
+            ]);
+            const i = o;
+        },
+        645: (t1)=>{
+            "use strict";
+            t1.exports = function(t2) {
+                var e = [];
+                return e.toString = function() {
+                    return this.map(function(e1) {
+                        var n = t2(e1);
+                        return e1[2] ? "@media ".concat(e1[2], " {").concat(n, "}") : n;
+                    }).join("");
+                }, e.i = function(t3, n, r) {
+                    "string" == typeof t3 && (t3 = [
+                        [
+                            null,
+                            t3,
+                            ""
+                        ]
+                    ]);
+                    var o = {
+                    };
+                    if (r) for(var i = 0; i < this.length; i++){
+                        var a = this[i][0];
+                        null != a && (o[a] = true);
+                    }
+                    for(var l = 0; l < t3.length; l++){
+                        var u = [].concat(t3[l]);
+                        r && o[u[0]] || (n && (u[2] ? u[2] = "".concat(n, " and ").concat(u[2]) : u[2] = n), e.push(u));
+                    }
+                }, e;
+            };
+        },
+        418: (t1)=>{
+            "use strict";
+            var e = Object.getOwnPropertySymbols, n = Object.prototype.hasOwnProperty, r = Object.prototype.propertyIsEnumerable;
+            function o(t2) {
+                if (null == t2) throw new TypeError("Object.assign cannot be called with null or undefined");
+                return Object(t2);
+            }
+            t1.exports = (function() {
+                try {
+                    if (!Object.assign) return false;
+                    var t2 = "abc";
+                    if (t2[5] = "de", "5" === Object.getOwnPropertyNames(t2)[0]) return false;
+                    for(var e1 = {
+                    }, n1 = 0; n1 < 10; n1++)e1["_" + String.fromCharCode(n1)] = n1;
+                    if ("0123456789" !== Object.getOwnPropertyNames(e1).map(function(t3) {
+                        return e1[t3];
+                    }).join("")) return false;
+                    var r1 = {
+                    };
+                    return "abcdefghijklmnopqrst".split("").forEach(function(t3) {
+                        r1[t3] = t3;
+                    }), "abcdefghijklmnopqrst" === Object.keys(Object.assign({
+                    }, r1)).join("");
+                } catch (t3) {
+                    return false;
+                }
+            })() ? Object.assign : function(t2, i) {
+                for(var a, l, u = o(t2), c = 1; c < arguments.length; c++){
+                    for(var s in a = Object(arguments[c]))n.call(a, s) && (u[s] = a[s]);
+                    if (e) {
+                        l = e(a);
+                        for(var f = 0; f < l.length; f++)r.call(a, l[f]) && (u[l[f]] = a[l[f]]);
+                    }
+                }
+                return u;
+            };
+        },
+        703: (t1, e, n)=>{
+            "use strict";
+            var r = n(414);
+            function o() {
+            }
+            function i() {
+            }
+            i.resetWarningCache = o, t1.exports = function() {
+                function t2(t3, e1, n1, o1, i1, a) {
+                    if (a !== r) {
+                        var l = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
+                        throw l.name = "Invariant Violation", l;
+                    }
+                }
+                function e1() {
+                    return t2;
+                }
+                t2.isRequired = t2;
+                var n1 = {
+                    array: t2,
+                    bool: t2,
+                    func: t2,
+                    number: t2,
+                    object: t2,
+                    string: t2,
+                    symbol: t2,
+                    any: t2,
+                    arrayOf: e1,
+                    element: t2,
+                    elementType: t2,
+                    instanceOf: e1,
+                    node: t2,
+                    objectOf: e1,
+                    oneOf: e1,
+                    oneOfType: e1,
+                    shape: e1,
+                    exact: e1,
+                    checkPropTypes: i,
+                    resetWarningCache: o
+                };
+                return n1.PropTypes = n1, n1;
+            };
+        },
+        697: (t1, e, n)=>{
+            t1.exports = n(703)();
+        },
+        414: (t1)=>{
+            "use strict";
+            t1.exports = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+        },
+        408: (t1, e, n)=>{
+            "use strict";
+            var r = n(418), o = 60103, i = 60106;
+            e.Fragment = 60107, e.StrictMode = 60108, e.Profiler = 60114;
+            var a = 60109, l = 60110, u = 60112;
+            e.Suspense = 60113;
+            var c = 60115, s3 = 60116;
+            if ("function" == typeof Symbol && Symbol.for) {
+                var f = Symbol.for;
+                o = f("react.element"), i = f("react.portal"), e.Fragment = f("react.fragment"), e.StrictMode = f("react.strict_mode"), e.Profiler = f("react.profiler"), a = f("react.provider"), l = f("react.context"), u = f("react.forward_ref"), e.Suspense = f("react.suspense"), c = f("react.memo"), s3 = f("react.lazy");
+            }
+            var p = "function" == typeof Symbol && Symbol.iterator;
+            function d(t2) {
+                for(var e1 = "https://reactjs.org/docs/error-decoder.html?invariant=" + t2, n1 = 1; n1 < arguments.length; n1++)e1 += "&args[]=" + encodeURIComponent(arguments[n1]);
+                return "Minified React error #" + t2 + "; visit " + e1 + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
+            }
+            var y = {
+                isMounted: function() {
+                    return false;
+                },
+                enqueueForceUpdate: function() {
+                },
+                enqueueReplaceState: function() {
+                },
+                enqueueSetState: function() {
+                }
+            }, h = {
+            };
+            function v(t2, e1, n1) {
+                this.props = t2, this.context = e1, this.refs = h, this.updater = n1 || y;
+            }
+            function g() {
+            }
+            function b(t2, e1, n1) {
+                this.props = t2, this.context = e1, this.refs = h, this.updater = n1 || y;
+            }
+            v.prototype.isReactComponent = {
+            }, v.prototype.setState = function(t2, e1) {
+                if ("object" != typeof t2 && "function" != typeof t2 && null != t2) throw Error(d(85));
+                this.updater.enqueueSetState(this, t2, e1, "setState");
+            }, v.prototype.forceUpdate = function(t2) {
+                this.updater.enqueueForceUpdate(this, t2, "forceUpdate");
+            }, g.prototype = v.prototype;
+            var m = b.prototype = new g;
+            m.constructor = b, r(m, v.prototype), m.isPureReactComponent = true;
+            var O = {
+                current: null
+            }, w = Object.prototype.hasOwnProperty, C = {
+                key: true,
+                ref: true,
+                __self: true,
+                __source: true
+            };
+            function S(t2, e1, n1) {
+                var r1, i1 = {
+                }, a1 = null, l1 = null;
+                if (null != e1) for(r1 in (void 0) !== e1.ref && (l1 = e1.ref), (void 0) !== e1.key && (a1 = "" + e1.key), e1)w.call(e1, r1) && !C.hasOwnProperty(r1) && (i1[r1] = e1[r1]);
+                var u1 = arguments.length - 2;
+                if (1 === u1) i1.children = n1;
+                else if (1 < u1) {
+                    for(var c1 = Array(u1), s1 = 0; s1 < u1; s1++)c1[s1] = arguments[s1 + 2];
+                    i1.children = c1;
+                }
+                if (t2 && t2.defaultProps) for(r1 in u1 = t2.defaultProps)(void 0) === i1[r1] && (i1[r1] = u1[r1]);
+                return {
+                    $$typeof: o,
+                    type: t2,
+                    key: a1,
+                    ref: l1,
+                    props: i1,
+                    _owner: O.current
+                };
+            }
+            function j(t2) {
+                return "object" == typeof t2 && null !== t2 && t2.$$typeof === o;
+            }
+            var _ = /\/+/g;
+            function E(t2, e1) {
+                return "object" == typeof t2 && null !== t2 && null != t2.key ? (function(t3) {
+                    var e2 = {
+                        "=": "=0",
+                        ":": "=2"
+                    };
+                    return "$" + t3.replace(/[=:]/g, function(t4) {
+                        return e2[t4];
+                    });
+                })("" + t2.key) : e1.toString(36);
+            }
+            function x(t2, e1, n1, r1, a1) {
+                var l1 = typeof t2;
+                "undefined" !== l1 && "boolean" !== l1 || (t2 = null);
+                var u1 = false;
+                if (null === t2) u1 = true;
+                else switch(l1){
+                    case "string":
+                    case "number":
+                        u1 = true;
+                        break;
+                    case "object":
+                        switch(t2.$$typeof){
+                            case o:
+                            case i:
+                                u1 = true;
+                        }
+                }
+                if (u1) return a1 = a1(u1 = t2), t2 = "" === r1 ? "." + E(u1, 0) : r1, Array.isArray(a1) ? (n1 = "", null != t2 && (n1 = t2.replace(_, "$&/") + "/"), x(a1, e1, n1, "", function(t3) {
+                    return t3;
+                })) : null != a1 && (j(a1) && (a1 = (function(t3, e2) {
+                    return {
+                        $$typeof: o,
+                        type: t3.type,
+                        key: e2,
+                        ref: t3.ref,
+                        props: t3.props,
+                        _owner: t3._owner
+                    };
+                })(a1, n1 + (!a1.key || u1 && u1.key === a1.key ? "" : ("" + a1.key).replace(_, "$&/") + "/") + t2)), e1.push(a1)), 1;
+                if (u1 = 0, r1 = "" === r1 ? "." : r1 + ":", Array.isArray(t2)) for(var c2 = 0; c2 < t2.length; c2++){
+                    var s2 = r1 + E(l1 = t2[c2], c2);
+                    u1 += x(l1, e1, n1, s2, a1);
+                }
+                else if ("function" == typeof (s2 = function(t3) {
+                    return null === t3 || "object" != typeof t3 ? null : "function" == typeof (t3 = p && t3[p] || t3["@@iterator"]) ? t3 : null;
+                }(t2))) for(t2 = s2.call(t2), c2 = 0; !(l1 = t2.next()).done;)u1 += x(l1 = l1.value, e1, n1, s2 = r1 + E(l1, c2++), a1);
+                else if ("object" === l1) throw e1 = "" + t2, Error(d(31, "[object Object]" === e1 ? "object with keys {" + Object.keys(t2).join(", ") + "}" : e1));
+                return u1;
+            }
+            function P(t2, e1, n1) {
+                if (null == t2) return t2;
+                var r1 = [], o1 = 0;
+                return x(t2, r1, "", "", function(t3) {
+                    return e1.call(n1, t3, o1++);
+                }), r1;
+            }
+            function k(t2) {
+                if (-1 === t2._status) {
+                    var e1 = t2._result;
+                    e1 = e1(), t2._status = 0, t2._result = e1, e1.then(function(e2) {
+                        0 === t2._status && (e2 = e2.default, t2._status = 1, t2._result = e2);
+                    }, function(e2) {
+                        0 === t2._status && (t2._status = 2, t2._result = e2);
+                    });
+                }
+                if (1 === t2._status) return t2._result;
+                throw t2._result;
+            }
+            var R = {
+                current: null
+            };
+            function T() {
+                var t2 = R.current;
+                if (null === t2) throw Error(d(321));
+                return t2;
+            }
+            var I = {
+                ReactCurrentDispatcher: R,
+                ReactCurrentBatchConfig: {
+                    transition: 0
+                },
+                ReactCurrentOwner: O,
+                IsSomeRendererActing: {
+                    current: false
+                },
+                assign: r
+            };
+            e.Children = {
+                map: P,
+                forEach: function(t2, e2, n1) {
+                    P(t2, function() {
+                        e2.apply(this, arguments);
+                    }, n1);
+                },
+                count: function(t2) {
+                    var e2 = 0;
+                    return P(t2, function() {
+                        e2++;
+                    }), e2;
+                },
+                toArray: function(t2) {
+                    return P(t2, function(t3) {
+                        return t3;
+                    }) || [];
+                },
+                only: function(t2) {
+                    if (!j(t2)) throw Error(d(143));
+                    return t2;
+                }
+            }, e.Component = v, e.PureComponent = b, e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = I, e.cloneElement = function(t2, e2, n1) {
+                if (null == t2) throw Error(d(267, t2));
+                var i1 = r({
+                }, t2.props), a1 = t2.key, l1 = t2.ref, u1 = t2._owner;
+                if (null != e2) {
+                    if ((void 0) !== e2.ref && (l1 = e2.ref, u1 = O.current), (void 0) !== e2.key && (a1 = "" + e2.key), t2.type && t2.type.defaultProps) var c2 = t2.type.defaultProps;
+                    for(s4 in e2)w.call(e2, s4) && !C.hasOwnProperty(s4) && (i1[s4] = (void 0) === e2[s4] && (void 0) !== c2 ? c2[s4] : e2[s4]);
+                }
+                var s4 = arguments.length - 2;
+                if (1 === s4) i1.children = n1;
+                else if (1 < s4) {
+                    c2 = Array(s4);
+                    for(var f = 0; f < s4; f++)c2[f] = arguments[f + 2];
+                    i1.children = c2;
+                }
+                return {
+                    $$typeof: o,
+                    type: t2.type,
+                    key: a1,
+                    ref: l1,
+                    props: i1,
+                    _owner: u1
+                };
+            }, e.createContext = function(t2, e2) {
+                return (void 0) === e2 && (e2 = null), (t2 = {
+                    $$typeof: l,
+                    _calculateChangedBits: e2,
+                    _currentValue: t2,
+                    _currentValue2: t2,
+                    _threadCount: 0,
+                    Provider: null,
+                    Consumer: null
+                }).Provider = {
+                    $$typeof: a,
+                    _context: t2
+                }, t2.Consumer = t2;
+            }, e.createElement = S, e.createFactory = function(t2) {
+                var e2 = S.bind(null, t2);
+                return e2.type = t2, e2;
+            }, e.createRef = function() {
+                return {
+                    current: null
+                };
+            }, e.forwardRef = function(t2) {
+                return {
+                    $$typeof: u,
+                    render: t2
+                };
+            }, e.isValidElement = j, e.lazy = function(t2) {
+                return {
+                    $$typeof: s3,
+                    _payload: {
+                        _status: -1,
+                        _result: t2
+                    },
+                    _init: k
+                };
+            }, e.memo = function(t2, e2) {
+                return {
+                    $$typeof: c,
+                    type: t2,
+                    compare: (void 0) === e2 ? null : e2
+                };
+            }, e.useCallback = function(t2, e2) {
+                return T().useCallback(t2, e2);
+            }, e.useContext = function(t2, e2) {
+                return T().useContext(t2, e2);
+            }, e.useDebugValue = function() {
+            }, e.useEffect = function(t2, e2) {
+                return T().useEffect(t2, e2);
+            }, e.useImperativeHandle = function(t2, e2, n1) {
+                return T().useImperativeHandle(t2, e2, n1);
+            }, e.useLayoutEffect = function(t2, e2) {
+                return T().useLayoutEffect(t2, e2);
+            }, e.useMemo = function(t2, e2) {
+                return T().useMemo(t2, e2);
+            }, e.useReducer = function(t2, e2, n1) {
+                return T().useReducer(t2, e2, n1);
+            }, e.useRef = function(t2) {
+                return T().useRef(t2);
+            }, e.useState = function(t2) {
+                return T().useState(t2);
+            }, e.version = "17.0.1";
+        },
+        294: (t1, e2, n)=>{
+            "use strict";
+            t1.exports = n(408);
+        },
+        379: (t1, e2, n)=>{
+            "use strict";
+            var r, o = function() {
+                var t2 = {
+                };
+                return function(e3) {
+                    if ((void 0) === t2[e3]) {
+                        var n1 = document.querySelector(e3);
+                        if (window.HTMLIFrameElement && n1 instanceof window.HTMLIFrameElement) try {
+                            n1 = n1.contentDocument.head;
+                        } catch (t3) {
+                            n1 = null;
+                        }
+                        t2[e3] = n1;
+                    }
+                    return t2[e3];
+                };
+            }(), i = [];
+            function a(t2) {
+                for(var e3 = -1, n2 = 0; n2 < i.length; n2++)if (i[n2].identifier === t2) {
+                    e3 = n2;
+                    break;
+                }
+                return e3;
+            }
+            function l(t2, e3) {
+                for(var n2 = {
+                }, r1 = [], o1 = 0; o1 < t2.length; o1++){
+                    var l1 = t2[o1], u = e3.base ? l1[0] + e3.base : l1[0], c3 = n2[u] || 0, s3 = "".concat(u, " ").concat(c3);
+                    n2[u] = c3 + 1;
+                    var f = a(s3), p = {
+                        css: l1[1],
+                        media: l1[2],
+                        sourceMap: l1[3]
+                    };
+                    -1 !== f ? (i[f].references++, i[f].updater(p)) : i.push({
+                        identifier: s3,
+                        updater: h(p, e3),
+                        references: 1
+                    }), r1.push(s3);
+                }
+                return r1;
+            }
+            function u(t2) {
+                var e3 = document.createElement("style"), r1 = t2.attributes || {
+                };
+                if ((void 0) === r1.nonce) {
+                    var i1 = n.nc;
+                    i1 && (r1.nonce = i1);
+                }
+                if (Object.keys(r1).forEach(function(t3) {
+                    e3.setAttribute(t3, r1[t3]);
+                }), "function" == typeof t2.insert) t2.insert(e3);
+                else {
+                    var a1 = o(t2.insert || "head");
+                    if (!a1) throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+                    a1.appendChild(e3);
+                }
+                return e3;
+            }
+            var c4, s4 = (c4 = [], function(t2, e3) {
+                return c4[t2] = e3, c4.filter(Boolean).join("\n");
+            });
+            function f(t2, e3, n2, r1) {
+                var o1 = n2 ? "" : r1.media ? "@media ".concat(r1.media, " {").concat(r1.css, "}") : r1.css;
+                if (t2.styleSheet) t2.styleSheet.cssText = s4(e3, o1);
+                else {
+                    var i2 = document.createTextNode(o1), a2 = t2.childNodes;
+                    a2[e3] && t2.removeChild(a2[e3]), a2.length ? t2.insertBefore(i2, a2[e3]) : t2.appendChild(i2);
+                }
+            }
+            function p(t2, e3, n2) {
+                var r1 = n2.css, o1 = n2.media, i3 = n2.sourceMap;
+                if (o1 ? t2.setAttribute("media", o1) : t2.removeAttribute("media"), i3 && "undefined" != typeof btoa && (r1 += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i3)))), " */")), t2.styleSheet) t2.styleSheet.cssText = r1;
+                else {
+                    for(; t2.firstChild;)t2.removeChild(t2.firstChild);
+                    t2.appendChild(document.createTextNode(r1));
+                }
+            }
+            var d = null, y = 0;
+            function h(t2, e3) {
+                var n2, r1, o1;
+                if (e3.singleton) {
+                    var i3 = y++;
+                    n2 = d || (d = u(e3)), r1 = f.bind(null, n2, i3, false), o1 = f.bind(null, n2, i3, true);
+                } else n2 = u(e3), r1 = p.bind(null, n2, e3), o1 = function() {
+                    (function(t3) {
+                        if (null === t3.parentNode) return false;
+                        t3.parentNode.removeChild(t3);
+                    })(n2);
+                };
+                return r1(t2), function(e4) {
+                    if (e4) {
+                        if (e4.css === t2.css && e4.media === t2.media && e4.sourceMap === t2.sourceMap) return;
+                        r1(t2 = e4);
+                    } else o1();
+                };
+            }
+            t1.exports = function(t2, e3) {
+                (e3 = e3 || {
+                }).singleton || "boolean" == typeof e3.singleton || (e3.singleton = ((void 0) === r && (r = Boolean(window && document && document.all && !window.atob)), r));
+                var n2 = l(t2 = t2 || [], e3);
+                return function(t3) {
+                    if (t3 = t3 || [], "[object Array]" === Object.prototype.toString.call(t3)) {
+                        for(var r1 = 0; r1 < n2.length; r1++){
+                            var o1 = a(n2[r1]);
+                            i[o1].references--;
+                        }
+                        for(var u1 = l(t3, e3), c5 = 0; c5 < n2.length; c5++){
+                            var s5 = a(n2[c5]);
+                            0 === i[s5].references && (i[s5].updater(), i.splice(s5, 1));
+                        }
+                        n2 = u1;
+                    }
+                };
+            };
+        }
+    }, e2 = {
+    };
+    function n2(r2) {
+        if (e2[r2]) return e2[r2].exports;
+        var o2 = e2[r2] = {
+            id: r2,
+            exports: {
+            }
+        };
+        return t[r2](o2, o2.exports, n2), o2.exports;
+    }
+    n2.n = (t1)=>{
+        var e3 = t1 && t1.__esModule ? ()=>t1.default
+         : ()=>t1
+        ;
+        return n2.d(e3, {
+            a: e3
+        }), e3;
+    }, n2.d = (t1, e4)=>{
+        for(var r2 in e4)n2.o(e4, r2) && !n2.o(t1, r2) && Object.defineProperty(t1, r2, {
+            enumerable: true,
+            get: e4[r2]
+        });
+    }, n2.o = (t1, e4)=>Object.prototype.hasOwnProperty.call(t1, e4)
+    , n2.r = (t1)=>{
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t1, Symbol.toStringTag, {
+            value: "Module"
+        }), Object.defineProperty(t1, "__esModule", {
+            value: true
+        });
+    };
+    var r3 = {
+    };
+    (()=>{
+        n2.r(r3), n2.d(r3, {
+            default: ()=>N
+        });
+        var t1 = n2(294), e4 = n2(697), o2 = n2.n(e4), i4 = n2(379), a3 = n2.n(i4), l2 = n2(839);
+        a3()(l2.Z, {
+            insert: "head",
+            singleton: false
+        }), l2.Z.locals;
+        var u2 = {
+            color: void 0,
+            size: void 0,
+            className: void 0,
+            style: void 0,
+            attr: void 0
+        }, c6 = t1.createContext && t1.createContext(u2), s6 = function() {
+            return (s6 = Object.assign || function(t2) {
+                for(var e5, n3 = 1, r4 = arguments.length; n3 < r4; n3++)for(var o3 in e5 = arguments[n3])Object.prototype.hasOwnProperty.call(e5, o3) && (t2[o3] = e5[o3]);
+                return t2;
+            }).apply(this, arguments);
+        };
+        function f(e5) {
+            return e5 && e5.map(function(e6, n3) {
+                return t1.createElement(e6.tag, s6({
+                    key: n3
+                }, e6.attr), f(e6.child));
+            });
+        }
+        function p(e5) {
+            return function(n3) {
+                return t1.createElement(d, s6({
+                    attr: s6({
+                    }, e5.attr)
+                }, n3), f(e5.child));
+            };
+        }
+        function d(e5) {
+            var n3 = function(n4) {
+                var r4, o3 = e5.attr, i5 = e5.size, a4 = e5.title, l3 = function(t2, e6) {
+                    var n5 = {
+                    };
+                    for(var r5 in t2)Object.prototype.hasOwnProperty.call(t2, r5) && e6.indexOf(r5) < 0 && (n5[r5] = t2[r5]);
+                    if (null != t2 && "function" == typeof Object.getOwnPropertySymbols) {
+                        var o4 = 0;
+                        for(r5 = Object.getOwnPropertySymbols(t2); o4 < r5.length; o4++)e6.indexOf(r5[o4]) < 0 && Object.prototype.propertyIsEnumerable.call(t2, r5[o4]) && (n5[r5[o4]] = t2[r5[o4]]);
+                    }
+                    return n5;
+                }(e5, [
+                    "attr",
+                    "size",
+                    "title"
+                ]), u3 = i5 || n4.size || "1em";
+                return n4.className && (r4 = n4.className), e5.className && (r4 = (r4 ? r4 + " " : "") + e5.className), t1.createElement("svg", s6({
+                    stroke: "currentColor",
+                    fill: "currentColor",
+                    strokeWidth: "0"
+                }, n4.attr, o3, l3, {
+                    className: r4,
+                    style: s6(s6({
+                        color: e5.color || n4.color
+                    }, n4.style), e5.style),
+                    height: u3,
+                    width: u3,
+                    xmlns: "http://www.w3.org/2000/svg"
+                }), a4 && t1.createElement("title", null, a4), e5.children);
+            };
+            return (void 0) !== c6 ? t1.createElement(c6.Consumer, null, function(t2) {
+                return n3(t2);
+            }) : n3(u2);
+        }
+        function y(t2) {
+            return p({
+                tag: "svg",
+                attr: {
+                    version: "1.1",
+                    viewBox: "0 0 16 16"
+                },
+                child: [
+                    {
+                        tag: "path",
+                        attr: {
+                            d: "M14.59 9.535c-0.839-1.454-0.335-3.317 1.127-4.164l-1.572-2.723c-0.449 0.263-0.972 0.414-1.529 0.414-1.68 0-3.042-1.371-3.042-3.062h-3.145c0.004 0.522-0.126 1.051-0.406 1.535-0.839 1.454-2.706 1.948-4.17 1.106l-1.572 2.723c0.453 0.257 0.845 0.634 1.123 1.117 0.838 1.452 0.336 3.311-1.12 4.16l1.572 2.723c0.448-0.261 0.967-0.41 1.522-0.41 1.675 0 3.033 1.362 3.042 3.046h3.145c-0.001-0.517 0.129-1.040 0.406-1.519 0.838-1.452 2.7-1.947 4.163-1.11l1.572-2.723c-0.45-0.257-0.839-0.633-1.116-1.113zM8 11.24c-1.789 0-3.24-1.45-3.24-3.24s1.45-3.24 3.24-3.24c1.789 0 3.24 1.45 3.24 3.24s-1.45 3.24-3.24 3.24z"
+                        }
+                    }
+                ]
+            })(t2);
+        }
+        var h = n2(101);
+        function v(t2) {
+            return (v = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
+                return typeof t3;
+            } : function(t3) {
+                return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            })(t2);
+        }
+        function g(t2, e5) {
+            var n3 = Object.keys(t2);
+            if (Object.getOwnPropertySymbols) {
+                var r4 = Object.getOwnPropertySymbols(t2);
+                e5 && (r4 = r4.filter(function(e6) {
+                    return Object.getOwnPropertyDescriptor(t2, e6).enumerable;
+                })), n3.push.apply(n3, r4);
+            }
+            return n3;
+        }
+        function b(t2, e5, n3) {
+            return e5 in t2 ? Object.defineProperty(t2, e5, {
+                value: n3,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            }) : t2[e5] = n3, t2;
+        }
+        function m(t2, e5) {
+            for(var n3 = 0; n3 < e5.length; n3++){
+                var r5 = e5[n3];
+                r5.enumerable = r5.enumerable || false, r5.configurable = true, "value" in r5 && (r5.writable = true), Object.defineProperty(t2, r5.key, r5);
+            }
+        }
+        function O(t2, e5) {
+            return (O = Object.setPrototypeOf || function(t3, e6) {
+                return t3.__proto__ = e6, t3;
+            })(t2, e5);
+        }
+        function w(t2, e5) {
+            return !e5 || "object" !== v(e5) && "function" != typeof e5 ? C(t2) : e5;
+        }
+        function C(t2) {
+            if ((void 0) === t2) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return t2;
+        }
+        function S(t2) {
+            return (S = Object.setPrototypeOf ? Object.getPrototypeOf : function(t3) {
+                return t3.__proto__ || Object.getPrototypeOf(t3);
+            })(t2);
+        }
+        a3()(h.Z, {
+            insert: "head",
+            singleton: false
+        }), h.Z.locals;
+        var j = function(e5) {
+            (function(t2, e6) {
+                if ("function" != typeof e6 && null !== e6) throw new TypeError("Super expression must either be null or a function");
+                t2.prototype = Object.create(e6 && e6.prototype, {
+                    constructor: {
+                        value: t2,
+                        writable: true,
+                        configurable: true
+                    }
+                }), e6 && O(t2, e6);
+            })(l5, e5);
+            var n3, r6, o3, i5, a4 = (o3 = l5, i5 = function() {
+                if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+                if (Reflect.construct.sham) return false;
+                if ("function" == typeof Proxy) return true;
+                try {
+                    return Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+                    })), true;
+                } catch (t2) {
+                    return false;
+                }
+            }(), function() {
+                var t2, e6 = S(o3);
+                if (i5) {
+                    var n4 = S(this).constructor;
+                    t2 = Reflect.construct(e6, arguments, n4);
+                } else t2 = e6.apply(this, arguments);
+                return w(this, t2);
+            });
+            function l5(t2) {
+                var e6, n5;
+                return (function(t3, e7) {
+                    if (!(t3 instanceof e7)) throw new TypeError("Cannot call a class as a function");
+                })(this, l5), (n5 = a4.call(this, t2)).triggerRotate = n5.triggerRotate.bind(C(n5)), n5.state = {
+                    id: null !== (e6 = n5.props.id) && (void 0) !== e6 ? e6 : "LoadingCog-".concat(parseInt(1000 * Math.random())),
+                    rotateInterval: void 0,
+                    rot: 0
+                }, n5.props.rotating && n5.triggerRotate(), n5;
+            }
+            return n3 = l5, r6 = [
+                {
+                    key: "componentWillUnmount",
+                    value: function() {
+                        this.endRotate(false);
+                    }
+                },
+                {
+                    key: "endRotate",
+                    value: function() {
+                        var t2 = !(arguments.length > 0 && (void 0) !== arguments[0]) || arguments[0];
+                        this.state.rotateInterval && (window.clearInterval(this.state.rotateInterval), t2 && this.setState({
+                            rotateInterval: void 0
+                        }));
+                    }
+                },
+                {
+                    key: "triggerRotate",
+                    value: function() {
+                        var t2 = this;
+                        this.state.rotateInterval && this.endRotate(false);
+                        var e6 = window.setInterval(function() {
+                            t2.setState({
+                                rot: t2.state.rot + 1
+                            });
+                        }, 10);
+                        this.setState({
+                            rotateInterval: e6
+                        });
+                    }
+                },
+                {
+                    key: "componentDidUpdate",
+                    value: function(t2) {
+                        !t2.rotating && this.props.rotating ? this.triggerRotate() : t2.rotating && !this.props.rotating && this.endRotate();
+                    }
+                },
+                {
+                    key: "render",
+                    value: function() {
+                        var e6, n5 = this.props.style ? function(t2) {
+                            for(var e7 = 1; e7 < arguments.length; e7++){
+                                var n6 = null != arguments[e7] ? arguments[e7] : {
+                                };
+                                e7 % 2 ? g(Object(n6), true).forEach(function(e8) {
+                                    b(t2, e8, n6[e8]);
+                                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t2, Object.getOwnPropertyDescriptors(n6)) : g(Object(n6)).forEach(function(e8) {
+                                    Object.defineProperty(t2, e8, Object.getOwnPropertyDescriptor(n6, e8));
+                                });
+                            }
+                            return t2;
+                        }({
+                        }, this.props.style) : {
+                        };
+                        return n5.transform = "rotate(".concat(this.state.rot, "deg)"), t1.createElement(t1.Fragment, null, t1.createElement("div", {
+                            style: n5,
+                            className: "loadingCog",
+                            id: this.state.id
+                        }, t1.createElement(y, {
+                            size: null !== (e6 = this.props.size) && (void 0) !== e6 ? e6 : 30
+                        })));
+                    }
+                }
+            ], m(n3.prototype, r6), l5;
+        }(t1.Component);
+        j.propTypes = {
+            style: o2().object,
+            size: o2().number,
+            rotating: o2().bool,
+            id: o2().string
+        };
+        const _ = j;
+        function E(t2) {
+            return (E = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t3) {
+                return typeof t3;
+            } : function(t3) {
+                return t3 && "function" == typeof Symbol && t3.constructor === Symbol && t3 !== Symbol.prototype ? "symbol" : typeof t3;
+            })(t2);
+        }
+        function x(t2, e5) {
+            for(var n3 = 0; n3 < e5.length; n3++){
+                var r6 = e5[n3];
+                r6.enumerable = r6.enumerable || false, r6.configurable = true, "value" in r6 && (r6.writable = true), Object.defineProperty(t2, r6.key, r6);
+            }
+        }
+        function P(t2, e5) {
+            return (P = Object.setPrototypeOf || function(t3, e6) {
+                return t3.__proto__ = e6, t3;
+            })(t2, e5);
+        }
+        function k(t2, e5) {
+            return !e5 || "object" !== E(e5) && "function" != typeof e5 ? R(t2) : e5;
+        }
+        function R(t2) {
+            if ((void 0) === t2) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return t2;
+        }
+        function T(t2) {
+            return (T = Object.setPrototypeOf ? Object.getPrototypeOf : function(t3) {
+                return t3.__proto__ || Object.getPrototypeOf(t3);
+            })(t2);
+        }
+        var I = function(e5) {
+            (function(t2, e6) {
+                if ("function" != typeof e6 && null !== e6) throw new TypeError("Super expression must either be null or a function");
+                t2.prototype = Object.create(e6 && e6.prototype, {
+                    constructor: {
+                        value: t2,
+                        writable: true,
+                        configurable: true
+                    }
+                }), e6 && P(t2, e6);
+            })(l7, e5);
+            var n3, r7, o3, i5, a4 = (o3 = l7, i5 = function() {
+                if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+                if (Reflect.construct.sham) return false;
+                if ("function" == typeof Proxy) return true;
+                try {
+                    return Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+                    })), true;
+                } catch (t2) {
+                    return false;
+                }
+            }(), function() {
+                var t2, e6 = T(o3);
+                if (i5) {
+                    var n5 = T(this).constructor;
+                    t2 = Reflect.construct(e6, arguments, n5);
+                } else t2 = e6.apply(this, arguments);
+                return k(this, t2);
+            });
+            function l7(t2) {
+                var e6, n7, r8, o5, i6;
+                (function(t3, e7) {
+                    if (!(t3 instanceof e7)) throw new TypeError("Cannot call a class as a function");
+                })(this, l7), (i6 = a4.call(this, t2)).handleTextChange = i6.handleTextChange.bind(R(i6));
+                var u3 = null !== (e6 = i6.props.id) && (void 0) !== e6 ? e6 : "floating-label".concat(parseInt(1000 * Math.random()));
+                return i6.state = {
+                    isActive: !!i6.props.initialValue,
+                    text: null !== (n7 = i6.props.initialValue) && (void 0) !== n7 ? n7 : "",
+                    id: u3,
+                    labelId: null !== (r8 = i6.props.labelId) && (void 0) !== r8 ? r8 : "".concat(u3, "-label"),
+                    inputId: null !== (o5 = i6.props.inputId) && (void 0) !== o5 ? o5 : "".concat(u3, "-input"),
+                    queuedChangeTimeout: void 0,
+                    cogId: "".concat(u3, "-cog")
+                }, i6;
+            }
+            return n3 = l7, r7 = [
+                {
+                    key: "componentDidUpdate",
+                    value: function(t2) {
+                        this.props.initialValue !== t2.initialValue && this.setState({
+                            text: this.props.initialValue,
+                            isActive: !!this.props.initialValue
+                        });
+                    }
+                },
+                {
+                    key: "handleTextChange",
+                    value: function(t2) {
+                        var e6 = this, n7 = arguments.length > 1 && (void 0) !== arguments[1] && arguments[1];
+                        if (this.setState({
+                            isActive: "" !== t2.target.value,
+                            text: t2.target.value
+                        }), this.props.onChange) {
+                            if (this.props.onChangeDelay) {
+                                if (this.state.queuedChangeTimeout && clearTimeout(this.state.queuedChangeTimeout), n7) this.props.onChange(t2);
+                                else {
+                                    var r8 = setTimeout(function() {
+                                        e6.props.onChange(t2), e6.setState({
+                                            queuedChangeTimeout: void 0
+                                        });
+                                    }, this.props.onChangeDelay);
+                                    this.setState({
+                                        queuedChangeTimeout: r8
+                                    });
+                                }
+                            } else this.props.onChange(t2);
+                        }
+                    }
+                },
+                {
+                    key: "render",
+                    value: function() {
+                        var e6, n7, r9, o5, i6, a5, l8, u3, c7, s7, f1, p1 = this, d1 = {
+                            className: null !== (e6 = this.props.className) && (void 0) !== e6 ? e6 : "",
+                            labelClassName: null !== (n7 = this.props.labelClassName) && (void 0) !== n7 ? n7 : "",
+                            inputClassName: null !== (r9 = this.props.inputClassName) && (void 0) !== r9 ? r9 : "",
+                            type: null !== (o5 = this.props.type) && (void 0) !== o5 ? o5 : "text",
+                            label: null !== (i6 = this.props.label) && (void 0) !== i6 ? i6 : "Floating Label",
+                            style: null !== (a5 = this.props.style) && (void 0) !== a5 ? a5 : {
+                            },
+                            labelStyle: null !== (l8 = this.props.labelStyle) && (void 0) !== l8 ? l8 : {
+                            },
+                            inputStyle: null !== (u3 = this.props.inputStyle) && (void 0) !== u3 ? u3 : {
+                            }
+                        };
+                        return t1.createElement(t1.Fragment, null, t1.createElement("div", {
+                            className: "floating-label ".concat(d1.className),
+                            id: this.state.id,
+                            style: d1.style
+                        }, t1.createElement("input", {
+                            className: d1.inputClassName,
+                            id: this.state.inputId,
+                            type: d1.type,
+                            value: this.state.text,
+                            onChange: this.handleTextChange,
+                            onBlur: function(t2) {
+                                p1.props.onBlur && p1.props.onBlur(t2);
+                            },
+                            onFocus: function(t2) {
+                                p1.props.onFocus && p1.props.onFocus(t2);
+                            },
+                            onKeyDown: function(t2) {
+                                "Enter" === t2.key && p1.handleTextChange(t2, true);
+                            },
+                            style: d1.inputStyle
+                        }), t1.createElement("label", {
+                            id: this.state.labelId,
+                            className: "".concat(d1.labelClassName).concat(this.state.isActive ? " floating-label-active" : ""),
+                            style: d1.labelStyle
+                        }, d1.label), this.props.loadingCog ? t1.createElement(_, {
+                            id: this.state.cogId,
+                            rotating: null !== (c7 = this.props.loadingCogSpinning) && (void 0) !== c7 && c7,
+                            size: null !== (s7 = this.props.loadingCogSize) && (void 0) !== s7 ? s7 : 30,
+                            style: null !== (f1 = this.props.loadingCogStyle) && (void 0) !== f1 ? f1 : {
+                            }
+                        }) : t1.createElement(t1.Fragment, null)));
+                    }
+                }
+            ], x(n3.prototype, r7), l7;
+        }(t1.Component);
+        I.propTypes = {
+            id: o2().string,
+            labelId: o2().string,
+            inputId: o2().string,
+            className: o2().string,
+            labelClassName: o2().string,
+            inputClassName: o2().string,
+            type: o2().string,
+            onChange: o2().func,
+            onBlur: o2().func,
+            onFocus: o2().func,
+            onChangeDelay: o2().number,
+            label: o2().string,
+            style: o2().object,
+            labelStyle: o2().object,
+            inputStyle: o2().object,
+            loadingCog: o2().bool,
+            loadingCogSpinning: o2().bool,
+            loadingCogSize: o2().number,
+            loadingCogStyle: o2().object,
+            initialValue: o2().string
+        };
+        const N = I;
+    })(), module.exports = r3;
+})();
+
+},{}],"35h4y":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
