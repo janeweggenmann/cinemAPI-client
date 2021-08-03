@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./registration-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
-import FloatingLabel from "react-bootstrap-floating-label";
 
 export function RegistrationView(props) {
   const [email, registerEmail] = useState('');
