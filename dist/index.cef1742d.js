@@ -21986,10 +21986,8 @@ class MainView extends _reactDefault.default.Component {
         }, movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
                 className: "movie_card",
                 xs: 12,
-                sm: 6,
-                md: 4,
-                lg: 3,
-                xl: 3,
+                md: 6,
+                lg: 4,
                 key: movie._id,
                 __source: {
                     fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
@@ -24650,7 +24648,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/FloatingLabel":"7brY9"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
@@ -26838,7 +26836,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/FloatingLabel":"7brY9"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27250,8 +27248,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            xs: 12,
-            md: 6,
+            md: 12,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 15
@@ -27267,97 +27264,103 @@ class MovieView extends _reactDefault.default.Component {
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             className: "d-flex",
-            xs: 12,
-            md: 6,
+            md: 12,
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 18
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-view_wrapper",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 19
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             className: "movie-view_title",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 19
+                lineNumber: 20
             },
             __self: this
         }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 20
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 22
             },
             __self: this
         }, "Overview: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 22
             },
             __self: this
         }, " ", movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 22
+                lineNumber: 23
             },
             __self: this
         }, "Year: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 22
+                lineNumber: 23
             },
             __self: this
         }, " ", movieyear)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 23
+                lineNumber: 24
             },
             __self: this
         }, "Directed By: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 23
+                lineNumber: 24
             },
             __self: this
         }, " ", movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "movie-view_label",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 24
+                lineNumber: 25
             },
             __self: this
         }, "Genre: ", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "movie-view_text",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 24
+                lineNumber: 25
             },
             __self: this
         }, " ", movie.Genre.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "d-flex align-items-start",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 26
+                lineNumber: 27
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
             className: "movie-view_button",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 27
+                lineNumber: 28
             },
             __self: this
-        }, "Back")))));
+        }, "Back"))))));
     }
 }
 MovieView.propTypes = {
