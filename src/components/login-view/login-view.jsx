@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./login-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -28,27 +29,26 @@ export function LoginView(props) {
           <Form.Text className="login-form-text1">
             Please enter your username and password below to log in.
           </Form.Text>
+        </ Form.Group>
+        <Form.Group className="mb-3" controlId="formHorizontalInput" value={username} onChange={e => setUsername(e.target.value)}>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Username"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="Username" />
+          </FloatingLabel>
         </Form.Group>
-        <Form.Floating className="mb-3">
-          <Form.Control
-            id="floatingUsername"
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-          />
-          <label htmlFor="floatingInputCustom">Username</label>
-        </Form.Floating>
-        <Form.Floating className="mb-3">
-          <Form.Control
-            id="floatingPassword"
+        <Form.Group className="mb-3" controlId="formHorizontalPassword" value={password} onChange={e => setPassword(e.target.value)}>
+          <FloatingLabel
+            controlId="floatingPassword"
+            label="Password"
+            className="mb-3"
             type="password"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <label htmlFor="floatingInputCustom">Password</label>
-        </Form.Floating>
+          >
+            <Form.Control type="password" placeholder="Password" />
+          </FloatingLabel>
+        </Form.Group>
         <Button type="button" variant="primary" onClick={handleSubmit}>
           Login
         </Button>

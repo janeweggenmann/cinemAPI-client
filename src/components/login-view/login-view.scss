@@ -39,15 +39,7 @@
   margin: 0 auto;
 }
 
-.floating-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #3c3c3c;
-}
-
-.floating-label [type=text],
-.floating-label [type=email] {
+.form-floating {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 200;

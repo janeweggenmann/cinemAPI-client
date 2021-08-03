@@ -24481,6 +24481,8 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _floatingLabel = require("react-bootstrap/FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -24497,61 +24499,53 @@ function LoginView(props) {
         className: "login-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 21
+            lineNumber: 22
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 22
+            lineNumber: 23
         },
         __self: this
     }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "cinemapi_title-thick",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 23
+            lineNumber: 24
         },
         __self: this
     }, "API")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, "Your place to find information on movies, genres, and directors."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "login-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 26
+            lineNumber: 27
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 27
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "login-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 28
+            lineNumber: 29
         },
         __self: this
-    }, "Please enter your username and password below to log in.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Floating, {
+    }, "Please enter your username and password below to log in.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-3",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 32
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        id: "floatingUsername",
-        type: "text",
-        placeholder: "Username",
+        controlId: "formHorizontalInput",
         value: username,
         onChange: (e)=>setUsername(e.target.value)
         ,
@@ -24560,40 +24554,53 @@ function LoginView(props) {
             lineNumber: 33
         },
         __self: this
-    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        htmlFor: "floatingInputCustom",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 40
-        },
-        __self: this
-    }, "Username")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Floating, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
+        controlId: "floatingInput",
+        label: "Username",
         className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 42
+            lineNumber: 34
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        id: "floatingPassword",
-        type: "password",
-        placeholder: "Password",
+        type: "text",
+        placeholder: "Username",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 39
+        },
+        __self: this
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        className: "mb-3",
+        controlId: "formHorizontalPassword",
         value: password,
         onChange: (e)=>setPassword(e.target.value)
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 42
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
+        controlId: "floatingPassword",
+        label: "Password",
+        className: "mb-3",
+        type: "password",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
             lineNumber: 43
         },
         __self: this
-    }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        htmlFor: "floatingInputCustom",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "password",
+        placeholder: "Password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 50
+            lineNumber: 49
         },
         __self: this
-    }, "Password")), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
         type: "button",
         variant: "primary",
         onClick: handleSubmit,
@@ -24643,7 +24650,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/FloatingLabel":"7brY9"}],"4dfy5":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
@@ -26631,6 +26638,8 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _floatingLabel = require("react-bootstrap/FloatingLabel");
+var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
@@ -26649,42 +26658,42 @@ function RegistrationView(props) {
         className: "registration-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 24
+            lineNumber: 25
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "cinemapi_title-thin",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "cinemapi_title-thick",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, "API")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "registration-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 26
+            lineNumber: 27
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 27
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "reg-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 28
+            lineNumber: 29
         },
         __self: this
     }, "Please enter your information below to create an account.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26695,26 +26704,25 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 30
+            lineNumber: 31
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
-        controlId: "floatingInput",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
+        controlId: "floatingEmail",
         label: "Email",
         className: "mb-3",
         type: "email",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 31
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "email",
-        size: "lg",
         placeholder: "Email Address",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 37
+            lineNumber: 38
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26725,25 +26733,24 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 40
+            lineNumber: 41
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
-        controlId: "floatingInput",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
+        controlId: "floatingUsername",
         label: "Username",
         className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 41
+            lineNumber: 42
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "text",
-        size: "lg",
         placeholder: "Username",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 46
+            lineNumber: 47
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26754,17 +26761,17 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 49
+            lineNumber: 50
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(FloatingLabel, {
-        controlId: "floatingInput",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
+        controlId: "floatingPassword",
         label: "Password",
         className: "mb-3",
         type: "password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 50
+            lineNumber: 51
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26772,7 +26779,7 @@ function RegistrationView(props) {
         placeholder: "Password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 56
+            lineNumber: 57
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -26780,7 +26787,7 @@ function RegistrationView(props) {
         controlId: "formHorizontalInput",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 59
+            lineNumber: 60
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -26790,7 +26797,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 60
+            lineNumber: 61
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26799,7 +26806,7 @@ function RegistrationView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 62
+            lineNumber: 63
         },
         __self: this
     }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -26808,7 +26815,7 @@ function RegistrationView(props) {
         onClick: registerBack,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 63
+            lineNumber: 64
         },
         __self: this
     }, "Back"))));
@@ -26831,7 +26838,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/FloatingLabel":"7brY9"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
