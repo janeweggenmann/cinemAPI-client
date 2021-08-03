@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./registration-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 export function RegistrationView(props) {
   const [email, registerEmail] = useState('');
@@ -29,26 +30,26 @@ export function RegistrationView(props) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formHorizontalInput" value={email} onChange={e => registerEmail(e.target.value)}>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingEmail"
             label="Email"
             className="mb-3"
             type="email"
           >
-            <Form.Control type="email" size="lg" placeholder="Email Address" />
+            <Form.Control type="email" placeholder="Email Address" />
           </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formHorizontalInput" value={username} onChange={e => registerUsername(e.target.value)}>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingUsername"
             label="Username"
             className="mb-3"
           >
-            <Form.Control type="text" size="lg" placeholder="Username" />
+            <Form.Control type="text" placeholder="Username" />
           </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formHorizontalPassword" value={password} onChange={e => registerPassword(e.target.value)}>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingPassword"
             label="Password"
             className="mb-3"
             type="password"
