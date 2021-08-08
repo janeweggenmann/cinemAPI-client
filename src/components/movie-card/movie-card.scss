@@ -12,6 +12,12 @@
   height: 230px;
 }
 
+@media screen and (max-width: 600px) {
+  .card-img-top {
+    height: 190px;
+  }
+}
+
 .card {
   border-color: #ced4da !important;
   text-transform: uppercase;
@@ -19,6 +25,12 @@
   justify-content: center;
   margin: 5px;
   height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    height: 200px;
+  }
 }
 
 .card:hover, 
@@ -44,4 +56,10 @@
   font-size: 20pt;
   line-height: 22pt;
   font-family: 'Anton', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-card_title {
+    font-size: 18pt;
+  }
 }

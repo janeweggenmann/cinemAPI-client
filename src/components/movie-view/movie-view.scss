@@ -3,10 +3,22 @@
   text-align: left;
 }
 
+@media screen and (max-width: 600px) {
+  .movie-view_wrapper {
+    width: 100% !important;
+  }
+}
+
 .movie-view_wrapper {
   width: 60%;
   margin: 0 auto;
   padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-view_image {
+    width: 100% !important;
+  }
 }
 
 .movie-view_image {
@@ -50,8 +62,8 @@
   background-color: #3c3c3c;
   color: white;
   border-color: #3c3c3c;
-  height: 30px;
-  width: 50px;
+  height: 35px;
+  width: 80px;
 }
 
 .movie-view_button:hover {
