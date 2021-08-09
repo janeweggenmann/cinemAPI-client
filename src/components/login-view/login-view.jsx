@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import axios from 'axios';
 import "./login-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,10 +10,20 @@ export function LoginView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    console.log(username, password);
-    props.onLoggedIn(username);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("https://weggenmann-cinemapi.herokuapp.com/login", {
+      Username: username,
+      Password: password
+    })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch(e => {
+        console.log("Username or password does not match our records.")
+      });
+  }
 
   const registerClick = () => {
     props.onRegisterClick("yes");

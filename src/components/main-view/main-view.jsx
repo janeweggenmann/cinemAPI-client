@@ -3,6 +3,9 @@ import axios from "axios";
 import "./main-view.scss";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
@@ -22,17 +25,15 @@ export class MainView extends React.Component {
     };
   }
 
+  //if user is already logged in, use their token and take them to movies page
   componentDidMount() {
-    axios
-      .get("https://weggenmann-cinemapi.herokuapp.com/movies")
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
 
   //when movie is selected, update state from null to the selected movie
@@ -42,11 +43,40 @@ export class MainView extends React.Component {
     });
   }
 
-  //when a user logs in, update state from null to that user
-  onLoggedIn(user) {
+  //when a user logs in, update state from null to that user's username
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Username
     });
+    //store token and username in local storage - this allows users to stay logged in
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  //remove locally stored token and username to log user out
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
+  //take a user to the movies page, using the auth data from when they log in
+  getMovies(token) {
+    axios.get("https://weggenmann-cinemapi.herokuapp.com/movies", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   //when a user clicks "register" button, take them to registration page
@@ -87,6 +117,14 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
+        <Navbar expand="sm">
+          <Container>
+            <Navbar.Text>
+              <h1 className="cinemapi_title-thin">Cinem<span className="cinemapi_title-thick">API</span></h1>
+            </Navbar.Text>
+            <button className="logout-button" onClick={() => { this.onLoggedOut() }}>Logout</button>
+          </Container>
+        </Navbar>
         {selectedMovie ? (
           <MovieView
             movie={selectedMovie}
