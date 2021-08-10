@@ -18,6 +18,10 @@
   }
 }
 
+.movie_card > a {
+  text-decoration: none;
+}
+
 .card {
   border-color: #ced4da !important;
   text-transform: uppercase;

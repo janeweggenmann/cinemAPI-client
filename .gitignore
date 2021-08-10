@@ -2,7 +2,3 @@ node_modules
 .cache
 .parcel-cache
 dist
-dist/index.cef1742d.js
-*.map
-dist/index.cef1742d.js
-*.map
