@@ -76,6 +76,9 @@ p {
   border-color: #3c3c3c;
 }
 
+.field:invalid {
+  border: 1px solid red;
+}
 
 
 
