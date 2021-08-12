@@ -4,7 +4,6 @@ import "./movie-view.scss";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 export class MovieView extends React.Component {
 
@@ -25,7 +24,7 @@ export class MovieView extends React.Component {
               <p className="movie-view_label">Year:  <span className="movie-view_text"> {movieyear}</span></p>
               <span className="movie-view_label">Directed By: </span>
               <Link to={`/directors/${movie.Director.Name}`}>
-                <Button variant="link">{movie.Director.Name}</Button>
+                <span className="movie-view_text">{movie.Director.Name}</span>
               </Link>
               <p></p>
               <span className="movie-view_label">Genre:  </span>

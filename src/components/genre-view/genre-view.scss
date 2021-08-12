@@ -1,0 +1,50 @@
+.genre-view_wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 10px;
+  text-align: center;
+}
+
+.genre-view_name {
+  font-size: 32pt;
+  font-family: 'Anton', sans-serif;
+}
+
+.genre-view_description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 11pt;
+  line-height: 12pt;
+  font-style: italic;
+}
+
+.genre-view_label {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 8pt;
+}
+
+.genre-view_text {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 11pt;
+}
+
+.genre-view_button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: 11pt;
+  background-color: #3c3c3c;
+  color: white;
+  border-color: #3c3c3c;
+  height: 35px;
+  width: 80px;
+}
+
+.genre-view_button:hover {
+  opacity: 70%;
+}

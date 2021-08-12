@@ -17,7 +17,7 @@ export class DirectorView extends React.Component {
               Bio:
               <span className="director-view_text"> {director.Bio}</span>
             </p>
-            <div className="d-flex align-items-start">
+            <div className="d-flex align-items-center">
               <button
                 className="director-view_button"
                 onClick={() => {
@@ -37,9 +37,9 @@ export class DirectorView extends React.Component {
 DirectorView.propTypes = {
   director: PropTypes.shape({
     Name: PropTypes.string.isRequired,
-    Bio: PropTypes.string.isRequired,
-    Birth: PropTypes.instanceOf(Date),
-    Death: PropTypes.instanceOf(Date)
+    Bio: PropTypes.string,
+    Birth: PropTypes.string,
+    Death: PropTypes.string
   }).isRequired
 };
 
