@@ -5,6 +5,7 @@ import axios from 'axios';
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { Link } from "react-router-dom";
 
 export function RegistrationView(props) {
   const [email, registerEmail] = useState('');
@@ -37,7 +38,6 @@ export function RegistrationView(props) {
 
   return (
     <div className="registration-view">
-      <h1 className="cinemapi_title-thin">Cinem<span className="cinemapi_title-thick">API</span></h1>
       <Form className="registration-form">
         <Form.Group className="mb-2">
           <Form.Text className="reg-form-text1">Please enter your information below to create an account.</Form.Text>
@@ -90,7 +90,11 @@ export function RegistrationView(props) {
             onChange={e => registerBirthday(e.target.value)} />
         </Form.Group>
         <Button type="button" variant="primary" onClick={handleRegister}>Submit</Button>
-        <Button type="button" variant="secondary" onClick={registerBack}>Back</Button>
+        <Link to={`/`}>
+          <Button type="button" variant="secondary" >
+            Back
+          </Button>
+        </Link>
       </Form>
     </div>
   );

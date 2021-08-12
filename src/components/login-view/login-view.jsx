@@ -5,6 +5,7 @@ import "./login-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { Link } from "react-router-dom";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -25,15 +26,8 @@ export function LoginView(props) {
       });
   }
 
-  const registerClick = () => {
-    props.onRegisterClick("yes");
-  };
-
   return (
     <div className="login-view">
-      <h1 className="cinemapi_title-thin">
-        Cinem<span className="cinemapi_title-thick">API</span>
-      </h1>
       <p>Your place to find information on movies, genres, and directors.</p>
       <Form className="login-form">
         <Form.Group className="mb-2">
@@ -66,9 +60,11 @@ export function LoginView(props) {
         <Form.Group className="mb-2">
           <Form.Text className="login-form-text2">Not a member yet?</Form.Text>
         </Form.Group>
-        <Button type="button" variant="secondary" onClick={registerClick}>
-          Create Account
-        </Button>
+        <Link to={`/register`}>
+          <Button type="button" variant="secondary" >
+            Create Account
+          </Button>
+        </Link>
       </Form>
     </div>
   );
