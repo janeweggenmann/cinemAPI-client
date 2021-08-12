@@ -21883,6 +21883,7 @@ var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
+var _profileView = require("../profile-view/profile-view");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -21935,18 +21936,6 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    //when a user clicks "register" button, take them to registration page
-    onRegisterClick() {
-        this.setState({
-            register: "yes"
-        });
-    }
-    //when back button is clicked on registration page, go back to sign in page
-    onRegisterBack() {
-        this.setState({
-            register: null
-        });
-    }
     //when user registers, log the user and take them to movies view page
     onRegistered(user) {
         this.setState({
@@ -21959,62 +21948,88 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 103
+                lineNumber: 91
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default, {
             expand: "sm",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 104
+                lineNumber: 93
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 105
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default.Text, {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 106
+                lineNumber: 95
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/`,
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 96
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "cinemapi_title-thin",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 107
+                lineNumber: 97
             },
             __self: this
         }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "cinemapi_title-thick",
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 107
+                lineNumber: 97
             },
             __self: this
-        }, "API"))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        }, "API")))), /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default.Text, {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 100
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/users/${user}`,
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 102
+            },
+            __self: this
+        }, user))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
             className: "logout-button",
             onClick: ()=>{
                 this.onLoggedOut();
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 109
+                lineNumber: 105
             },
             __self: this
-        }, "Logout"))), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+        }, "Logout"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 113
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            __source: {
-                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 114
+                lineNumber: 108
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22023,6 +22038,8 @@ class MainView extends _reactDefault.default.Component {
             render: ()=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                    ,
+                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -22040,7 +22057,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 115
+                lineNumber: 109
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22049,11 +22066,13 @@ class MainView extends _reactDefault.default.Component {
                 if (user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
                     to: "/"
                 }));
-                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, null)));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, {
+                    onRegisterBack: (register)=>this.onRegisterBack(register)
+                })));
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 127
+                lineNumber: 121
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22061,6 +22080,8 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                    ,
+                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -22073,7 +22094,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 134
+                lineNumber: 128
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22081,6 +22102,8 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                    ,
+                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -22093,7 +22116,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 145
+                lineNumber: 139
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22101,6 +22124,8 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                    ,
+                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -22113,7 +22138,29 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
-                lineNumber: 155
+                lineNumber: 149
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            exact: true,
+            path: "/users/:Username",
+            render: ({ history  })=>{
+                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+                    onLoggedIn: (data)=>this.onLoggedIn(data)
+                    ,
+                    onRegisterClick: (register)=>this.onRegisterClick(register)
+                })));
+                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                    className: "main-view"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, {
+                    history: history,
+                    movies: movies
+                })));
+            },
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/main-view/main-view.jsx",
+                lineNumber: 160
             },
             __self: this
         })))));
@@ -22126,7 +22173,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","./main-view.scss":"7cw4c","react-bootstrap/Col":"2D0r8","react-bootstrap/Navbar":"3qLFd","react-bootstrap/Container":"3Mt3t","react-router-dom":"1PMSK","../login-view/login-view":"3XzRu","../registration-view/registration-view":"1q2lk","../movie-card/movie-card":"35h4y","../movie-view/movie-view":"6Dk2Z","../director-view/director-view":"6r9pe","../genre-view/genre-view":"3Vc5z","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/Row":"3fzwD"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","./main-view.scss":"7cw4c","react-bootstrap/Col":"2D0r8","react-bootstrap/Navbar":"3qLFd","react-bootstrap/Container":"3Mt3t","react-router-dom":"1PMSK","../login-view/login-view":"3XzRu","../registration-view/registration-view":"1q2lk","../movie-card/movie-card":"35h4y","../movie-view/movie-view":"6Dk2Z","../director-view/director-view":"6r9pe","../genre-view/genre-view":"3Vc5z","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-bootstrap/Row":"3fzwD","../profile-view/profile-view":"1oFVd"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -29823,6 +29870,7 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _floatingLabel = require("react-bootstrap/FloatingLabel");
 var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -29840,55 +29888,38 @@ function LoginView(props) {
             console.log("Username or password does not match our records.");
         });
     };
-    const registerClick = ()=>{
-        props.onRegisterClick("yes");
-    };
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "login-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 33
+            lineNumber: 30
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
-        className: "cinemapi_title-thin",
+    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 34
-        },
-        __self: this
-    }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
-        className: "cinemapi_title-thick",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 35
-        },
-        __self: this
-    }, "API")), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 37
+            lineNumber: 31
         },
         __self: this
     }, "Your place to find information on movies, genres, and directors."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "login-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 38
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 39
+            lineNumber: 33
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "login-form-text1",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 40
+            lineNumber: 34
         },
         __self: this
     }, "Please enter your username and password below to log in.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29899,7 +29930,7 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 44
+            lineNumber: 38
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
@@ -29908,7 +29939,7 @@ function LoginView(props) {
         className: "mb-3",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 45
+            lineNumber: 39
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29916,7 +29947,7 @@ function LoginView(props) {
         placeholder: "Username",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 50
+            lineNumber: 44
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -29927,7 +29958,7 @@ function LoginView(props) {
         ,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 53
+            lineNumber: 47
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_floatingLabelDefault.default, {
@@ -29937,7 +29968,7 @@ function LoginView(props) {
         type: "password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 54
+            lineNumber: 48
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -29945,7 +29976,7 @@ function LoginView(props) {
         placeholder: "Password",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 60
+            lineNumber: 54
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -29954,33 +29985,39 @@ function LoginView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 63
+            lineNumber: 57
         },
         __self: this
     }, "Login"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 66
+            lineNumber: 60
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
         className: "login-form-text2",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 67
+            lineNumber: 61
         },
         __self: this
-    }, "Not a member yet?")), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        type: "button",
-        variant: "secondary",
-        onClick: registerClick,
+    }, "Not a member yet?")), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: `/register`,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
-            lineNumber: 69
+            lineNumber: 63
         },
         __self: this
-    }, "Create Account"))));
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "button",
+        variant: "secondary",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/login-view/login-view.jsx",
+            lineNumber: 64
+        },
+        __self: this
+    }, "Create Account")))));
 }
 _s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
 _c = LoginView;
@@ -29998,7 +30035,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","axios":"7rA65","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"ytArV":[function() {},{}],"6A5ko":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","axios":"7rA65","./login-view.scss":"ytArV","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-router-dom":"1PMSK"}],"ytArV":[function() {},{}],"6A5ko":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -31215,6 +31252,7 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _floatingLabel = require("react-bootstrap/FloatingLabel");
 var _floatingLabelDefault = parcelHelpers.interopDefault(_floatingLabel);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
@@ -31244,24 +31282,10 @@ function RegistrationView(props) {
         className: "registration-view",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 39
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
-        className: "cinemapi_title-thin",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 40
         },
         __self: this
-    }, "Cinem", /*#__PURE__*/ _reactDefault.default.createElement("span", {
-        className: "cinemapi_title-thick",
-        __source: {
-            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 40
-        },
-        __self: this
-    }, "API")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
         className: "registration-form",
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
@@ -31395,16 +31419,22 @@ function RegistrationView(props) {
             lineNumber: 92
         },
         __self: this
-    }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        type: "button",
-        variant: "secondary",
-        onClick: registerBack,
+    }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: `/`,
         __source: {
             fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
             lineNumber: 93
         },
         __self: this
-    }, "Back"))));
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "button",
+        variant: "secondary",
+        __source: {
+            fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/registration-view/registration-view.jsx",
+            lineNumber: 94
+        },
+        __self: this
+    }, "Back")))));
 }
 _s(RegistrationView, "BWz+VN0Qq8QhM30gal/N+P/A2/A=");
 _c = RegistrationView;
@@ -31424,7 +31454,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./registration-view.scss":"695UR","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/FloatingLabel":"7brY9","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","react-router-dom":"1PMSK"}],"695UR":[function() {},{}],"35h4y":[function(require,module,exports) {
 var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32276,6 +32306,161 @@ exports.default = GenreView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./genre-view.scss":"5QXwF","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"5QXwF":[function() {},{}],"1S2ED":[function() {},{}]},["1j6wU","Xk9RF","55ueq"], "55ueq", "parcelRequire9590")
+},{"react":"3b2NM","prop-types":"4dfy5","./genre-view.scss":"5QXwF","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny"}],"5QXwF":[function() {},{}],"1oFVd":[function(require,module,exports) {
+var helpers = require("../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _profileViewScss = require("./profile-view.scss");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+class ProfileView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        //initial state is set to null
+        this.state = {
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthday: null,
+            FavoriteMovies: []
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        this.getUser(accessToken);
+    }
+    getUser(token) {
+        const username = localStorage.getItem('user');
+        _axiosDefault.default.get(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthday: response.data.Birthday,
+                FavoriteMovies: response.data.FavoriteMovies
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    render() {
+        const { movies , user  } = this.props;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "profile-view",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 48
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            className: "d-flex",
+            md: 12,
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "profile-view_wrapper",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 50
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            className: "profile-view_name",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 51
+            },
+            __self: this
+        }, " Hello, ", this.state.Username, "!"), /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            className: "profile-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, "Profile Information"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "profile-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 55
+            },
+            __self: this
+        }, "Username:", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "profile-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 57
+            },
+            __self: this
+        }, " ", this.state.Username)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "profile-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, "Email:", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "profile-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 61
+            },
+            __self: this
+        }, " ", this.state.Email)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "profile-view_label",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 63
+            },
+            __self: this
+        }, "Birthday:", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "profile-view_text",
+            __source: {
+                fileName: "/Users/janeweggenmann/careerfoundry/movie_api-client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 65
+            },
+            __self: this
+        }, " ", this.state.Birthday))))));
+    }
+}
+ProfileView.propTypes = {
+    users: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string,
+        Favorites: _propTypesDefault.default.array
+    }),
+    movies: _propTypesDefault.default.array.isRequired
+};
+exports.default = ProfileView;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"./profile-view.scss":"1LxDM","react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","@parcel/transformer-js/src/esmodule-helpers.js":"2IRPi","../../../../../.nvm/versions/node/v14.17.0/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1syny","axios":"7rA65"}],"1LxDM":[function() {},{}],"1S2ED":[function() {},{}]},["1j6wU","Xk9RF","55ueq"], "55ueq", "parcelRequire9590")
 
 //# sourceMappingURL=index.cef1742d.js.map

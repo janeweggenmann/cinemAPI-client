@@ -28,6 +28,7 @@ p {
   color: #3c3c3c;
   text-transform: uppercase;
   font-size: 42pt;
+  text-decoration: none !important;
 }
 
 .cinemapi_title-thick {
@@ -78,6 +79,10 @@ p {
 
 .field:invalid {
   border: 1px solid red;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 

@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
@@ -16,6 +17,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
+import { ProfileView } from "../profile-view/profile-view";
 
 
 export class MainView extends React.Component {
@@ -24,7 +26,7 @@ export class MainView extends React.Component {
     //initial state is set to null
     this.state = {
       movies: [],
-      user: null
+      user: null,
     };
   }
 
@@ -75,20 +77,6 @@ export class MainView extends React.Component {
       });
   }
 
-  //when a user clicks "register" button, take them to registration page
-  onRegisterClick() {
-    this.setState({
-      register: "yes"
-    });
-  }
-
-  //when back button is clicked on registration page, go back to sign in page
-  onRegisterBack() {
-    this.setState({
-      register: null
-    });
-  }
-
   //when user registers, log the user and take them to movies view page
   onRegistered(user) {
     this.setState({
@@ -101,20 +89,26 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
-        <Navbar expand="sm">
-          <Container>
-            <Navbar.Text>
-              <h1 className="cinemapi_title-thin">Cinem<span className="cinemapi_title-thick">API</span></h1>
-            </Navbar.Text>
-            <button className="logout-button" onClick={() => { this.onLoggedOut() }}>Logout</button>
-          </Container>
-        </Navbar>
-
         <Router>
+          <Navbar expand="sm">
+            <Container>
+              <Navbar.Text>
+                <Link to={`/`}>
+                  <h1 className="cinemapi_title-thin">Cinem<span className="cinemapi_title-thick">API</span></h1>
+                </Link>
+              </Navbar.Text>
+              <Navbar.Text>
+                <Link to={`/users/${user}`}>
+                  <p>{user}</p>
+                </Link>
+              </Navbar.Text>
+              <button className="logout-button" onClick={() => { this.onLoggedOut() }}>Logout</button>
+            </Container>
+          </Navbar>
           <Row>
             <Route exact path="/" render={() => {
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} onRegisterClick={register => this.onRegisterClick(register)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map(movie => (
@@ -127,13 +121,13 @@ export class MainView extends React.Component {
             <Route path="/register" render={() => {
               if (user) return <Redirect to="/" />
               return <Col>
-                <RegistrationView />
+                <RegistrationView onRegisterBack={register => this.onRegisterBack(register)} />
               </Col>
             }} />
 
             <Route path="/directors/:Name" render={({ match, history }) => {
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} onRegisterClick={register => this.onRegisterClick(register)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col>
@@ -144,7 +138,7 @@ export class MainView extends React.Component {
 
             <Route path="/movies/:movieId" render={({ match, history }) => {
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} onRegisterClick={register => this.onRegisterClick(register)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col>
@@ -154,7 +148,7 @@ export class MainView extends React.Component {
 
             <Route path="/genres/:Name" render={({ match, history }) => {
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} onRegisterClick={register => this.onRegisterClick(register)} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col>
@@ -162,9 +156,20 @@ export class MainView extends React.Component {
               </Col>
             }
             } />
+
+            <Route exact path="/users/:Username" render={({ history }) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={(data) => this.onLoggedIn(data)} onRegisterClick={register => this.onRegisterClick(register)} />
+              </Col>
+              if (movies.length === 0) return <div className="main-view" />;
+              return <Col>
+                <ProfileView history={history} movies={movies} />
+              </Col>
+            }
+            } />
           </Row>
         </Router>
-      </div>
+      </div >
     );
   }
 }
