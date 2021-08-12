@@ -10,6 +10,7 @@
   "description": "",
   "dependencies": {
     "@types/react": "^17.0.14",
+    "@types/react-router-dom": "^5.1.8",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "formik": "^2.2.9",
