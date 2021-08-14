@@ -43,7 +43,7 @@ export class ProfileView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.props;
+
     return (
       <Row className="profile-view" >
         <Col className="d-flex" md={12}>
@@ -52,10 +52,6 @@ export class ProfileView extends React.Component {
             <h5 className="profile-view_label">
               Profile Information
             </h5>
-            <p className="profile-view_label">
-              Username:
-              <span className="profile-view_text"> {this.state.Username}</span>
-            </p>
             <p className="profile-view_label">
               Email:
               <span className="profile-view_text"> {this.state.Email}</span>
