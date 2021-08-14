@@ -1,13 +1,12 @@
-import React from "react";
-import axios from "axios";
-
 import "./main-view.scss";
 
+import React from "react";
+import axios from "axios";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-
+import { NavbarBrand } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -18,7 +17,6 @@ import { MovieView } from "../movie-view/movie-view";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { ProfileView } from "../profile-view/profile-view";
-import { NavbarBrand } from "react-bootstrap";
 
 export class MainView extends React.Component {
   constructor() {
@@ -73,7 +71,7 @@ export class MainView extends React.Component {
           movies: response.data
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }

@@ -1,7 +1,8 @@
+import "./login-view.scss";
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import axios from 'axios';
-import "./login-view.scss";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";

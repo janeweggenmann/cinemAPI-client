@@ -1,6 +1,6 @@
+import "./profile-view.scss";
 import React from "react";
 import axios from "axios";
-import "./profile-view.scss";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

@@ -1,6 +1,7 @@
+import "./genre-view.scss";
+
 import React from "react";
 import PropTypes from "prop-types";
-import "./genre-view.scss";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 

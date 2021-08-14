@@ -9,4 +9,4 @@ This project focuses on the client-side of my CinemAPI application, built using 
 - Parcel
 
 ## Parcel File Path
-Users/janeweggenmann/careerfoundry/movie_api-client/src/index.html
+Users/janeweggenmann/careerfoundry/movieapi-client/src/index.html

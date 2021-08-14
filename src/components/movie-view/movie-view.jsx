@@ -1,13 +1,14 @@
+import "./movie-view.scss";
+
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import "./movie-view.scss";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import Popup from "reactjs-popup";
 
 export class MovieView extends React.Component {
+
   addFavorite() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("user");
@@ -21,9 +22,9 @@ export class MovieView extends React.Component {
         }
       )
       .then(response => {
-        console.log("Added to Favorites");
+        alert("Added to favorites!");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -68,20 +69,13 @@ export class MovieView extends React.Component {
               >
                 Back
               </button>
-              <Popup
-                trigger={
-                  <button
-                    className="movie-view_favorite-button"
-                    value={movie.id}
-                    onClick={e => this.addFavorite(e, movie)}
-                  >
-                    Favorite
-                  </button>
-                }
-                position="right center"
+              <button
+                className="movie-view_favorite-button"
+                value={movie.id}
+                onClick={e => this.addFavorite(e, movie)}
               >
-                <div>Added to favorites</div>
-              </Popup>
+                Add to Favorites
+              </button>
             </div>
           </div>
         </Col>
