@@ -100,7 +100,7 @@ export class MainView extends React.Component {
               </NavbarBrand>
               <Navbar.Text>
                 <Link to={`/users/${user}`}>
-                  <p>{user}</p>
+                  <p className="navbar-username">{user}</p>
                 </Link>
               </Navbar.Text>
               <button
