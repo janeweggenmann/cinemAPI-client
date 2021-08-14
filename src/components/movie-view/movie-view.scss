@@ -64,8 +64,29 @@
   border-color: #3c3c3c;
   height: 35px;
   width: 80px;
+  margin: 0px 5px 0px 0px;
 }
 
-.movie-view_button:hover {
+.movie-view_favorite-button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: 11pt;
+  background-color: #718C6a;
+  color: white;
+  border-color: #718C6a;
+  height: 35px;
+  width: 80px;
+  margin: 0px 5px;
+}
+
+.movie-view_button:hover,
+.movie-view_favorite-button:hover {
   opacity: 70%;
+}
+
+.movie-view_buttons {
+  flex-direction: row;
+  justify-items: start;
 }
