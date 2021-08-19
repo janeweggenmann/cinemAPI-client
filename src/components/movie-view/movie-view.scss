@@ -90,3 +90,17 @@
   flex-direction: row;
   justify-items: start;
 }
+
+.movie-view_unfavorite-button {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  font-size: 11pt;
+  background-color: #6d2424;
+  color: white;
+  border-color: #6d2424;
+  height: 35px;
+  width: 160px;
+  margin: 0px 5px;
+}

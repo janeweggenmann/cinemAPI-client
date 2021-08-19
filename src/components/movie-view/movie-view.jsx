@@ -2,12 +2,44 @@ import "./movie-view.scss";
 
 import React from "react";
 import axios from "axios";
+import moment from "moment";
+
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 
 export class MovieView extends React.Component {
+  constructor() {
+    super();
+    //initial state is set to null
+    this.state = {
+      FavoriteMovies: [],
+    };
+  }
+
+  componentDidMount() {
+    const accessToken = localStorage.getItem('token');
+    this.getFavorites(accessToken);
+  }
+
+  //get favorite movies
+  getFavorites(token) {
+    const username = localStorage.getItem('user');
+    const FavoriteMovies = this.state;
+
+    axios.get(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        this.setState({
+          FavoriteMovies: response.data.FavoriteMovies,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   addFavorite() {
     const token = localStorage.getItem("token");
@@ -23,6 +55,23 @@ export class MovieView extends React.Component {
       )
       .then(response => {
         alert("Added to favorites!");
+        window.location.reload();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  removeFavorite() {
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("user");
+
+    axios.delete(`https://weggenmann-cinemapi.herokuapp.com/users/${username}/favorites/${this.props.movie._id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(response => {
+        alert("Removed from favorites!");
+        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
@@ -31,8 +80,9 @@ export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-    const year = new Date(movie.Year);
-    const movieyear = year.getFullYear();
+    const movieyear = moment(movie.Year).format("YYYY");
+    const { FavoriteMovies } = this.state;
+
     return (
       <Row className="movie-view">
         <Col md={12}>
@@ -69,13 +119,24 @@ export class MovieView extends React.Component {
               >
                 Back
               </button>
-              <button
-                className="movie-view_favorite-button"
-                value={movie.id}
-                onClick={e => this.addFavorite(e, movie)}
-              >
-                Add to Favorites
-              </button>
+              {FavoriteMovies.includes(movie._id) &&
+                <button
+                  className="movie-view_unfavorite-button"
+                  value={movie.id}
+                  onClick={e => this.removeFavorite(e, movie)}
+                >
+                  Remove from Favorites
+                </button>
+              }
+              {(FavoriteMovies.indexOf(movie._id) === -1) &&
+                <button
+                  className="movie-view_favorite-button"
+                  value={movie.id}
+                  onClick={e => this.addFavorite(e, movie)}
+                >
+                  Add to Favorites
+                </button>
+              }
             </div>
           </div>
         </Col>
@@ -83,6 +144,7 @@ export class MovieView extends React.Component {
     );
   }
 }
+
 
 MovieView.propTypes = {
   movie: PropTypes.shape({
@@ -100,7 +162,15 @@ MovieView.propTypes = {
       Birth: PropTypes.string,
       Death: PropTypes.string
     })
-  }).isRequired
+  }).isRequired,
+  user: PropTypes.shape({
+    FavoriteMovies: PropTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        Name: PropTypes.string.isRequired,
+      })
+    )
+  })
 };
 
 export default MovieView;
