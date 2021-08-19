@@ -20,6 +20,10 @@ export class ProfileView extends React.Component {
       Email: null,
       Birthday: null,
       FavoriteMovies: [],
+      UsernameError: "",
+      PasswordError: "",
+      EmailError: "",
+      BirthdayError: ""
     };
 
     this.onUsernameChange = this.onUsernameChange.bind(this);
@@ -57,24 +61,58 @@ export class ProfileView extends React.Component {
     e.preventDefault();
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("user");
-    axios.put(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
-      Username: this.state.Username,
-      Password: this.state.Password,
-      Email: this.state.Email,
-      Birthday: this.state.Birthday
-    },
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
-      .then(response => {
-        const data = response.data;
-        console.log(data);
-        alert("Your information has been updated!");
-        window.open(`/`, '_self');
-      })
-      .catch(e => {
-        console.log("Error updating user information")
-      });
+    let validated = this.formValidation();
+    if (validated) {
+      axios.put(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
+        Username: this.state.Username,
+        Password: this.state.Password,
+        Email: this.state.Email,
+        Birthday: this.state.Birthday
+      },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          alert("Your information has been updated!");
+          window.open(`/`, '_self');
+        })
+        .catch(e => {
+          console.log("Error updating user information")
+        });
+    }
   }
+
+  formValidation() {
+    let UsernameError = {};
+    let EmailError = {};
+    let PasswordError = {};
+    let BirthdayError = {};
+    let isValid = true;
+    if (!(this.state.Username && this.state.Username.length > 4)) {
+      UsernameError.notValidUsername = "Username must be at least 4 characters.";
+      isValid = false;
+    }
+    if (!(this.state.Password && this.state.Password.length > 5)) {
+      PasswordError.notValidPassword = "Password must be at least 6 characters.";
+      isValid = false;
+    }
+    if (!(this.state.Email && this.state.Email.includes("@"))) {
+      EmailError.notValidEmail = "Please enter a valid email address.";
+      isValid = false;
+    }
+    if (!(this.state.Birthday)) {
+      BirthdayError.noBirthday = "Please enter your date of birth.";
+      isValid = false;
+    }
+    this.setState({
+      UsernameError: UsernameError,
+      PasswordError: PasswordError,
+      EmailError: EmailError,
+      BirthdayError: BirthdayError,
+    })
+    return isValid;
+  };
 
   componentDidMount() {
     const accessToken = localStorage.getItem('token');
@@ -128,6 +166,7 @@ export class ProfileView extends React.Component {
   render() {
     const { FavoriteMovies } = this.state;
     const { movies } = this.props;
+    const { UsernameError, PasswordError, EmailError, BirthdayError } = this.state;
 
     return (
       <div className="profile-view_wrapper">
@@ -141,10 +180,17 @@ export class ProfileView extends React.Component {
               </Form.Label>
             </Col>
             <Col sm="9">
+              {Object.keys(EmailError).map((key) => {
+                return (
+                  <div className="form-validation-error" key={key}>
+                    {EmailError[key]}
+                  </div>
+                );
+              })}
               <Form.Control
+                required
                 type="text"
                 placeholder={this.state.Email}
-                value={this.state.Email}
                 onChange={this.onEmailChange} />
             </Col>
           </Row>
@@ -155,10 +201,17 @@ export class ProfileView extends React.Component {
               </Form.Label>
             </Col>
             <Col sm="9">
+              {Object.keys(UsernameError).map((key) => {
+                return (
+                  <div className="form-validation-error" key={key}>
+                    {UsernameError[key]}
+                  </div>
+                );
+              })}
               <Form.Control
+                required
                 type="text"
                 placeholder={this.state.Username}
-                value={this.state.Username}
                 onChange={this.onUsernameChange} />
             </Col>
           </Row>
@@ -169,10 +222,17 @@ export class ProfileView extends React.Component {
               </Form.Label>
             </Col>
             <Col sm="9">
+              {Object.keys(PasswordError).map((key) => {
+                return (
+                  <div className="form-validation-error" key={key}>
+                    {PasswordError[key]}
+                  </div>
+                );
+              })}
               <Form.Control
+                required
                 type="password"
-                placeholder="*******"
-                value={this.state.Password}
+                placeholder=""
                 onChange={this.onPasswordChange} />
             </Col>
           </Row>
@@ -183,10 +243,17 @@ export class ProfileView extends React.Component {
               </Form.Label>
             </Col>
             <Col sm="9">
+              {Object.keys(BirthdayError).map((key) => {
+                return (
+                  <div className="form-validation-error" key={key}>
+                    {BirthdayError[key]}
+                  </div>
+                );
+              })}
               <Form.Control
+                required
                 type="date"
-                placeholder={this.state.Birthday}
-                value={this.state.Birthday}
+                defaultValue={this.state.Birthday}
                 onChange={this.onBirthdayChange} />
             </Col>
           </Row>

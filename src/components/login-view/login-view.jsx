@@ -23,6 +23,7 @@ export function LoginView(props) {
         props.onLoggedIn(data);
       })
       .catch(e => {
+        alert("Incorrect email or password");
         console.log("Username or password does not match our records.")
       });
   }
@@ -42,7 +43,7 @@ export function LoginView(props) {
             label="Username"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="Username" />
+            <Form.Control required type="text" placeholder="Username" />
           </FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formHorizontalPassword" value={password} onChange={e => setPassword(e.target.value)}>
@@ -52,8 +53,9 @@ export function LoginView(props) {
             className="mb-3"
             type="password"
           >
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control required type="password" placeholder="Password" />
           </FloatingLabel>
+
         </Form.Group>
         <Button type="button" variant="primary" onClick={handleSubmit}>
           Login
