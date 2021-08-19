@@ -21,6 +21,55 @@ export class ProfileView extends React.Component {
       Birthday: null,
       FavoriteMovies: [],
     };
+
+    this.onUsernameChange = this.onUsernameChange.bind(this);
+    this.onPasswordChange = this.onPasswordChange.bind(this);
+    this.onEmailChange = this.onEmailChange.bind(this);
+    this.onBirthdayChange = this.onBirthdayChange.bind(this);
+    this.handleUpdateUser = this.handleUpdateUser.bind(this);
+  }
+
+  onUsernameChange(event) {
+    this.setState({
+      Username: event.target.value
+    });
+  }
+
+  onPasswordChange(event) {
+    this.setState({
+      Password: event.target.value
+    });
+  }
+
+  onEmailChange(event) {
+    this.setState({
+      Email: event.target.value
+    });
+  }
+
+  onBirthdayChange(event) {
+    this.setState({
+      Birthday: event.target.value
+    });
+  }
+
+  handleUpdateUser = (e) => {
+    e.preventDefault();
+
+    axios.put(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
+      Username: this.state.Username,
+      Password: this.state.Password,
+      Email: this.state.Email,
+      Birthday: this.state.Birthday
+    })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        window.open(`/`, '_self');
+      })
+      .catch(e => {
+        console.log("Error updating user information")
+      });
   }
 
   componentDidMount() {
@@ -71,70 +120,76 @@ export class ProfileView extends React.Component {
     }
   }
 
+
   render() {
     const { FavoriteMovies } = this.state;
     const { movies } = this.props;
+
     return (
       <div className="profile-view_wrapper">
         <h3 className="profile-view_headers"> Hello, {this.state.Username}!</h3>
 
         <Form className="profile-form">
-          <fieldset disabled className="profile-form-disable">
-            <Row className="profile-form_row">
-              <Col sm="3" className="profile-form_label">
-                <Form.Label>
-                  Email
-                </Form.Label>
-              </Col>
-              <Col sm="9">
-                <Form.Control
-                  type="text"
-                  placeholder={this.state.Email} />
-              </Col>
-            </Row>
-            <Row className="profile-form_row">
-              <Col sm="3" className="profile-form_label">
-                <Form.Label >
-                  Username
-                </Form.Label>
-              </Col>
-              <Col sm="9">
-                <Form.Control
-                  type="text"
-                  placeholder={this.state.Username} />
-              </Col>
-            </Row>
-            <Row className="profile-form_row">
-              <Col sm="3" className="profile-form_label">
-                <Form.Label >
-                  Password
-                </Form.Label>
-              </Col>
-              <Col sm="9">
-                <Form.Control
-                  type="password"
-                  defaultValue={this.state.Password} />
-              </Col>
-            </Row>
-            <Row className="profile-form_row">
-              <Col sm="3" className="profile-form_label">
-                <Form.Label>
-                  Birthday
-                </Form.Label>
-              </Col>
-              <Col sm="9">
-                <Form.Control
-                  type="date"
-                  defaultValue={this.state.Birthday} />
-              </Col>
-            </Row>
-          </fieldset>
+          <Row className="profile-form_row">
+            <Col sm="3" className="profile-form_label">
+              <Form.Label>
+                Email
+              </Form.Label>
+            </Col>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                placeholder={this.state.Email}
+                value={this.state.Email}
+                onChange={this.onEmailChange} />
+            </Col>
+          </Row>
+          <Row className="profile-form_row">
+            <Col sm="3" className="profile-form_label">
+              <Form.Label >
+                Username
+              </Form.Label>
+            </Col>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                placeholder={this.state.Username}
+                value={this.state.Username}
+                onChange={this.onUsernameChange} />
+            </Col>
+          </Row>
+          <Row className="profile-form_row">
+            <Col sm="3" className="profile-form_label">
+              <Form.Label >
+                Password
+              </Form.Label>
+            </Col>
+            <Col sm="9">
+              <Form.Control
+                type="password"
+                placeholder="*******"
+                value={this.state.Password}
+                onChange={this.onPasswordChange} />
+            </Col>
+          </Row>
+          <Row className="profile-form_row">
+            <Col sm="3" className="profile-form_label">
+              <Form.Label>
+                Birthday
+              </Form.Label>
+            </Col>
+            <Col sm="9">
+              <Form.Control
+                type="date"
+                placeholder={this.state.Birthday}
+                value={this.state.Birthday}
+                onChange={this.onBirthdayChange} />
+            </Col>
+          </Row>
           <Form.Group className="profile-form_buttons">
-            <Link to={`/userupdate/${this.props.user}`}>
-              <Button type="button" variant="secondary" className="profile-update-button" onClick={this.enableProfileForm}>
-                Update Information
-              </Button>
-            </Link>
+            <Button type="button" variant="secondary" className="profile-update-button" onClick={this.handleUpdateUser}>
+              Update Information
+            </Button>
             <Button type="button" variant="danger" onClick={this.handleDeleteUser}>Delete Account</Button>
           </Form.Group>
         </Form>
