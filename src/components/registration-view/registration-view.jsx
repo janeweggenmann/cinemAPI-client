@@ -1,7 +1,7 @@
 import "./registration-view.scss";
 
 import React, { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
@@ -26,16 +26,12 @@ export function RegistrationView(props) {
       .then(response => {
         const data = response.data;
         console.log(data);
-        window.open("/", "_self"); // the second argument '_self' is necessary so that the page will open in the current tab
+        window.open(`/`, '_self');
       })
       .catch(e => {
         console.log("Error registering the user")
       });
   }
-
-  const registerBack = () => {
-    props.onRegisterBack();
-  };
 
   return (
     <div className="registration-view">
