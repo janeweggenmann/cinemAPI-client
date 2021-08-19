@@ -55,16 +55,20 @@ export class ProfileView extends React.Component {
 
   handleUpdateUser = (e) => {
     e.preventDefault();
-
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("user");
     axios.put(`https://weggenmann-cinemapi.herokuapp.com/users/${username}`, {
       Username: this.state.Username,
       Password: this.state.Password,
       Email: this.state.Email,
       Birthday: this.state.Birthday
-    })
+    },
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
       .then(response => {
         const data = response.data;
         console.log(data);
+        alert("Your information has been updated!");
         window.open(`/`, '_self');
       })
       .catch(e => {
