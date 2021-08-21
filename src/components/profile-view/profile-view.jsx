@@ -26,6 +26,7 @@ export class ProfileView extends React.Component {
       BirthdayError: ""
     };
 
+    //when user submits a change to the form, change user information
     this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
@@ -57,6 +58,7 @@ export class ProfileView extends React.Component {
     });
   }
 
+  //when update form is submitted, PUT action with API
   handleUpdateUser = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");

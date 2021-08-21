@@ -41,6 +41,7 @@ export class MovieView extends React.Component {
       });
   }
 
+  // when a user favorites a movie, add it to their favorites list via POST action to API 
   addFavorite() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("user");
@@ -62,6 +63,7 @@ export class MovieView extends React.Component {
       });
   }
 
+  // when a user clicks remove favorite, remove from favorites list via DELETE action to API
   removeFavorite() {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("user");
@@ -119,6 +121,7 @@ export class MovieView extends React.Component {
               >
                 Back
               </button>
+              {/*if this movie is already favorite, show the "remove favorite" button */}
               {FavoriteMovies.includes(movie._id) &&
                 <button
                   className="movie-view_unfavorite-button"
@@ -128,6 +131,7 @@ export class MovieView extends React.Component {
                   Remove from Favorites
                 </button>
               }
+              {/*if this movie is NOT already favorite, show the "add favorite" button */}
               {(FavoriteMovies.indexOf(movie._id) === -1) &&
                 <button
                   className="movie-view_favorite-button"
