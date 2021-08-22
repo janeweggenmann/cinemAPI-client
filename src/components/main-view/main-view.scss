@@ -13,8 +13,13 @@
 
 a {
   text-decoration: none;
+  color: #3c3c3c !important;
 }
 
-.navbar-username {
-  text-decoration: underline;
+.nav-link, .dropdown-item {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 13pt;
+  color: #3c3c3c !important;
 }
