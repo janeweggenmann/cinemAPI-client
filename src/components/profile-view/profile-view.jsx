@@ -2,13 +2,15 @@ import "./profile-view.scss";
 import React from "react";
 import axios from "axios";
 import moment from "moment";
-import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
+import { connect } from 'react-redux';
+import { setUser } from '../../actions/actions';
+
 
 export class ProfileView extends React.Component {
   constructor() {
@@ -295,18 +297,11 @@ export class ProfileView extends React.Component {
   }
 }
 
-ProfileView.propTypes = {
-  user: PropTypes.shape({
-    FavoriteMovies: PropTypes.arrayOf(
-      PropTypes.shape({
-        _id: PropTypes.string.isRequired,
-        Name: PropTypes.string.isRequired,
-      })
-    ),
-    Username: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string,
-  }),
-};
+let mapStateToProps = state => {
+  return {
+    user: state.user,
+    movies: state.movies
+  }
+}
 
-export default ProfileView;
+export default connect(mapStateToProps, { setUser })(ProfileView);

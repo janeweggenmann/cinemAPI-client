@@ -1,7 +1,6 @@
 import "./movie-card.scss";
 
 import React from "react";
-import PropTypes from "prop-types";
 import moment from "moment";
 
 import Card from "react-bootstrap/Card";
@@ -26,22 +25,3 @@ export class MovieCard extends React.Component {
     );
   }
 }
-
-MovieCard.propTypes = {
-  movie: PropTypes.shape({
-    Name: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    Year: PropTypes.string,
-    ImageURL: PropTypes.string.isRequired,
-    Genre: PropTypes.shape({
-      Name: PropTypes.string,
-      Description: PropTypes.string
-    }),
-    Director: PropTypes.shape({
-      Name: PropTypes.string,
-      Bio: PropTypes.string,
-      Birth: PropTypes.string,
-      Death: PropTypes.string,
-    }),
-  }).isRequired
-};

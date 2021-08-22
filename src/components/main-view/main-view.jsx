@@ -2,9 +2,11 @@ import "./main-view.scss";
 
 import React from "react";
 import axios from "axios";
+import { connect } from 'react-redux';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import { NavbarBrand } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
@@ -12,39 +14,41 @@ import { Link } from "react-router-dom";
 
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
-import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { DirectorView } from "../director-view/director-view";
 import { GenreView } from "../genre-view/genre-view";
 import { ProfileView } from "../profile-view/profile-view";
+import MoviesList from '../movies-list/movies-list';
+import { setMovies, setUser } from '../../actions/actions';
 
-export class MainView extends React.Component {
-  constructor() {
-    super();
-    //initial state is set to null
-    this.state = {
-      movies: [],
-      user: null
-    };
-  }
+class MainView extends React.Component {
 
   //if user is already logged in, use their token and take them to movies page
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem("user")
-      });
+      setUser(localStorage.getItem("user"));
       this.getMovies(accessToken);
     }
   }
 
+  //take a user to the movies page, using the auth data from when they log in
+  getMovies(token) {
+    axios
+      .get("https://weggenmann-cinemapi.herokuapp.com/movies", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(response => {
+        this.props.setMovies(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   //when a user logs in, update state from null to that user's username
   onLoggedIn(authData) {
-    console.log(authData);
-    this.setState({
-      user: authData.user.Username
-    });
+    this.props.setUser(authData.user.Username);
     //store token and username in local storage - this allows users to stay logged in
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
@@ -55,36 +59,11 @@ export class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.setState({
-      user: null
-    });
-  }
-
-  //take a user to the movies page, using the auth data from when they log in
-  getMovies(token) {
-    axios
-      .get("https://weggenmann-cinemapi.herokuapp.com/movies", {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  //when user registers, log the user and take them to movies view page
-  onRegistered(user) {
-    this.setState({
-      user
-    });
+    this.props.setUser("");
   }
 
   render() {
-    const { movies, user } = this.state;
+    let { movies, user } = this.props;
 
     return (
       <div className="main-view">
@@ -98,19 +77,15 @@ export class MainView extends React.Component {
                   </h1>
                 </Link>
               </NavbarBrand>
-              <Navbar.Text>
-                <Link to={`/users/${user}`}>
-                  <p className="navbar-username">{user}</p>
-                </Link>
-              </Navbar.Text>
-              <button
-                className="logout-button"
-                onClick={() => {
-                  this.onLoggedOut();
-                }}
-              >
-                Logout
-              </button>
+              <Navbar.Toggle />
+              <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                <NavDropdown title={user} id="basic-nav-dropdown">
+                  <NavDropdown.Item> <Link to={`/users/${user}`}>Profile Information</Link></NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => {
+                    this.onLoggedOut();
+                  }}>Logout</NavDropdown.Item>
+                </NavDropdown>
+              </Navbar.Collapse>
             </Container>
           </Navbar>
           <Row>
@@ -130,17 +105,7 @@ export class MainView extends React.Component {
                     </Col>
                   );
                 if (movies.length === 0) return <div className="main-view" />;
-                return movies.map(movie => (
-                  <Col
-                    className="movie_card"
-                    xs={12}
-                    md={6}
-                    lg={4}
-                    key={movie._id}
-                  >
-                    <MovieCard movie={movie} />
-                  </Col>
-                ));
+                return <MoviesList movies={movies} />;
               }}
             />
 
@@ -276,4 +241,11 @@ export class MainView extends React.Component {
   }
 }
 
-export default MainView;
+let mapStateToProps = state => {
+  return {
+    movies: state.movies,
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);

@@ -14,6 +14,7 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(username, password);
     axios.post("https://weggenmann-cinemapi.herokuapp.com/login", {
       Username: username,
       Password: password
