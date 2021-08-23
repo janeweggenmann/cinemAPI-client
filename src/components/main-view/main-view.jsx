@@ -95,7 +95,7 @@ class MainView extends React.Component {
               <Navbar.Toggle />
               <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                 <NavDropdown title={user} id="basic-nav-dropdown">
-                  <Link to={`/users/${user}`}>Profile Information</Link>
+                  <Link className="dropdown-item" to={`/users/${user}`}>Profile Information</Link>
                   <NavDropdown.Item onClick={() => {
                     this.onLoggedOut();
                   }}>Logout</NavDropdown.Item>
