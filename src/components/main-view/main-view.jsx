@@ -22,12 +22,15 @@ import MoviesList from '../movies-list/movies-list';
 import { setMovies, setUser } from '../../actions/actions';
 
 class MainView extends React.Component {
+  constructor() {
+    super();
+  }
 
   //if user is already logged in, use their token and take them to movies page
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      setUser(localStorage.getItem("user"));
+      this.props.setUser(localStorage.getItem("user"));
       this.getMovies(accessToken);
     }
   }
@@ -48,6 +51,16 @@ class MainView extends React.Component {
 
   //when a user logs in, update state from null to that user's username
   onLoggedIn(authData) {
+    console.log(authData);
+    this.props.setUser(authData.user.Username);
+    //store token and username in local storage - this allows users to stay logged in
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  onRegistered(authData) {
+    console.log(authData);
     this.props.setUser(authData.user.Username);
     //store token and username in local storage - this allows users to stay logged in
     localStorage.setItem("token", authData.token);
@@ -59,8 +72,10 @@ class MainView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.props.setUser("");
+    this.props.setUser(null);
   }
+
+
 
   render() {
     let { movies, user } = this.props;
@@ -80,7 +95,7 @@ class MainView extends React.Component {
               <Navbar.Toggle />
               <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                 <NavDropdown title={user} id="basic-nav-dropdown">
-                  <NavDropdown.Item> <Link to={`/users/${user}`}>Profile Information</Link></NavDropdown.Item>
+                  <Link to={`/users/${user}`}>Profile Information</Link>
                   <NavDropdown.Item onClick={() => {
                     this.onLoggedOut();
                   }}>Logout</NavDropdown.Item>
@@ -98,9 +113,6 @@ class MainView extends React.Component {
                     <Col>
                       <LoginView
                         onLoggedIn={user => this.onLoggedIn(user)}
-                        onRegisterClick={register =>
-                          this.onRegisterClick(register)
-                        }
                       />
                     </Col>
                   );
