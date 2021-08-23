@@ -33,6 +33,7 @@ export function RegistrationView(props) {
       })
         .then(response => {
           const data = response.data;
+          props.onRegistered(data);
           console.log(data);
           window.open(`/`, '_self');
         })
