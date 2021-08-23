@@ -14,7 +14,6 @@ export function RegistrationView(props) {
   const [password, registerPassword] = useState('');
   const [birthday, registerBirthday] = useState('');
 
-  //relates to form validation
   const [usernameError, registerUsernameError] = useState({});
   const [passwordError, registerPasswordError] = useState({});
   const [emailError, registerEmailError] = useState({});
@@ -22,7 +21,6 @@ export function RegistrationView(props) {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // only do POST action if form is valid
     const isValid = formValidation();
     if (isValid) {
       axios.post("https://weggenmann-cinemapi.herokuapp.com/users", {
@@ -33,12 +31,10 @@ export function RegistrationView(props) {
       })
         .then(response => {
           const data = response.data;
-          props.onRegistered(data);
           console.log(data);
           window.open(`/`, '_self');
         })
         .catch(e => {
-          alert("There was an error");
           console.log("Error registering the user")
         });
     }

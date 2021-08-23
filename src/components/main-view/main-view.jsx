@@ -59,22 +59,12 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onRegistered(authData) {
-    console.log(authData);
-    this.props.setUser(authData.user.Username);
-    //store token and username in local storage - this allows users to stay logged in
-    localStorage.setItem("token", authData.token);
-    localStorage.setItem("user", authData.user.Username);
-    this.getMovies(authData.token);
-  }
-
   //remove locally stored token and username to log user out
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     this.props.setUser(null);
   }
-
 
 
   render() {
