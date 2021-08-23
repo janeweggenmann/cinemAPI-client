@@ -37,6 +37,7 @@ export function RegistrationView(props) {
           window.open(`/`, '_self');
         })
         .catch(e => {
+          alert("There was an error");
           console.log("Error registering the user")
         });
     }

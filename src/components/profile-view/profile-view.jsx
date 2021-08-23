@@ -132,7 +132,6 @@ export class ProfileView extends React.Component {
       .then(response => {
         this.setState({
           Username: response.data.Username,
-          Password: response.data.Password,
           Email: response.data.Email,
           Birthday: moment(response.data.Birthday).format("YYYY-MM-DD"),
           FavoriteMovies: response.data.FavoriteMovies,

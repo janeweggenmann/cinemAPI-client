@@ -24,7 +24,7 @@ export function LoginView(props) {
         props.onLoggedIn(data);
       })
       .catch(e => {
-        alert("Incorrect email or password");
+        alert("Username or password does not match our records.");
         console.log("Username or password does not match our records.")
       });
   }
