@@ -56,6 +56,7 @@ export class MovieView extends React.Component {
       )
       .then(response => {
         alert("Added to favorites!");
+        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
