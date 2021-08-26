@@ -60,7 +60,6 @@ export class MovieView extends React.Component {
         }
       )
       .then(response => {
-        alert("Added to favorites!");
       })
       .catch(function (error) {
         console.log(error);
@@ -76,7 +75,6 @@ export class MovieView extends React.Component {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(response => {
-        alert("Removed from favorites!");
       })
       .catch(function (error) {
         console.log(error);
