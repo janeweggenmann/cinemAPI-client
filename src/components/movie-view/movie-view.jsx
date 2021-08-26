@@ -23,6 +23,11 @@ export class MovieView extends React.Component {
     this.getFavorites(accessToken);
   }
 
+  componentDidUpdate(FavoriteMovies) {
+    const accessToken = localStorage.getItem('token');
+    this.getFavorites(accessToken);
+  }
+
   //get favorite movies
   getFavorites(token) {
     const username = localStorage.getItem('user');
@@ -56,7 +61,6 @@ export class MovieView extends React.Component {
       )
       .then(response => {
         alert("Added to favorites!");
-        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
@@ -73,7 +77,6 @@ export class MovieView extends React.Component {
     })
       .then(response => {
         alert("Removed from favorites!");
-        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
